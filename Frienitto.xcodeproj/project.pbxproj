@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */; };
 		3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */; };
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
+		B87F75A222C75521000176BB /* FrienttoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A122C75521000176BB /* FrienttoService.swift */; };
+		B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A322C769C0000176BB /* FrienttoProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		459141520A9FDA0C60F96994 /* Pods-Frienitto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.debug.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.debug.xcconfig"; sourceTree = "<group>"; };
 		69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frienitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
+		B87F75A122C75521000176BB /* FrienttoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoService.swift; sourceTree = "<group>"; };
+		B87F75A322C769C0000176BB /* FrienttoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 		3B20E7B922BCCEBD0043C929 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B87F75A122C75521000176BB /* FrienttoService.swift */,
+				B87F75A322C769C0000176BB /* FrienttoProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -268,7 +274,9 @@
 				3B20E7AA22BCCE7A0043C929 /* ViewController.swift in Sources */,
 				3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */,
 				3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */,
+				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
 				3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */,
+				B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
