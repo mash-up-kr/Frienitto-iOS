@@ -23,7 +23,7 @@ enum FrienttoService {
 
 extension FrienttoService: TargetType {
     var baseURL: URL {
-        return URL(string: "http://210.89.190.173")!
+        return URL(string: "http://192.168.123.26:8080")!
     }
     
     var path: String {
