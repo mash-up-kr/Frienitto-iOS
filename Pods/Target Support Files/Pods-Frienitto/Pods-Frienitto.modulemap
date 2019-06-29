@@ -1,6 +1,0 @@
-framework module Pods_Frienitto {
-  umbrella header "Pods-Frienitto-umbrella.h"
-
-  export *
-  module * { export * }
-}
