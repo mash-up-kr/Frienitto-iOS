@@ -8,34 +8,68 @@
 
 /* Begin PBXBuildFile section */
 		3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7A722BCCE7A0043C929 /* AppDelegate.swift */; };
-		3B20E7AA22BCCE7A0043C929 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7A922BCCE7A0043C929 /* MainViewController.swift */; };
 		3B20E7AD22BCCE7A0043C929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7AB22BCCE7A0043C929 /* Main.storyboard */; };
 		3B20E7AF22BCCE7B0043C929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */; };
 		3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7B022BCCE7B0043C929 /* LaunchScreen.storyboard */; };
 		3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */; };
 		3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */; };
+		3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D77D222C7E04A00FA8871 /* CommonAlertViewController.swift */; };
+		3B8E9A8A22C7682A00923678 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8E9A8922C7682A00923678 /* Login.storyboard */; };
+		3BB6B75322C7B43400BB5156 /* LoginSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB6B75222C7B43400BB5156 /* LoginSignViewController.swift */; };
+		3BE1C10622C7C5C2001BF37F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1C10522C7C5C2001BF37F /* LoginViewController.swift */; };
+		3BE1C10922C7CB4F001BF37F /* IssueCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1C10822C7CB4F001BF37F /* IssueCodeModel.swift */; };
+		3BE1C10B22C7CBAF001BF37F /* AuthCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1C10A22C7CBAF001BF37F /* AuthCodeModel.swift */; };
+		3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1C10C22C7CF75001BF37F /* SignInAuthViewController.swift */; };
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
-		D961311F22C7C35F00AE4E7C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961311E22C7C35F00AE4E7C /* UIColor.swift */; };
-		D98584BB22C765C1008547CF /* MakeRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98584BA22C765C1008547CF /* MakeRoom.storyboard */; };
-		D98584BD22C766E8008547CF /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98584BC22C766E8008547CF /* MakeRoomViewController.swift */; };
+		B87F75A222C75521000176BB /* FrienttoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A122C75521000176BB /* FrienttoService.swift */; };
+		B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A322C769C0000176BB /* FrienttoProvider.swift */; };
+		B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87F75B222C7B3AB000176BB /* Colors.xcassets */; };
+		B87F75B922C7BF0C000176BB /* RoomInside.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87F75B822C7BF0C000176BB /* RoomInside.storyboard */; };
+		B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */; };
+		B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75BD22C7D469000176BB /* ProfileCell.swift */; };
+		B87F75C122C7DF2A000176BB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C022C7DF2A000176BB /* CircleView.swift */; };
+		B87F75C322C7E536000176BB /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C222C7E536000176BB /* PeopleListViewController.swift */; };
+		B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */; };
+		B87F75C722C7F0A9000176BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C622C7F0A9000176BB /* User.swift */; };
+		D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01422C7FCB7001D4956 /* MainViewController.swift */; };
+		D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */; };
+		D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */; };
+		D90DF01E22C7FD4D001D4956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01D22C7FD4D001D4956 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B20E7A422BCCE7A0043C929 /* Frienitto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frienitto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B20E7A722BCCE7A0043C929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B20E7A922BCCE7A0043C929 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3B20E7AC22BCCE7A0043C929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B20E7B122BCCE7B0043C929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B20E7B322BCCE7B0043C929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Stroyboard.swift"; sourceTree = "<group>"; };
 		3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Instantiate.swift"; sourceTree = "<group>"; };
+		3B3D77D222C7E04A00FA8871 /* CommonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertViewController.swift; sourceTree = "<group>"; };
+		3B8E9A8922C7682A00923678 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3BB6B75222C7B43400BB5156 /* LoginSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignViewController.swift; sourceTree = "<group>"; };
+		3BE1C10522C7C5C2001BF37F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3BE1C10822C7CB4F001BF37F /* IssueCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCodeModel.swift; sourceTree = "<group>"; };
+		3BE1C10A22C7CBAF001BF37F /* AuthCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeModel.swift; sourceTree = "<group>"; };
+		3BE1C10C22C7CF75001BF37F /* SignInAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAuthViewController.swift; sourceTree = "<group>"; };
 		459141520A9FDA0C60F96994 /* Pods-Frienitto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.debug.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.debug.xcconfig"; sourceTree = "<group>"; };
 		69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frienitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
-		D961311E22C7C35F00AE4E7C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		D98584BA22C765C1008547CF /* MakeRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeRoom.storyboard; sourceTree = "<group>"; };
-		D98584BC22C766E8008547CF /* MakeRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
+		B87F75A122C75521000176BB /* FrienttoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoService.swift; sourceTree = "<group>"; };
+		B87F75A322C769C0000176BB /* FrienttoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoProvider.swift; sourceTree = "<group>"; };
+		B87F75B222C7B3AB000176BB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B87F75B822C7BF0C000176BB /* RoomInside.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoomInside.storyboard; sourceTree = "<group>"; };
+		B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleMatchViewController.swift; sourceTree = "<group>"; };
+		B87F75BD22C7D469000176BB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		B87F75C022C7DF2A000176BB /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		B87F75C222C7E536000176BB /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
+		B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedProfileViewController.swift; sourceTree = "<group>"; };
+		B87F75C622C7F0A9000176BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D90DF01422C7FCB7001D4956 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MakeRoom.storyboard; sourceTree = "<group>"; };
+		D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
+		D90DF01D22C7FD4D001D4956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frienitto/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3B20E7A622BCCE7A0043C929 /* Frienitto */,
+				D90DF01D22C7FD4D001D4956 /* Assets.xcassets */,
 				3B20E7A522BCCE7A0043C929 /* Products */,
 				628F74C58366520EC03E43DC /* Pods */,
 				9ACF15B2C97722DA8CC265C3 /* Frameworks */,
@@ -71,14 +106,14 @@
 		3B20E7A622BCCE7A0043C929 /* Frienitto */ = {
 			isa = PBXGroup;
 			children = (
+				B87F75BF22C7DF0D000176BB /* Common */,
 				3B20E7BC22BCCEF50043C929 /* Extensions */,
 				3B20E7B922BCCEBD0043C929 /* Network */,
 				3B20E7BA22BCCED40043C929 /* Models */,
 				3B20E7BB22BCCEDC0043C929 /* Views */,
+				B87F75B122C7B38E000176BB /* Resources */,
 				3B20E7A722BCCE7A0043C929 /* AppDelegate.swift */,
-				3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */,
 				3B20E7B022BCCE7B0043C929 /* LaunchScreen.storyboard */,
-				3B20E7B322BCCE7B0043C929 /* Info.plist */,
 			);
 			path = Frienitto;
 			sourceTree = "<group>";
@@ -86,6 +121,8 @@
 		3B20E7B922BCCEBD0043C929 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B87F75A122C75521000176BB /* FrienttoService.swift */,
+				B87F75A322C769C0000176BB /* FrienttoProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -93,6 +130,8 @@
 		3B20E7BA22BCCED40043C929 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3BE1C10722C7CB3A001BF37F /* LoginModels */,
+				B87F75C622C7F0A9000176BB /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,7 +139,10 @@
 		3B20E7BB22BCCEDC0043C929 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D98584B922C765B1008547CF /* RoomOwner */,
+				3B3D77D122C7E03C00FA8871 /* Common */,
+				B87F75B522C7BEC4000176BB /* RoomInside */,
+				3B8E9A8622C767FB00923678 /* Login */,
+				D90DF01622C7FCE7001D4956 /* RoomOwner */,
 				3B20E7C122BCD0DD0043C929 /* Main */,
 			);
 			path = Views;
@@ -111,7 +153,6 @@
 			children = (
 				3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */,
 				3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */,
-				D961311E22C7C35F00AE4E7C /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,9 +177,53 @@
 		3B20E7C322BCD2AD0043C929 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3B20E7A922BCCE7A0043C929 /* MainViewController.swift */,
+				D90DF01422C7FCB7001D4956 /* MainViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3B3D77D122C7E03C00FA8871 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3B3D77D222C7E04A00FA8871 /* CommonAlertViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3B8E9A8622C767FB00923678 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3B8E9A8722C7680F00923678 /* ViewController */,
+				3B8E9A8822C7681500923678 /* Storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3B8E9A8722C7680F00923678 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3BB6B75222C7B43400BB5156 /* LoginSignViewController.swift */,
+				3BE1C10522C7C5C2001BF37F /* LoginViewController.swift */,
+				3BE1C10C22C7CF75001BF37F /* SignInAuthViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3B8E9A8822C7681500923678 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3B8E9A8922C7682A00923678 /* Login.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		3BE1C10722C7CB3A001BF37F /* LoginModels */ = {
+			isa = PBXGroup;
+			children = (
+				3BE1C10822C7CB4F001BF37F /* IssueCodeModel.swift */,
+				3BE1C10A22C7CBAF001BF37F /* AuthCodeModel.swift */,
+			);
+			path = LoginModels;
 			sourceTree = "<group>";
 		};
 		628F74C58366520EC03E43DC /* Pods */ = {
@@ -158,29 +243,83 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D98584B922C765B1008547CF /* RoomOwner */ = {
+		B87F75B122C7B38E000176BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D98584BE22C76D2C008547CF /* ViewController */,
-				D98584BF22C76D30008547CF /* Storyboard */,
+				3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */,
+				B87F75B222C7B3AB000176BB /* Colors.xcassets */,
+				3B20E7B322BCCE7B0043C929 /* Info.plist */,
 			);
-			path = RoomOwner;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		D98584BE22C76D2C008547CF /* ViewController */ = {
+		B87F75B522C7BEC4000176BB /* RoomInside */ = {
 			isa = PBXGroup;
 			children = (
-				D98584BC22C766E8008547CF /* MakeRoomViewController.swift */,
+				B87F75BC22C7D449000176BB /* View */,
+				B87F75B622C7BED3000176BB /* ViewController */,
+				B87F75B722C7BED9000176BB /* Storyboard */,
+			);
+			path = RoomInside;
+			sourceTree = "<group>";
+		};
+		B87F75B622C7BED3000176BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */,
+				B87F75C222C7E536000176BB /* PeopleListViewController.swift */,
+				B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		D98584BF22C76D30008547CF /* Storyboard */ = {
+		B87F75B722C7BED9000176BB /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				D98584BA22C765C1008547CF /* MakeRoom.storyboard */,
+				B87F75B822C7BF0C000176BB /* RoomInside.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B87F75BC22C7D449000176BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B87F75BD22C7D469000176BB /* ProfileCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B87F75BF22C7DF0D000176BB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B87F75C022C7DF2A000176BB /* CircleView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D90DF01622C7FCE7001D4956 /* RoomOwner */ = {
+			isa = PBXGroup;
+			children = (
+				D90DF01722C7FCE8001D4956 /* Storyboard */,
+				D90DF01922C7FCE8001D4956 /* ViewController */,
+			);
+			path = RoomOwner;
+			sourceTree = "<group>";
+		};
+		D90DF01722C7FCE8001D4956 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D90DF01922C7FCE8001D4956 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +382,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8E9A8A22C7682A00923678 /* Login.storyboard in Resources */,
 				3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */,
-				D98584BB22C765C1008547CF /* MakeRoom.storyboard in Resources */,
+				B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */,
+				D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */,
+				B87F75B922C7BF0C000176BB /* RoomInside.storyboard in Resources */,
 				3B20E7AF22BCCE7B0043C929 /* Assets.xcassets in Resources */,
+				D90DF01E22C7FD4D001D4956 /* Assets.xcassets in Resources */,
 				3B20E7AD22BCCE7A0043C929 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,12 +442,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B20E7AA22BCCE7A0043C929 /* MainViewController.swift in Sources */,
-				D961311F22C7C35F00AE4E7C /* UIColor.swift in Sources */,
+				3BE1C10B22C7CBAF001BF37F /* AuthCodeModel.swift in Sources */,
+				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,
+				3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */,
+				B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */,
+				D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */,
 				3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */,
 				3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */,
+				B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */,
+				D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */,
+				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
+				3BE1C10622C7C5C2001BF37F /* LoginViewController.swift in Sources */,
+				B87F75C322C7E536000176BB /* PeopleListViewController.swift in Sources */,
+				B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */,
 				3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */,
-				D98584BD22C766E8008547CF /* MakeRoomViewController.swift in Sources */,
+				3BE1C10922C7CB4F001BF37F /* IssueCodeModel.swift in Sources */,
+				B87F75C722C7F0A9000176BB /* User.swift in Sources */,
+				3BB6B75322C7B43400BB5156 /* LoginSignViewController.swift in Sources */,
+				B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */,
+				B87F75C122C7DF2A000176BB /* CircleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +608,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Frienitto/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Frienitto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +627,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Frienitto/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Frienitto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

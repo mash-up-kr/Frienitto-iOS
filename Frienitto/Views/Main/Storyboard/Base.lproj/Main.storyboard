@@ -40,7 +40,7 @@
                                 <rect key="frame" x="24" y="466" width="366" height="366"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="UDJ-g3-QnN">
-                                        <rect key="frame" x="90" y="-50" width="186" height="229"/>
+                                        <rect key="frame" x="90" y="-50" width="186" height="229.00000000000003"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UDJ-g3-QnN" secondAttribute="height" multiplier="152:187" id="TQx-Ws-FDh"/>
                                         </constraints>
@@ -60,6 +60,9 @@
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapEnterRoom:" destination="LZK-LC-6cg" eventType="touchUpInside" id="2cn-1G-1NB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnR-l6-bA6">
                                         <rect key="frame" x="24" y="238" width="318" height="48"/>
