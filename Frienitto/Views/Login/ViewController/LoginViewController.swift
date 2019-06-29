@@ -27,4 +27,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: Any) {
     }
+    
+    @IBAction func popViewController(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

@@ -9,4 +9,13 @@
 struct AuthCodeModel: Codable {
     let code: Int
     let msg: String
+    let data: AuthCodeModel.Data
+    
+    struct Data: Codable {
+        let registerToken: String
+        
+        enum CodingKeys: String, CodingKey {
+            case registerToken = "register_token"
+        }
+    }
 }
