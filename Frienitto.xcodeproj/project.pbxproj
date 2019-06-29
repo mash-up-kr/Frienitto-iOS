@@ -3,24 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7A722BCCE7A0043C929 /* AppDelegate.swift */; };
-		3B20E7AA22BCCE7A0043C929 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7A922BCCE7A0043C929 /* ViewController.swift */; };
+		3B20E7AA22BCCE7A0043C929 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7A922BCCE7A0043C929 /* MainViewController.swift */; };
 		3B20E7AD22BCCE7A0043C929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7AB22BCCE7A0043C929 /* Main.storyboard */; };
 		3B20E7AF22BCCE7B0043C929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */; };
 		3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7B022BCCE7B0043C929 /* LaunchScreen.storyboard */; };
 		3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */; };
 		3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */; };
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
+		D961311F22C7C35F00AE4E7C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961311E22C7C35F00AE4E7C /* UIColor.swift */; };
+		D98584BB22C765C1008547CF /* MakeRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98584BA22C765C1008547CF /* MakeRoom.storyboard */; };
+		D98584BD22C766E8008547CF /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98584BC22C766E8008547CF /* MakeRoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B20E7A422BCCE7A0043C929 /* Frienitto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frienitto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B20E7A722BCCE7A0043C929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B20E7A922BCCE7A0043C929 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B20E7A922BCCE7A0043C929 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3B20E7AC22BCCE7A0043C929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B20E7B122BCCE7B0043C929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		459141520A9FDA0C60F96994 /* Pods-Frienitto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.debug.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.debug.xcconfig"; sourceTree = "<group>"; };
 		69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frienitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
+		D961311E22C7C35F00AE4E7C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D98584BA22C765C1008547CF /* MakeRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeRoom.storyboard; sourceTree = "<group>"; };
+		D98584BC22C766E8008547CF /* MakeRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		3B20E7BB22BCCEDC0043C929 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D98584B922C765B1008547CF /* RoomOwner */,
 				3B20E7C122BCD0DD0043C929 /* Main */,
 			);
 			path = Views;
@@ -104,6 +111,7 @@
 			children = (
 				3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */,
 				3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */,
+				D961311E22C7C35F00AE4E7C /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -128,7 +136,7 @@
 		3B20E7C322BCD2AD0043C929 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3B20E7A922BCCE7A0043C929 /* ViewController.swift */,
+				3B20E7A922BCCE7A0043C929 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -148,6 +156,31 @@
 				69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D98584B922C765B1008547CF /* RoomOwner */ = {
+			isa = PBXGroup;
+			children = (
+				D98584BE22C76D2C008547CF /* ViewController */,
+				D98584BF22C76D30008547CF /* Storyboard */,
+			);
+			path = RoomOwner;
+			sourceTree = "<group>";
+		};
+		D98584BE22C76D2C008547CF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D98584BC22C766E8008547CF /* MakeRoomViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D98584BF22C76D30008547CF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D98584BA22C765C1008547CF /* MakeRoom.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */,
+				D98584BB22C765C1008547CF /* MakeRoom.storyboard in Resources */,
 				3B20E7AF22BCCE7B0043C929 /* Assets.xcassets in Resources */,
 				3B20E7AD22BCCE7A0043C929 /* Main.storyboard in Resources */,
 			);
@@ -265,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B20E7AA22BCCE7A0043C929 /* ViewController.swift in Sources */,
+				3B20E7AA22BCCE7A0043C929 /* MainViewController.swift in Sources */,
+				D961311F22C7C35F00AE4E7C /* UIColor.swift in Sources */,
 				3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */,
 				3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */,
 				3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */,
+				D98584BD22C766E8008547CF /* MakeRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
