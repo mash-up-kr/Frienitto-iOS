@@ -18,6 +18,7 @@
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
 		B87F75A222C75521000176BB /* FrienttoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A122C75521000176BB /* FrienttoService.swift */; };
 		B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A322C769C0000176BB /* FrienttoProvider.swift */; };
+		B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87F75B222C7B3AB000176BB /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
 		B87F75A122C75521000176BB /* FrienttoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoService.swift; sourceTree = "<group>"; };
 		B87F75A322C769C0000176BB /* FrienttoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoProvider.swift; sourceTree = "<group>"; };
+		B87F75B222C7B3AB000176BB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +77,9 @@
 				3B20E7B922BCCEBD0043C929 /* Network */,
 				3B20E7BA22BCCED40043C929 /* Models */,
 				3B20E7BB22BCCEDC0043C929 /* Views */,
+				B87F75B122C7B38E000176BB /* Resources */,
 				3B20E7A722BCCE7A0043C929 /* AppDelegate.swift */,
-				3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */,
 				3B20E7B022BCCE7B0043C929 /* LaunchScreen.storyboard */,
-				3B20E7B322BCCE7B0043C929 /* Info.plist */,
 			);
 			path = Frienitto;
 			sourceTree = "<group>";
@@ -183,6 +184,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B87F75B122C7B38E000176BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */,
+				B87F75B222C7B3AB000176BB /* Colors.xcassets */,
+				3B20E7B322BCCE7B0043C929 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,6 +256,7 @@
 			files = (
 				3B8E9A8A22C7682A00923678 /* Login.storyboard in Resources */,
 				3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */,
+				B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */,
 				3B20E7AF22BCCE7B0043C929 /* Assets.xcassets in Resources */,
 				3B20E7AD22BCCE7A0043C929 /* Main.storyboard in Resources */,
 			);
@@ -452,7 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Frienitto/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Frienitto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Frienitto/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Frienitto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
