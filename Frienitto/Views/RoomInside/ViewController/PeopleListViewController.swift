@@ -28,6 +28,13 @@ extension PeopleListViewController: UICollectionViewDataSource {
     }
 }
 
+extension PeopleListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let dimmedViewController = UIStoryboard.instantiate(DimmedProfileViewController.self, name: "RoomInside") as? DimmedProfileViewController else { return }
+        present(dimmedViewController, animated: true, completion: nil)
+    }
+}
+
 extension PeopleListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfRow: CGFloat = 2

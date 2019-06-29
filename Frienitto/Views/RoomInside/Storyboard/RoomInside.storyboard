@@ -36,7 +36,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DSH-vE-R62">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DSH-vE-R62">
                                 <rect key="frame" x="24" y="315" width="366" height="547"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nPZ-cH-Nk6">
@@ -192,7 +192,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tCQ-HZ-4v1">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tCQ-HZ-4v1">
                                 <rect key="frame" x="24" y="235" width="366" height="627"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Djh-wM-QYf">
@@ -300,11 +300,87 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqI-GL-IsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="11"/>
+            <point key="canvasLocation" x="668" y="11"/>
+        </scene>
+        <!--Dimmed Profile View Controller-->
+        <scene sceneID="hmc-1L-a6s">
+            <objects>
+                <viewController storyboardIdentifier="DimmedProfileViewController" modalPresentationStyle="overCurrentContext" id="20o-S9-150" customClass="DimmedProfileViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SYh-6j-RGG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNH-DA-pmD">
+                                <rect key="frame" x="24" y="260" width="366" height="376"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-C6-RJ7">
+                                        <rect key="frame" x="318" y="17" width="25" height="25"/>
+                                        <state key="normal" image="cancel"/>
+                                        <connections>
+                                            <action selector="dismiss:" destination="20o-S9-150" eventType="touchUpInside" id="mMH-x6-3X9"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KvI-Cq-Uwa" customClass="CircleImageView" customModule="Frienitto" customModuleProvider="target">
+                                        <rect key="frame" x="113" y="76" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="NPh-qI-ze2"/>
+                                            <constraint firstAttribute="width" constant="140" id="eb3-UY-X6H"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLH-Mr-iIT">
+                                        <rect key="frame" x="144" y="246" width="78" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-HU-YbD">
+                                        <rect key="frame" x="155.5" y="294" width="55.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wLH-Mr-iIT" firstAttribute="top" secondItem="KvI-Cq-Uwa" secondAttribute="bottom" constant="30" id="03f-C9-EWk"/>
+                                    <constraint firstItem="KvI-Cq-Uwa" firstAttribute="top" secondItem="UNH-DA-pmD" secondAttribute="top" constant="76" id="0CI-Md-WDI"/>
+                                    <constraint firstItem="KvI-Cq-Uwa" firstAttribute="centerX" secondItem="UNH-DA-pmD" secondAttribute="centerX" id="0D9-v6-ZwH"/>
+                                    <constraint firstItem="o2O-HU-YbD" firstAttribute="top" secondItem="wLH-Mr-iIT" secondAttribute="bottom" constant="12" id="F4C-br-HgD"/>
+                                    <constraint firstAttribute="trailing" secondItem="NZH-C6-RJ7" secondAttribute="trailing" constant="23" id="VdS-Q6-fcc"/>
+                                    <constraint firstItem="o2O-HU-YbD" firstAttribute="centerX" secondItem="UNH-DA-pmD" secondAttribute="centerX" id="cY7-Du-G1V"/>
+                                    <constraint firstAttribute="height" constant="376" id="gOH-PX-VVz"/>
+                                    <constraint firstItem="wLH-Mr-iIT" firstAttribute="centerX" secondItem="UNH-DA-pmD" secondAttribute="centerX" id="sxn-cX-d9c"/>
+                                    <constraint firstItem="NZH-C6-RJ7" firstAttribute="top" secondItem="UNH-DA-pmD" secondAttribute="top" constant="17" id="vrZ-ur-Yex"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UNH-DA-pmD" firstAttribute="centerY" secondItem="SYh-6j-RGG" secondAttribute="centerY" id="FES-wK-LUx"/>
+                            <constraint firstItem="gxZ-wX-Nr4" firstAttribute="trailing" secondItem="UNH-DA-pmD" secondAttribute="trailing" constant="24" id="RRd-Rb-5Lo"/>
+                            <constraint firstItem="UNH-DA-pmD" firstAttribute="leading" secondItem="gxZ-wX-Nr4" secondAttribute="leading" constant="24" id="hb9-rj-2Yk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gxZ-wX-Nr4"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="o2O-HU-YbD" id="qtd-iz-LNR"/>
+                        <outlet property="imageView" destination="KvI-Cq-Uwa" id="ZKD-jX-P9P"/>
+                        <outlet property="nicknameLabel" destination="wLH-Mr-iIT" id="9Se-mw-arV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXm-aY-nih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="682"/>
         </scene>
     </scenes>
     <resources>
         <image name="backArrow" width="13" height="21"/>
+        <image name="cancel" width="25" height="25"/>
         <image name="face6" width="279" height="279"/>
         <namedColor name="darkIndigo">
             <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
