@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clearBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vuc-f4-JOb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vuc-f4-JOb">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XP-xm-SOa">
@@ -51,7 +52,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c77-uF-Uzj">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="멋진 방 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c77-uF-Uzj">
                                                 <rect key="frame" x="8" y="37" width="318" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -95,7 +96,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="9bm-7N-qBX"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-zT-3jD">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4자 이상의 비밀번호를 적어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-zT-3jD">
                                                 <rect key="frame" x="8" y="37" width="318" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -131,6 +132,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNo-Rj-VgX">
                                                         <rect key="frame" x="0.0" y="0.0" width="155" height="48"/>
                                                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="3일 후">
                                                             <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -150,6 +152,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jct-YW-EHq">
                                                         <rect key="frame" x="163" y="0.0" width="155" height="48"/>
                                                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="7일 후">
                                                             <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -233,7 +236,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="A67-MZ-gUV" firstAttribute="leading" secondItem="XWn-Cq-IuD" secondAttribute="leading" constant="24" id="5gz-eA-cGN"/>
                             <constraint firstItem="vuc-f4-JOb" firstAttribute="leading" secondItem="XWn-Cq-IuD" secondAttribute="leading" id="6eT-ws-kcd"/>
@@ -254,7 +257,6 @@
                     <navigationItem key="navigationItem" id="eTq-W7-lVI"/>
                     <connections>
                         <outlet property="makeButton" destination="jsE-LX-woa" id="VZW-6O-L1F"/>
-                        <outlet property="makeRoomField" destination="NSL-tt-DLa" id="Bka-3D-JcZ"/>
                         <outlet property="roomName" destination="c77-uF-Uzj" id="6z2-5x-2wX"/>
                         <outlet property="roomPassword" destination="IRt-zT-3jD" id="AM0-o7-ERr"/>
                         <outlet property="sevenDayAfterButton" destination="Jct-YW-EHq" id="tz3-2a-e8C"/>
@@ -267,6 +269,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clearBackground" width="376" height="667"/>
+        <image name="homeBackground" width="376" height="667"/>
+        <namedColor name="darkIndigo">
+            <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

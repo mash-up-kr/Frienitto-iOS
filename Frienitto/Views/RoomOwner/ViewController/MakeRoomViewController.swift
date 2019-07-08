@@ -10,11 +10,12 @@ import UIKit
 
 class MakeRoomViewController: UIViewController {
     
+    // MARK: - IBOutlet
+    
     @IBOutlet weak var roomName: UITextField! {
         didSet {
             roomName.borderStyle = .none
             roomName.inputAccessoryView = keyboardAccessaryView
-            roomName.placeholder = "멋진 방 이름을 적어주세요"
             roomName.tag = 1
         }
     }
@@ -22,13 +23,10 @@ class MakeRoomViewController: UIViewController {
         didSet {
             roomPassword.borderStyle = .none
             roomPassword.keyboardType = .numberPad
-            roomPassword.placeholder = "비밀번호를 적어주세요."
             roomPassword.inputAccessoryView = keyboardAccessaryView
             roomPassword.tag = 2
         }
     }
-    
-    @IBOutlet weak var makeRoomField: UIView!
     
     @IBOutlet weak var threeDayAfterButton: UIButton! {
         didSet {
@@ -44,10 +42,14 @@ class MakeRoomViewController: UIViewController {
     
     @IBOutlet weak var makeButton: UIButton! {
         didSet {
-            makeButton.addTarget(self, action: #selector(basicButton(_:)), for: .touchUpInside)
+            setMakeButton(false)
+            makeButton.addTarget(self, action: #selector(didTapMakeButton(_:)), for: .touchUpInside)
         }
     }
     
+    // MARK: - Property
+    
+    // TODO: Xib
     private lazy var keyboardAccessaryView: UIToolbar = {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -61,10 +63,13 @@ class MakeRoomViewController: UIViewController {
         return toolBar
     }()
     
+    // TODO: Tag 제거
     private var nowTextFieldTag = 1
-    private let buttonBackgroundLightGray = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0)
-    private let buttonTextGray = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)
+    private let buttonBackgroundLightGray = UIColor(named: "lightgrey")
+    private let buttonTextGray = UIColor(named: "darkgrey")
 
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationItem()
@@ -74,6 +79,8 @@ class MakeRoomViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+    
+    // MARK: - Method
     
     private func setNavigationItem() {
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
@@ -87,6 +94,41 @@ class MakeRoomViewController: UIViewController {
         roomName.delegate = self
         roomPassword.delegate = self
     }
+    
+    // TODO: rename
+    // TODO: roomName validation check
+    private func checkBasicValidation() {
+        
+        guard let roomName = roomName.text,
+            let password = roomPassword.text
+            else {
+                setMakeButton(false)
+                return
+            }
+        
+        if password.count < 4 {
+            setMakeButton(false)
+            return
+        }
+        
+        if !threeDayAfterButton.isSelected && !sevenDayAfterButton.isSelected {
+            setMakeButton(false)
+            return
+        }
+        
+        setMakeButton(true)
+    }
+    
+    private func setMakeButton(_ validation: Bool) {
+        makeButton.isEnabled = validation
+        if validation {
+            makeButton.backgroundColor = UIColor(named: "orange")
+        } else {
+            makeButton.backgroundColor = UIColor(named: "darkgrey")
+        }
+    }
+    
+    // MARK: - objc
     
     @objc func didTapUpArrow() {
         roomPassword.resignFirstResponder()
@@ -104,6 +146,7 @@ class MakeRoomViewController: UIViewController {
         } else if roomName.isFirstResponder {
             roomName.resignFirstResponder()
         }
+        checkBasicValidation()
     }
     
     @objc func basicButton(_ sender: UIButton) {
@@ -131,12 +174,11 @@ class MakeRoomViewController: UIViewController {
             sevenDayAfterButton.setTitleColor(buttonTextGray, for: .normal)
         }
         
-        makeButton.backgroundColor = .orange
-        makeButton.setTitleColor(.white, for: .normal)
+        checkBasicValidation()
     }
     
     @objc func didTapMakeButton(_ sender: UIButton) {
-        
+        print("create Room")
     }
 }
 
@@ -152,7 +194,6 @@ extension MakeRoomViewController: UITextFieldDelegate {
             // down
             toolbar.items?.first?.isEnabled = true
             toolbar.items?[1].isEnabled = false
-            
         }
     }
 
@@ -162,6 +203,7 @@ extension MakeRoomViewController: UITextFieldDelegate {
         } else {
             textField.resignFirstResponder()
         }
+        checkBasicValidation()
         return true
     }
 }
