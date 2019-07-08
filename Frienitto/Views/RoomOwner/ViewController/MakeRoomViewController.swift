@@ -49,7 +49,6 @@ class MakeRoomViewController: UIViewController {
     
     // MARK: - Property
     
-    // TODO: Xib
     private lazy var keyboardAccessaryView: UIToolbar = {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
@@ -63,8 +62,6 @@ class MakeRoomViewController: UIViewController {
         return toolBar
     }()
     
-    // TODO: Tag 제거
-    private var nowTextFieldTag = 1
     private let buttonBackgroundLightGray = UIColor(named: "lightgrey")
     private let buttonTextGray = UIColor(named: "darkgrey")
 
@@ -95,9 +92,8 @@ class MakeRoomViewController: UIViewController {
         roomPassword.delegate = self
     }
     
-    // TODO: rename
     // TODO: roomName validation check
-    private func checkBasicValidation() {
+    private func checkRoomInfoValidation() {
         
         guard let roomName = roomName.text,
             let password = roomPassword.text
@@ -146,7 +142,7 @@ class MakeRoomViewController: UIViewController {
         } else if roomName.isFirstResponder {
             roomName.resignFirstResponder()
         }
-        checkBasicValidation()
+        checkRoomInfoValidation()
     }
     
     @objc func basicButton(_ sender: UIButton) {
@@ -174,7 +170,7 @@ class MakeRoomViewController: UIViewController {
             sevenDayAfterButton.setTitleColor(buttonTextGray, for: .normal)
         }
         
-        checkBasicValidation()
+        checkRoomInfoValidation()
     }
     
     @objc func didTapMakeButton(_ sender: UIButton) {
@@ -184,16 +180,18 @@ class MakeRoomViewController: UIViewController {
 
 extension MakeRoomViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        nowTextFieldTag = textField.tag
-        guard let toolbar = textField.inputAccessoryView as? UIToolbar else {fatalError("toolbar")}
-        if nowTextFieldTag == 1 {
-            // up
-            toolbar.items?.first?.isEnabled = false
-            toolbar.items?[1].isEnabled = true
-        } else if nowTextFieldTag == 2 {
-            // down
-            toolbar.items?.first?.isEnabled = true
-            toolbar.items?[1].isEnabled = false
+        guard
+            let toolbar = textField.inputAccessoryView as? UIToolbar,
+            let upArrowButton = toolbar.items?[0],
+            let downArrowButton = toolbar.items?[1]
+            else { fatalError("textfield arrow") }
+        
+        if textField == roomName {
+            upArrowButton.isEnabled = false
+            downArrowButton.isEnabled = true
+        } else if textField == roomPassword {
+            upArrowButton.isEnabled = true
+            downArrowButton.isEnabled = false
         }
     }
 
@@ -203,7 +201,7 @@ extension MakeRoomViewController: UITextFieldDelegate {
         } else {
             textField.resignFirstResponder()
         }
-        checkBasicValidation()
+        checkRoomInfoValidation()
         return true
     }
 }
