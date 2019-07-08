@@ -12,8 +12,6 @@ class MakeRoomViewController: UIViewController {
     
     @IBOutlet weak var roomName: UITextField! {
         didSet {
-            roomNameSuperViewY = (roomName.superview?.frame.origin.y)!
-            roomNameViewY = roomName.frame.origin.y
             roomName.borderStyle = .none
             roomName.inputAccessoryView = keyboardAccessaryView
             roomName.placeholder = "멋진 방 이름을 적어주세요"
@@ -22,8 +20,6 @@ class MakeRoomViewController: UIViewController {
     }
     @IBOutlet weak var roomPassword: UITextField! {
         didSet {
-            roomPasswordSuperViewY = (roomPassword.superview?.frame.origin.y)!
-            roomPasswordViewY = roomPassword.frame.origin.y
             roomPassword.borderStyle = .none
             roomPassword.keyboardType = .numberPad
             roomPassword.placeholder = "비밀번호를 적어주세요."
@@ -32,11 +28,7 @@ class MakeRoomViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var makeRoomField: UIView! {
-        didSet {
-            originMakeRoomFieldY = makeRoomField.frame.origin.y
-        }
-    }
+    @IBOutlet weak var makeRoomField: UIView!
     
     @IBOutlet weak var threeDayAfterButton: UIButton! {
         didSet {
@@ -72,24 +64,10 @@ class MakeRoomViewController: UIViewController {
     private var nowTextFieldTag = 1
     private let buttonBackgroundLightGray = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0)
     private let buttonTextGray = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)
-    
-    
-    private var originMakeRoomFieldY: CGFloat = 0.0
-    private var roomNameSuperViewY: CGFloat = 0.0
-    private var roomNameViewY: CGFloat = 0.0
-    private var roomPasswordSuperViewY: CGFloat = 0.0
-    private var roomPasswordViewY: CGFloat = 0.0
-    
-    private var roomNameTargetY: CGFloat = 0.0
-    private var roomPasswordTargetY: CGFloat = 0.0
-    
-    private var userKeyboardHeight: CGFloat = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationItem()
-        threeDayAfterButton.addTarget(self, action: #selector(basicButton(_:)), for: .touchUpInside)
-        sevenDayAfterButton.addTarget(self, action: #selector(basicButton(_:)), for: .touchUpInside)
         setDelegate()
     }
     
@@ -110,21 +88,14 @@ class MakeRoomViewController: UIViewController {
         roomPassword.delegate = self
     }
     
-    
     @objc func didTapUpArrow() {
         roomPassword.resignFirstResponder()
         roomName.becomeFirstResponder()
-//        if nowTextFieldTag == 2 {
-//
-//        }
     }
     
     @objc func didTapDownArrow() {
         roomName.resignFirstResponder()
         roomPassword.becomeFirstResponder()
-//        if nowTextFieldTag == 1 {
-//
-//        }
     }
     
     @objc func didTapToolbarDoneButton() {
@@ -132,9 +103,6 @@ class MakeRoomViewController: UIViewController {
             roomPassword.resignFirstResponder()
         } else if roomName.isFirstResponder {
             roomName.resignFirstResponder()
-        }
-        UIView.animate(withDuration: 0.3) {
-            self.makeRoomField.frame.origin.y = self.originMakeRoomFieldY
         }
     }
     
@@ -170,15 +138,6 @@ class MakeRoomViewController: UIViewController {
     @objc func didTapMakeButton(_ sender: UIButton) {
         
     }
-    
-//    @objc func keyboardWillShow(_ notification: Notification) {
-//        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-//            let keyboardRectangle = keyboardFrame.cgRectValue
-//            userKeyboardHeight = keyboardRectangle.height
-//        }
-//    }
-    
-    
 }
 
 extension MakeRoomViewController: UITextFieldDelegate {
@@ -198,21 +157,10 @@ extension MakeRoomViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField.tag == 1 {
-            roomNameTargetY = (originMakeRoomFieldY + roomNameSuperViewY + roomNameViewY) - 64
-            UIView.animate(withDuration: 0.3) {
-                self.makeRoomField.frame.origin.y = self.originMakeRoomFieldY - self.roomNameTargetY
-            }
+        if textField.returnKeyType == .next {
+            roomPassword.becomeFirstResponder()
         } else {
-            roomPasswordTargetY = (originMakeRoomFieldY + roomPasswordSuperViewY + roomPasswordViewY) - 64
-            UIView.animate(withDuration: 0.3) {
-                self.makeRoomField.frame.origin.y = self.originMakeRoomFieldY - self.roomPasswordTargetY
-            }
+            textField.resignFirstResponder()
         }
         return true
     }
