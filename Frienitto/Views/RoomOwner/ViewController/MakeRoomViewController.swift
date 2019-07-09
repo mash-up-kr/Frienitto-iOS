@@ -12,19 +12,19 @@ class MakeRoomViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var roomName: UITextField! {
+    @IBOutlet weak var roomNameField: UITextField! {
         didSet {
-            roomName.borderStyle = .none
-            roomName.inputAccessoryView = keyboardAccessaryView
-            roomName.tag = 1
+            roomNameField.borderStyle = .none
+            roomNameField.inputAccessoryView = keyboardAccessaryView
+            roomNameField.tag = 1
         }
     }
-    @IBOutlet weak var roomPassword: UITextField! {
+    @IBOutlet weak var roomPasswordField: UITextField! {
         didSet {
-            roomPassword.borderStyle = .none
-            roomPassword.keyboardType = .numberPad
-            roomPassword.inputAccessoryView = keyboardAccessaryView
-            roomPassword.tag = 2
+            roomPasswordField.borderStyle = .none
+            roomPasswordField.keyboardType = .numberPad
+            roomPasswordField.inputAccessoryView = keyboardAccessaryView
+            roomPasswordField.tag = 2
         }
     }
     
@@ -64,6 +64,7 @@ class MakeRoomViewController: UIViewController {
     
     private let buttonBackgroundLightGray = UIColor(named: "lightgrey")
     private let buttonTextGray = UIColor(named: "darkgrey")
+    private var selectedDaysButton: DaysButtonEnum?
 
     // MARK: - Life Cycle
     
@@ -88,15 +89,15 @@ class MakeRoomViewController: UIViewController {
     }
     
     private func setDelegate() {
-        roomName.delegate = self
-        roomPassword.delegate = self
+        roomNameField.delegate = self
+        roomPasswordField.delegate = self
     }
     
-    // TODO: roomName validation check
+    // TODO: roomNameField validation check
     private func checkRoomInfoValidation() {
         
-        guard let roomName = roomName.text,
-            let password = roomPassword.text
+        guard let roomName = roomNameField.text,
+            let password = roomPasswordField.text
             else {
                 setMakeButton(false)
                 return
@@ -107,7 +108,7 @@ class MakeRoomViewController: UIViewController {
             return
         }
         
-        if !threeDayAfterButton.isSelected && !sevenDayAfterButton.isSelected {
+        if selectedDaysButton == nil {
             setMakeButton(false)
             return
         }
@@ -127,20 +128,20 @@ class MakeRoomViewController: UIViewController {
     // MARK: - objc
     
     @objc func didTapUpArrow() {
-        roomPassword.resignFirstResponder()
-        roomName.becomeFirstResponder()
+        roomPasswordField.resignFirstResponder()
+        roomNameField.becomeFirstResponder()
     }
     
     @objc func didTapDownArrow() {
-        roomName.resignFirstResponder()
-        roomPassword.becomeFirstResponder()
+        roomNameField.resignFirstResponder()
+        roomPasswordField.becomeFirstResponder()
     }
     
     @objc func didTapToolbarDoneButton() {
-        if roomPassword.isFirstResponder {
-            roomPassword.resignFirstResponder()
-        } else if roomName.isFirstResponder {
-            roomName.resignFirstResponder()
+        if roomPasswordField.isFirstResponder {
+            roomPasswordField.resignFirstResponder()
+        } else if roomNameField.isFirstResponder {
+            roomNameField.resignFirstResponder()
         }
         checkRoomInfoValidation()
     }
@@ -157,6 +158,7 @@ class MakeRoomViewController: UIViewController {
         if threeDayAfterButton.isSelected {
             threeDayAfterButton.backgroundColor = self.view.backgroundColor
             threeDayAfterButton.setTitleColor(.white, for: .normal)
+            selectedDaysButton = DaysButtonEnum(rawValue: 0)
         } else {
             threeDayAfterButton.backgroundColor = buttonBackgroundLightGray
             threeDayAfterButton.setTitleColor(buttonTextGray, for: .normal)
@@ -165,6 +167,7 @@ class MakeRoomViewController: UIViewController {
         if sevenDayAfterButton.isSelected {
             sevenDayAfterButton.backgroundColor = self.view.backgroundColor
             sevenDayAfterButton.setTitleColor(.white, for: .normal)
+            selectedDaysButton = DaysButtonEnum(rawValue: 1)
         } else {
             sevenDayAfterButton.backgroundColor = buttonBackgroundLightGray
             sevenDayAfterButton.setTitleColor(buttonTextGray, for: .normal)
@@ -173,8 +176,16 @@ class MakeRoomViewController: UIViewController {
         checkRoomInfoValidation()
     }
     
+    // TODO: API Connect
     @objc func didTapMakeButton(_ sender: UIButton) {
-        print("create Room")
+        let makeRoomStoryboard = UIStoryboard(name: "MakeRoom", bundle: nil)
+        guard let makeRoomFinishViewController =
+            makeRoomStoryboard.instantiateViewController(withIdentifier: "MakeRoomFinishViewController") as? MakeRoomFinishViewController
+            else { fatalError("finish ViewController error") }
+        makeRoomFinishViewController.roomNameString = roomNameField.text!
+        makeRoomFinishViewController.roomPasswordString = roomPasswordField.text!
+        makeRoomFinishViewController.buttonSelectedEnum = selectedDaysButton!
+        navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
     }
 }
 
@@ -186,10 +197,10 @@ extension MakeRoomViewController: UITextFieldDelegate {
             let downArrowButton = toolbar.items?[1]
             else { fatalError("textfield arrow") }
         
-        if textField == roomName {
+        if textField == roomNameField {
             upArrowButton.isEnabled = false
             downArrowButton.isEnabled = true
-        } else if textField == roomPassword {
+        } else if textField == roomPasswordField {
             upArrowButton.isEnabled = true
             downArrowButton.isEnabled = false
         }
@@ -197,7 +208,7 @@ extension MakeRoomViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .next {
-            roomPassword.becomeFirstResponder()
+            roomPasswordField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
