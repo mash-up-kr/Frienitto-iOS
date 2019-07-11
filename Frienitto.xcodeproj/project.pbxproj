@@ -35,8 +35,9 @@
 		D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */; };
 		D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */; };
 		D90DF01E22C7FD4D001D4956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01D22C7FD4D001D4956 /* Assets.xcassets */; };
-		D94B829122D408A70050FC55 /* MakeRoomFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B829022D408A70050FC55 /* MakeRoomFinishViewController.swift */; };
-		D94B829422D40B660050FC55 /* DaysButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B829322D40B660050FC55 /* DaysButtonEnum.swift */; };
+		B87F75C922C7FE3F000176BB /* AuthCodeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C822C7FE3F000176BB /* AuthCodeCheckViewController.swift */; };
+		B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CA22C8041D000176BB /* SignUpViewController.swift */; };
+		B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +73,9 @@
 		D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MakeRoom.storyboard; sourceTree = "<group>"; };
 		D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
 		D90DF01D22C7FD4D001D4956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frienitto/Assets.xcassets; sourceTree = "<group>"; };
-		D94B829022D408A70050FC55 /* MakeRoomFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomFinishViewController.swift; sourceTree = "<group>"; };
-		D94B829322D40B660050FC55 /* DaysButtonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysButtonEnum.swift; sourceTree = "<group>"; };
+		B87F75C822C7FE3F000176BB /* AuthCodeCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeCheckViewController.swift; sourceTree = "<group>"; };
+		B87F75CA22C8041D000176BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,9 @@
 				3BB6B75222C7B43400BB5156 /* LoginSignViewController.swift */,
 				3BE1C10522C7C5C2001BF37F /* LoginViewController.swift */,
 				3BE1C10C22C7CF75001BF37F /* SignInAuthViewController.swift */,
+				B87F75C822C7FE3F000176BB /* AuthCodeCheckViewController.swift */,
+				B87F75CA22C8041D000176BB /* SignUpViewController.swift */,
+				B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -296,7 +301,6 @@
 		B87F75BF22C7DF0D000176BB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D94B829222D40B590050FC55 /* Enum */,
 				B87F75C022C7DF2A000176BB /* CircleView.swift */,
 			);
 			path = Common;
@@ -323,17 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */,
-				D94B829022D408A70050FC55 /* MakeRoomFinishViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		D94B829222D40B590050FC55 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				D94B829322D40B660050FC55 /* DaysButtonEnum.swift */,
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,21 +452,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE1C10B22C7CBAF001BF37F /* AuthCodeModel.swift in Sources */,
+				B87F75C922C7FE3F000176BB /* AuthCodeCheckViewController.swift in Sources */,
 				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,
-				D94B829422D40B660050FC55 /* DaysButtonEnum.swift in Sources */,
 				3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */,
 				B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */,
 				D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */,
+				3B20E7AA22BCCE7A0043C929 /* ViewController.swift in Sources */,
+				B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */,
 				3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */,
 				3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */,
 				B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */,
-				D94B829122D408A70050FC55 /* MakeRoomFinishViewController.swift in Sources */,
 				D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */,
 				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
 				3BE1C10622C7C5C2001BF37F /* LoginViewController.swift in Sources */,
 				B87F75C322C7E536000176BB /* PeopleListViewController.swift in Sources */,
 				B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */,
 				3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */,
+				B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */,
 				3BE1C10922C7CB4F001BF37F /* IssueCodeModel.swift in Sources */,
 				B87F75C722C7F0A9000176BB /* User.swift in Sources */,
 				3BB6B75322C7B43400BB5156 /* LoginSignViewController.swift in Sources */,

@@ -108,6 +108,8 @@ extension FrienttoService: TargetType {
     
     var headers: [String : String]? {
         // TODO:- token 처리
-        return ["Content-type": "application/json"]
+        return ["Content-type": "application/json",
+                "X-Register-Token": "TESTTOKEN",
+                "X-Authorization": "FEAA9DC8F3A7F5DFE6DEBCD3114947D6"]
     }
 }
