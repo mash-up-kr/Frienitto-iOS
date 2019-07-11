@@ -9,6 +9,6 @@
 import Foundation
 
 enum DaysButtonEnum: Int {
-    case threeDays
-    case sevenDays
+    case threeDays = 3
+    case sevenDays = 7
 }

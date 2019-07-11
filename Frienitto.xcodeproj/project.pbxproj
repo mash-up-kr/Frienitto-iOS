@@ -40,6 +40,7 @@
 		D90DF01E22C7FD4D001D4956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01D22C7FD4D001D4956 /* Assets.xcassets */; };
 		D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF78DF22D6E59B00AF6DC3 /* DaysButtonEnum.swift */; };
 		D9FF78E222D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF78E122D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift */; };
+		D9FF78E522D72B3B00AF6DC3 /* CreateRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF78E422D72B3B00AF6DC3 /* CreateRoomModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		D90DF01D22C7FD4D001D4956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frienitto/Assets.xcassets; sourceTree = "<group>"; };
 		D9FF78DF22D6E59B00AF6DC3 /* DaysButtonEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysButtonEnum.swift; sourceTree = "<group>"; };
 		D9FF78E122D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRoomFinishViewController.swift; sourceTree = "<group>"; };
+		D9FF78E422D72B3B00AF6DC3 /* CreateRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		3B20E7BA22BCCED40043C929 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D9FF78E322D72B2500AF6DC3 /* RoomOwner */,
 				3BE1C10722C7CB3A001BF37F /* LoginModels */,
 				B87F75C622C7F0A9000176BB /* User.swift */,
 			);
@@ -345,6 +348,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		D9FF78E322D72B2500AF6DC3 /* RoomOwner */ = {
+			isa = PBXGroup;
+			children = (
+				D9FF78E422D72B3B00AF6DC3 /* CreateRoomModel.swift */,
+			);
+			path = RoomOwner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FF78E522D72B3B00AF6DC3 /* CreateRoomModel.swift in Sources */,
 				3BE1C10B22C7CBAF001BF37F /* AuthCodeModel.swift in Sources */,
 				B87F75C922C7FE3F000176BB /* AuthCodeCheckViewController.swift in Sources */,
 				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,

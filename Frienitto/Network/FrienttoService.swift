@@ -12,7 +12,7 @@ import Moya
 enum FrienttoService {
     case signUp(username: String, description: String, imageCode: Int, email: String, password: String)
     case signIn(email: String, password: String)
-    case createRoom(name: String, code: String, expiresDate: Date)
+    case createRoom(name: String, code: String, daysAfterEnum: DaysButtonEnum)
     case joinRoom(id: String)
     case retrieveRoomList(id: String)
     case retrieveRoomDetail(id: String)
@@ -75,10 +75,19 @@ extension FrienttoService: TargetType {
             return .requestParameters(parameters: ["email" : email,
                                                    "password": password],
                                       encoding: JSONEncoding.default)
-        case .createRoom(let name, let code, let expiresDate):
+        case .createRoom(let name, let code, let daysAfterEnum):
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-DD"
-            let date = dateFormatter.string(from: expiresDate)
+            
+            var date: String {
+                let oneDayInterval = TimeInterval(60 * 60 * 24)
+                switch daysAfterEnum {
+                case .threeDays:
+                    return dateFormatter.string(from: Date(timeIntervalSinceNow: 3 * oneDayInterval))
+                case .sevenDays:
+                    return dateFormatter.string(from: Date(timeIntervalSinceNow: 7 * oneDayInterval))
+                }
+            }
             
             return .requestParameters(parameters: ["name": name,
                                                    "code": code,

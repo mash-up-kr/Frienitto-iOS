@@ -34,6 +34,17 @@ class FrienttoProvider {
         }
     }
     
+    func createRoom(name: String,
+                    password: String,
+                    daysAfterEnum: DaysButtonEnum,
+                    completion: @escaping ((Response?) -> Void),
+                    failure: @escaping ((Error) -> Void)) {
+        provider.request(.createRoom(name: name, code: password, daysAfterEnum: daysAfterEnum)) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+        
+    }
+    
     func joinRoom(id: String,
                   completion: @escaping ((Response?) -> Void),
                   failure: @escaping ((Error) -> Void)) {
