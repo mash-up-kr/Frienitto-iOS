@@ -26,6 +26,8 @@ class LoginViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func loginButtonAction(_ sender: Any) {
+        guard let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UINavigationController else { return }
+        UIApplication.shared.keyWindow?.rootViewController = mainNavigationController
     }
     
     @IBAction func popViewController(_ sender: UIButton) {
