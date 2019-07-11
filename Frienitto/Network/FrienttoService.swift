@@ -23,15 +23,15 @@ enum FrienttoService {
 
 extension FrienttoService: TargetType {
     var baseURL: URL {
-        return URL(string: "http://192.168.123.26:8080")!
+        return URL(string: "https://codingsquid-side-project.com")!
     }
     
     var path: String {
         switch self {
         case .signUp:
-            return "/api/v1/register/user"
+            return "/api/v1/sign-up"
         case .signIn:
-            return "/api/v1/login"
+            return "/api/v1/sign-in"
         case .createRoom:
             return "/api/v1/register/room"
         case .joinRoom(let id):
@@ -107,9 +107,16 @@ extension FrienttoService: TargetType {
     }
     
     var headers: [String : String]? {
-        // TODO:- token 처리
-        return ["Content-type": "application/json",
-                "X-Register-Token": "TESTTOKEN",
-                "X-Authorization": "FEAA9DC8F3A7F5DFE6DEBCD3114947D6"]
+        switch self {
+        case .signUp:
+            return ["Content-type": "application/json",
+                    "X-Register-Token": "TESTTOKEN"]
+        case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .matchingStart:
+            return ["Content-type": "application/json",
+                    "X-Authorization": "FEAA9DC8F3A7F5DFE6DEBCD3114947D6"]
+        default:
+            return ["Content-type": "application/json"]
+
+        }
     }
 }
