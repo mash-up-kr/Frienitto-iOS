@@ -22,9 +22,9 @@ class SignUpViewController: UIViewController {
         guard let signUpCompleteViewController = UIStoryboard.instantiate(SignUpCompleteViewController.self, name: "Login") as? SignUpCompleteViewController else { return }
         let email = emailTextField.text
         signUpCompleteViewController.email = email
-        let password = passwordTextField.text
-        signUpCompleteViewController.password = password
+        signUpCompleteViewController.password = passwordTextField.text
         
-        navigationController?.pushViewController(signUpCompleteViewController, animated: true)
+//        navigationController?.pushViewController(signUpCompleteViewController, animated: true)
+        present(signUpCompleteViewController, animated: true)
     }
 }
