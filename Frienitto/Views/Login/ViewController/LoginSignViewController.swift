@@ -23,7 +23,9 @@ class LoginSignViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func LoginButtonAction(_ sender: Any) {
-        
+        let loginVC = UIStoryboard.instantiate(LoginViewController.self, name: "Login")
+        guard let vc = loginVC else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func signInButtonAction(_ sender: Any) {

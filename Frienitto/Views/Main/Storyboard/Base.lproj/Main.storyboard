@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0ZZ-0l-BBo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xjV-u0-Qf5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,110 +19,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마니또 방을 만들거나," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7o-u0-g0m">
-                                <rect key="frame" x="24" y="158" width="297" height="42"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-Q7-dve">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프렌또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7o-u0-g0m">
+                                <rect key="frame" x="24" y="158" width="366" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방에 들어가서 참여해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-mT-IfP">
-                                <rect key="frame" x="24" y="218" width="222" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당신의 마니또를 만나보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-mT-IfP">
+                                <rect key="frame" x="24" y="218" width="366" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방에 입장하여 마니또에 참여해보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcC-xF-1Js">
-                                <rect key="frame" x="24" y="296" width="195" height="16"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDP-jK-iLu">
-                                <rect key="frame" x="24" y="466" width="366" height="366"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="UDJ-g3-QnN">
-                                        <rect key="frame" x="90" y="-50" width="186" height="229"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="UDJ-g3-QnN" secondAttribute="height" multiplier="152:187" id="TQx-Ws-FDh"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LY-s2-FlA">
-                                        <rect key="frame" x="24" y="302" width="318" height="48"/>
-                                        <color key="backgroundColor" red="1" green="0.31764705882352939" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Pak-Tz-08y"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <state key="normal" title="방 입장하기">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="didTapEnterRoom:" destination="LZK-LC-6cg" eventType="touchUpInside" id="2cn-1G-1NB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnR-l6-bA6">
-                                        <rect key="frame" x="24" y="238" width="318" height="48"/>
-                                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="5xb-DY-Jlj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                        <state key="normal" title="방 만들기">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="didTapDidTapMakeRoom:" destination="LZK-LC-6cg" eventType="touchUpInside" id="0IG-QU-Few"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSi-7i-V7E">
+                                <rect key="frame" x="48" y="754" width="318" height="48"/>
+                                <color key="backgroundColor" name="white"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gnR-l6-bA6" secondAttribute="trailing" constant="24" id="138-sD-ljO"/>
-                                    <constraint firstAttribute="bottom" secondItem="1LY-s2-FlA" secondAttribute="bottom" constant="16" id="91D-Ap-E8Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="1LY-s2-FlA" secondAttribute="trailing" constant="24" id="CfG-jH-E2s"/>
-                                    <constraint firstItem="UDJ-g3-QnN" firstAttribute="top" secondItem="BDP-jK-iLu" secondAttribute="top" constant="-50" id="Gwn-FV-59D"/>
-                                    <constraint firstAttribute="trailing" secondItem="UDJ-g3-QnN" secondAttribute="trailing" constant="90" id="LiN-lC-7NA"/>
-                                    <constraint firstItem="gnR-l6-bA6" firstAttribute="leading" secondItem="BDP-jK-iLu" secondAttribute="leading" constant="24" id="SBj-vB-VF6"/>
-                                    <constraint firstItem="1LY-s2-FlA" firstAttribute="top" secondItem="gnR-l6-bA6" secondAttribute="bottom" constant="16" id="f6z-DR-968"/>
-                                    <constraint firstItem="UDJ-g3-QnN" firstAttribute="leading" secondItem="BDP-jK-iLu" secondAttribute="leading" constant="90" id="ijJ-DN-PTW"/>
-                                    <constraint firstAttribute="width" secondItem="BDP-jK-iLu" secondAttribute="height" multiplier="1:1" id="pak-mf-Hgg"/>
-                                    <constraint firstItem="1LY-s2-FlA" firstAttribute="leading" secondItem="BDP-jK-iLu" secondAttribute="leading" constant="24" id="rfF-ys-7Be"/>
+                                    <constraint firstAttribute="height" constant="48" id="c7R-sy-k7e"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="방 입장하기">
+                                    <color key="titleColor" name="orange"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방을 만들어 방장이 되어 마니또를 진행하거나," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-qY-gzf">
-                                <rect key="frame" x="24" y="272" width="234.5" height="16"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <connections>
+                                    <action selector="didTapEnterRoom:" destination="LZK-LC-6cg" eventType="touchUpInside" id="d5w-g5-a6O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZe-uC-rUz">
+                                <rect key="frame" x="48" y="690" width="318" height="48"/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="bBo-SA-jhx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="방 만들기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapDidTapMakeRoom:" destination="LZK-LC-6cg" eventType="touchUpInside" id="Y6R-b9-fdQ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
-                            <constraint firstItem="FCX-qY-gzf" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="24" id="5t4-YA-2QV"/>
-                            <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="BDP-jK-iLu" secondAttribute="trailing" constant="24" id="7uc-zB-h4I"/>
+                            <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="vAW-mT-IfP" secondAttribute="trailing" constant="24" id="2Un-Ly-X6o"/>
+                            <constraint firstItem="pSi-7i-V7E" firstAttribute="centerX" secondItem="azp-YR-QVg" secondAttribute="centerX" id="3RH-MN-vfL"/>
+                            <constraint firstAttribute="bottom" secondItem="hQ0-Q7-dve" secondAttribute="bottom" id="BxP-0A-wAN"/>
+                            <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="h7o-u0-g0m" secondAttribute="trailing" constant="24" id="DnX-Ab-Vwu"/>
+                            <constraint firstItem="hQ0-Q7-dve" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" id="E90-de-YBv"/>
+                            <constraint firstItem="nGR-HA-hdk" firstAttribute="bottom" secondItem="pSi-7i-V7E" secondAttribute="bottom" constant="60" id="SAW-3i-6bq"/>
                             <constraint firstItem="vAW-mT-IfP" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="24" id="TQl-bk-lMt"/>
-                            <constraint firstItem="nGR-HA-hdk" firstAttribute="bottom" secondItem="BDP-jK-iLu" secondAttribute="bottom" constant="30" id="UFA-B6-kHA"/>
+                            <constraint firstItem="hQ0-Q7-dve" firstAttribute="top" secondItem="nGR-HA-hdk" secondAttribute="top" id="WBI-7d-TE1"/>
                             <constraint firstItem="vAW-mT-IfP" firstAttribute="top" secondItem="h7o-u0-g0m" secondAttribute="bottom" constant="18" id="XJc-ad-KZk"/>
-                            <constraint firstItem="BcC-xF-1Js" firstAttribute="top" secondItem="FCX-qY-gzf" secondAttribute="bottom" constant="8" id="YeM-Jl-dYg"/>
                             <constraint firstItem="h7o-u0-g0m" firstAttribute="top" secondItem="nGR-HA-hdk" secondAttribute="top" constant="70" id="ZcQ-w8-cDj"/>
-                            <constraint firstItem="BcC-xF-1Js" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="24" id="dWs-ab-DDi"/>
-                            <constraint firstItem="BDP-jK-iLu" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="24" id="nxY-LY-vdJ"/>
-                            <constraint firstItem="FCX-qY-gzf" firstAttribute="top" secondItem="vAW-mT-IfP" secondAttribute="bottom" constant="30" id="uQw-PS-Wvc"/>
+                            <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="hQ0-Q7-dve" secondAttribute="trailing" id="fuG-TS-LXy"/>
+                            <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="pSi-7i-V7E" secondAttribute="trailing" constant="48" id="jeQ-lD-Mr8"/>
+                            <constraint firstItem="pSi-7i-V7E" firstAttribute="top" secondItem="mZe-uC-rUz" secondAttribute="bottom" constant="16" id="mTp-To-gwh"/>
+                            <constraint firstItem="mZe-uC-rUz" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="48" id="n2m-JG-2bR"/>
+                            <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="mZe-uC-rUz" secondAttribute="trailing" constant="48" id="rwg-2Q-hD1"/>
+                            <constraint firstItem="pSi-7i-V7E" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="48" id="ukr-sg-wof"/>
                             <constraint firstItem="h7o-u0-g0m" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="24" id="ux9-bT-CPO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nGR-HA-hdk"/>
@@ -130,28 +99,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v30-NN-ql4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.913043478261" y="137.94642857142856"/>
+            <point key="canvasLocation" x="3010.144927536232" y="144.64285714285714"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="9fJ-MS-V9h">
+        <scene sceneID="QCX-fV-bMW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ZZ-0l-BBo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xjV-u0-Qf5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IiD-P2-5OX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1M2-Qk-BR9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LZK-LC-6cg" kind="relationship" relationship="rootViewController" id="IZ6-MN-X5y"/>
+                        <segue destination="LZK-LC-6cg" kind="relationship" relationship="rootViewController" id="rta-t3-yos"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wuZ-m3-abd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4i-p8-Nel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863.768115942029" y="137.94642857142856"/>
+            <point key="canvasLocation" x="2100" y="144.64285714285714"/>
         </scene>
     </scenes>
     <resources>
-        <image name="group" width="152" height="187"/>
+        <image name="homeBackground" width="376" height="667"/>
+        <namedColor name="darkIndigo">
+            <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orange">
+            <color red="1" green="0.31764705882352939" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
