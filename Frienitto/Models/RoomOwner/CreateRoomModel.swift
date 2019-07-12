@@ -17,7 +17,6 @@ struct CreateRoomModel: Codable {
         let id: Int
         let title: String
         let expires_date: String
-        let url: String
         let participants: [CreateRoomModel.UserInfo]
     }
     
