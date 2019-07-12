@@ -13,6 +13,7 @@ class PeopleMatchViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var roomNameLabel: UILabel!
     @IBOutlet var numberOfPeopleLabel: UILabel!
+    @IBOutlet var matchingButton: UIButton!
     
     let dummyUsers: [User] = [User(imageCode: 1, name: "꿀꿀", description: "하하하"),
                               User(imageCode: 2, name: "꿀꿀", description: "하하하"),
@@ -27,6 +28,16 @@ class PeopleMatchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        matchingButton.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -47,7 +58,7 @@ extension PeopleMatchViewController: UICollectionViewDataSource {
 
 extension PeopleMatchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let dimmedViewController = UIStoryboard.instantiate(DimmedProfileViewController.self, name: "RoomInside") as? DimmedProfileViewController else { return }
+        guard let dimmedViewController = UIStoryboard.instantiate(DimmedProfileViewController.self, name: "RoomInside") else { return }
         dimmedViewController.user = dummyUsers[indexPath.item]
         present(dimmedViewController, animated: true, completion: nil)
     }
