@@ -77,7 +77,7 @@ extension FrienttoService: TargetType {
                                       encoding: JSONEncoding.default)
         case .createRoom(let name, let code, let daysAfterEnum):
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-DD"
+            dateFormatter.dateFormat = "YYYY-MM-dd"
             
             var date: String {
                 let oneDayInterval = TimeInterval(60 * 60 * 24)

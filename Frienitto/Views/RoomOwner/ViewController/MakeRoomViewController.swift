@@ -190,18 +190,15 @@ class MakeRoomViewController: UIViewController {
                 let response = response else { return }
             do {
                 let responseModel = try response.map(CreateRoomModel.self)
-                if responseModel.code >= 200 && responseModel.code < 300 {
-                    print(responseModel)
-                    print("good")
-                    let makeRoomStoryboard = UIStoryboard(name: "MakeRoom", bundle: nil)
-                    guard let makeRoomFinishViewController =
-                        makeRoomStoryboard.instantiateViewController(withIdentifier: "MakeRoomFinishViewController") as? MakeRoomFinishViewController
-                        else { fatalError("finish ViewController error") }
-                    makeRoomFinishViewController.roomNameString = roomName
-                    makeRoomFinishViewController.roomPasswordString = roomPassword
-                    makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
-                    self.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
-                }
+                
+                let makeRoomStoryboard = UIStoryboard(name: "MakeRoom", bundle: nil)
+                guard let makeRoomFinishViewController =
+                    makeRoomStoryboard.instantiateViewController(withIdentifier: "MakeRoomFinishViewController") as? MakeRoomFinishViewController
+                    else { fatalError("finish ViewController error") }
+                makeRoomFinishViewController.roomNameString = roomName
+                makeRoomFinishViewController.roomPasswordString = roomPassword
+                makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
+                self.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
             } catch (let err) {
                 print(err.localizedDescription)
             }

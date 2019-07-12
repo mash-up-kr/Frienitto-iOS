@@ -14,7 +14,7 @@ struct CreateRoomModel: Codable {
     let data: CreateRoomModel.DataModel
     
     struct DataModel: Codable {
-        let id: String
+        let id: Int
         let title: String
         let expires_date: String
         let url: String
@@ -22,7 +22,7 @@ struct CreateRoomModel: Codable {
     }
     
     struct UserInfo: Codable {
-        let id: String
+        let id: Int
         let username: String
         let image_code: Int
     }
