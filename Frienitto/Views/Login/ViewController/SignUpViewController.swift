@@ -24,7 +24,6 @@ class SignUpViewController: UIViewController {
         signUpCompleteViewController.email = email
         signUpCompleteViewController.password = passwordTextField.text
         
-//        navigationController?.pushViewController(signUpCompleteViewController, animated: true)
-        present(signUpCompleteViewController, animated: true)
+        navigationController?.pushViewController(signUpCompleteViewController, animated: true)
     }
 }

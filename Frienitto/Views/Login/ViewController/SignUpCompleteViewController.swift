@@ -27,8 +27,11 @@ class SignUpCompleteViewController: UIViewController {
             let email = email,
             let password = password else { return }
         provider.signUp(username: name, description: description, imageCode: 1, email: email, password: password, completion: { response in
-            
-            print(try? response?.mapJSON())
+            let result = try? response?.map(SignUpModel.self)
+            if let result = result {
+                print(result)
+            }
+            self.navigationController?.popToRootViewController(animated: true)
         }, failure: { error in
             print(error.localizedDescription)
         })
