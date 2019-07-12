@@ -26,7 +26,8 @@ class SignUpCompleteViewController: UIViewController {
             let description = descriptionTextField.text,
             let email = email,
             let password = password else { return }
-        provider.signUp(username: name, description: description, imageCode: 1, email: email, password: password, completion: { response in
+        let imageCode = Int.random(in: 1...6)
+        provider.signUp(username: name, description: description, imageCode: imageCode, email: email, password: password, completion: { response in
             let result = try? response?.map(SignUpModel.self)
             if let result = result {
                 print(result)

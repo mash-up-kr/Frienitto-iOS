@@ -113,7 +113,7 @@ extension FrienttoService: TargetType {
                     "X-Register-Token": registerToken]
         case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .matchingStart:
             return ["Content-type": "application/json",
-                    "X-Authorization": "FEAA9DC8F3A7F5DFE6DEBCD3114947D6"]
+                    "X-Authorization": authorizationToken]
         default:
             return ["Content-type": "application/json"]
 
@@ -124,5 +124,9 @@ extension FrienttoService: TargetType {
 extension FrienttoService {
     var registerToken: String {
         return UserDefaults.standard.string(forKey: "registerToken") ?? ""
+    }
+    
+    var authorizationToken: String {
+        return UserDefaults.standard.string(forKey: "authorizationToken") ?? ""
     }
 }

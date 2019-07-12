@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
             let result = try? response?.map(SignInModel.self)
             
             if let result = result {
-                print(result)
+                UserDefaults.standard.set(result.data.token, forKey: "authorizationToken")
             }
             
             guard let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UINavigationController else { return }
