@@ -316,6 +316,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="xdA-Rb-i1t" firstAttribute="centerY" secondItem="0Fr-fi-qF6" secondAttribute="centerY" id="LWi-3t-0kU"/>
                                                             <constraint firstItem="xdA-Rb-i1t" firstAttribute="leading" secondItem="0Fr-fi-qF6" secondAttribute="leading" constant="23" id="Pez-kx-uLw"/>
@@ -438,7 +439,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="24W-Fs-cJU" firstAttribute="leading" secondItem="B4A-DY-dW4" secondAttribute="leading" id="5M5-RR-ASY"/>
                             <constraint firstItem="jNE-cl-Q82" firstAttribute="leading" secondItem="6Sk-wm-u0J" secondAttribute="leading" id="78t-gB-G8S"/>
@@ -700,7 +701,7 @@
                                                 <rect key="frame" x="24" y="445" width="366" height="328"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-9P-Gjg">
-                                                        <rect key="frame" x="107" y="-34" width="152" height="187"/>
+                                                        <rect key="frame" x="107" y="-34" width="152" height="187.00000000000003"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="152" id="F8L-Bx-ggv"/>
                                                             <constraint firstAttribute="height" constant="187" id="IX3-vT-Csq"/>
@@ -805,7 +806,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="8PW-gD-EeV" firstAttribute="trailing" secondItem="C4F-cK-rfG" secondAttribute="trailing" id="9rO-Ye-6Dn"/>
                             <constraint firstItem="C4F-cK-rfG" firstAttribute="top" secondItem="8PW-gD-EeV" secondAttribute="top" id="Axg-hm-fPN"/>
@@ -1150,7 +1151,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="k1q-AB-S0j" secondAttribute="trailing" constant="23" id="DWo-SM-pRe"/>
                                                             <constraint firstItem="k1q-AB-S0j" firstAttribute="centerY" secondItem="gQ5-6W-7k2" secondAttribute="centerY" id="ZWy-Xc-JMq"/>
@@ -1232,7 +1233,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="r3m-aH-ZXc" firstAttribute="leading" secondItem="Fhg-3Z-JGU" secondAttribute="leading" id="C6A-M1-jdt"/>
                             <constraint firstItem="P1y-xY-XpL" firstAttribute="trailing" secondItem="r3m-aH-ZXc" secondAttribute="trailing" id="KJz-hL-Zaz"/>
@@ -1741,7 +1742,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="hVG-dq-7qp" firstAttribute="centerY" secondItem="NaK-4F-fcb" secondAttribute="centerY" id="7Pp-4z-D8O"/>
                                                             <constraint firstAttribute="trailing" secondItem="hVG-dq-7qp" secondAttribute="trailing" constant="23" id="UvG-w7-7qh"/>
@@ -1797,7 +1798,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="9R2-XD-ykk" firstAttribute="top" secondItem="wJa-yR-1EX" secondAttribute="top" id="HGg-hy-oNu"/>
                             <constraint firstAttribute="trailing" secondItem="G34-D1-hg0" secondAttribute="trailing" id="NWW-LT-dkk"/>
@@ -2137,7 +2138,7 @@ Cg
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="1Hs-lk-KtE" firstAttribute="leading" secondItem="jAz-u4-PN4" secondAttribute="leading" constant="23" id="FPe-oP-bq8"/>
                                                             <constraint firstAttribute="trailing" secondItem="1Hs-lk-KtE" secondAttribute="trailing" constant="23" id="WrK-zd-Phh"/>
@@ -2193,7 +2194,7 @@ Cg
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.098039215690000001" green="0.08235294118" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="L5N-3Z-7Kq" firstAttribute="trailing" secondItem="qdV-Nc-Byg" secondAttribute="trailing" id="4UM-Yc-Udh"/>
                             <constraint firstAttribute="bottom" secondItem="V1V-Kt-Mpu" secondAttribute="bottom" id="6s5-bm-Rea"/>
@@ -2221,6 +2222,9 @@ Cg
         <image name="ball" width="378" height="667"/>
         <image name="capsule" width="160" height="141"/>
         <image name="loginIcon" width="152" height="187"/>
+        <namedColor name="darkIndigo">
+            <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="darkgrey">
             <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -28,13 +28,14 @@
 		B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */; };
 		B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75BD22C7D469000176BB /* ProfileCell.swift */; };
 		B87F75C122C7DF2A000176BB /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C022C7DF2A000176BB /* CircleView.swift */; };
-		B87F75C322C7E536000176BB /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C222C7E536000176BB /* PeopleListViewController.swift */; };
 		B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */; };
 		B87F75C722C7F0A9000176BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C622C7F0A9000176BB /* User.swift */; };
 		B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CA22C8041D000176BB /* SignUpViewController.swift */; };
 		B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */; };
 		B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4922D8272500E9B64A /* SignUpModel.swift */; };
 		B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4B22D82D5800E9B64A /* SignInModel.swift */; };
+		B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */; };
+		B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */; };
 		D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01422C7FCB7001D4956 /* MainViewController.swift */; };
 		D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */; };
 		D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */; };
@@ -69,13 +70,14 @@
 		B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleMatchViewController.swift; sourceTree = "<group>"; };
 		B87F75BD22C7D469000176BB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		B87F75C022C7DF2A000176BB /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		B87F75C222C7E536000176BB /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedProfileViewController.swift; sourceTree = "<group>"; };
 		B87F75C622C7F0A9000176BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B87F75CA22C8041D000176BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteViewController.swift; sourceTree = "<group>"; };
 		B8C94E4922D8272500E9B64A /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		B8C94E4B22D82D5800E9B64A /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEnterViewController.swift; sourceTree = "<group>"; };
+		B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomModel.swift; sourceTree = "<group>"; };
 		D90DF01422C7FCB7001D4956 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MakeRoom.storyboard; sourceTree = "<group>"; };
 		D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				3BE1C10722C7CB3A001BF37F /* LoginModels */,
 				B87F75C622C7F0A9000176BB /* User.swift */,
+				B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,8 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */,
-				B87F75C222C7E536000176BB /* PeopleListViewController.swift */,
 				B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */,
+				B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -472,6 +475,8 @@
 				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,
 				3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */,
 				B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */,
+				B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */,
+				B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */,
 				B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */,
 				D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */,
 				B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */,
@@ -484,7 +489,6 @@
 				D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */,
 				B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */,
 				3BE1C10622C7C5C2001BF37F /* LoginViewController.swift in Sources */,
-				B87F75C322C7E536000176BB /* PeopleListViewController.swift in Sources */,
 				B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */,
 				3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */,
 				B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */,
