@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func confirm(_ sender: UIButton) {
-        guard let signUpCompleteViewController = UIStoryboard.instantiate(SignUpCompleteViewController.self, name: "Login") as? SignUpCompleteViewController else { return }
+        guard let signUpCompleteViewController = UIStoryboard.instantiate(SignUpCompleteViewController.self, name: "Login") else { return }
         let email = emailTextField.text
         signUpCompleteViewController.email = email
         signUpCompleteViewController.password = passwordTextField.text
