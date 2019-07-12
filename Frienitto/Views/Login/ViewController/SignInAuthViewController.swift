@@ -9,67 +9,85 @@
 import UIKit
 import Moya
 
-protocol PushViewControllerDelegate: class {
-    func pushViewController(_ viewController: UIViewController)
-}
-
 class SignInAuthViewController: UIViewController {
 
+    enum EmailCodeStatus {
+        case initial
+        case sent
+    }
+    
     // MARK: - IBOutlet
     
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
     
-    weak var delegate: PushViewControllerDelegate?
+    private var status: EmailCodeStatus = .initial
+    private var inputEmail: String?
     
     // MARK: - Private
     
-    private func sendAuthApi() {
-        guard let email = emailTextField.text else { return }
-        let provider = FrienttoProvider()
-        provider.issueCode(receiverInfo: email, type: "EMAIL", completion: {[weak self] (response) in
-            guard let self = self else { return }
-            do {
-                let responseModel = try response?.map(IssueCodeModel.self)
-                
-                if responseModel?.code == 202 {
-                    guard let alertVC = UIStoryboard.instantiate(CommonAlertViewController.self, name: "Login") as? CommonAlertViewController else { return }
-                    alertVC.modalPresentationStyle = .overCurrentContext
-                    alertVC.email = email
-                    alertVC.delegate = self
-                    
-                    self.present(alertVC, animated: false)
-                }
-            } catch (let error){
-                print(error.localizedDescription)
-            }
-        }, failure: { error in
-            print(error.localizedDescription)
-        })
-        
-            }
+    private func configure(_ status: EmailCodeStatus) {
+        switch status {
+        case .initial:
+            self.status = .sent
+            emailLabel.text = "이메일 인증 코드"
+            textField.placeholder = "인증코드를 입력하십시오."
+            textField.text = ""
+            sendButton.setTitle("인증코드 재발송하기", for: .normal)
+            confirmButton.isEnabled = true
+            confirmButton.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.08235294118, blue: 0.3294117647, alpha: 1)
+        case .sent:
+            break
+        }
+    }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - Action
     
-    @IBAction func sendAuthButtonAction(_ sender: UIButton) {
-        guard let email = emailTextField.text else { return }
-        if !email.isEmpty {
-            sendAuthApi()
-        }
+    @IBAction func sendAuthButton(_ sender: UIButton) {
+        guard let email = textField.text, !email.isEmpty else { return }
+        inputEmail = email
+        let provider = FrienttoProvider()
+        provider.issueCode(receiverInfo: email, type: "EMAIL", completion: { response in
+            let result = try? response?.map(IssueCodeModel.self)
+            
+            if let _ = result {
+                guard let alertViewController = UIStoryboard.instantiate(CommonAlertViewController.self, name: "Login") else { return }
+                self.present(alertViewController, animated: false, completion: {
+                    self.configure(self.status)
+                })
+            }
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
     }
-}
-
-extension SignInAuthViewController: PushViewControllerDelegate {
-    func pushViewController(_ viewController: UIViewController) {
-        navigationController?.pushViewController(viewController, animated: true)
+    
+    @IBAction func confirm(_ sender: UIButton) {
+        guard let email = inputEmail, let code = textField.text else { return }
+        let provider = FrienttoProvider()
+        provider.authCode(receiverInfo: email, type: "EMAIL", code: code, completion: { response in
+            let result = try? response?.map(AuthCodeModel.self)
+            
+            if let result = result {
+                print(result.data.registerToken)
+                UserDefaults.standard.set(result.data.registerToken, forKey: "registerToken")
+            }
+            
+            guard let signUpViewController = UIStoryboard.instantiate(SignUpViewController.self, name: "Login") else { return }
+            self.navigationController?.pushViewController(signUpViewController, animated: true)
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
 }
