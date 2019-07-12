@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTapEnterRoom(_ sender: UIButton) {
-        guard let roomInside = UIStoryboard(name: "RoomInside", bundle: nil).instantiateInitialViewController() as? PeopleMatchViewController else {fatalError("RoomInside error")}
+        guard let roomInside = UIStoryboard(name: "RoomInside", bundle: nil).instantiateInitialViewController() as? RoomEnterViewController else {fatalError("RoomInside error")}
         navigationController?.pushViewController(roomInside, animated: true)
     }
 
