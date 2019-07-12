@@ -26,8 +26,20 @@ class LoginViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        guard let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UINavigationController else { return }
-        UIApplication.shared.keyWindow?.rootViewController = mainNavigationController
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        let provider = FrienttoProvider()
+        provider.signIn(email: email, password: password, completion: { response in
+            let result = try? response?.map(SignInModel.self)
+            
+            if let result = result {
+                print(result)
+            }
+            
+            guard let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UINavigationController else { return }
+            UIApplication.shared.keyWindow?.rootViewController = mainNavigationController
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
     }
     
     @IBAction func popViewController(_ sender: UIButton) {

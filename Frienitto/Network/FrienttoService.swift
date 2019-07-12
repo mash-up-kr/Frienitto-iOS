@@ -110,7 +110,7 @@ extension FrienttoService: TargetType {
         switch self {
         case .signUp:
             return ["Content-type": "application/json",
-                    "X-Register-Token": "TESTTOKEN"]
+                    "X-Register-Token": registerToken]
         case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .matchingStart:
             return ["Content-type": "application/json",
                     "X-Authorization": "FEAA9DC8F3A7F5DFE6DEBCD3114947D6"]
@@ -118,5 +118,11 @@ extension FrienttoService: TargetType {
             return ["Content-type": "application/json"]
 
         }
+    }
+}
+
+extension FrienttoService {
+    var registerToken: String {
+        return UserDefaults.standard.string(forKey: "registerToken") ?? ""
     }
 }
