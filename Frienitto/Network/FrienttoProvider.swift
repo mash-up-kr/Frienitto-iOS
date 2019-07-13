@@ -34,34 +34,34 @@ class FrienttoProvider {
         }
     }
     
-    func createRoom(name: String,
+    func createRoom(title: String,
                     password: String,
                     daysAfterEnum: DaysButtonEnum,
                     completion: @escaping ((Response?) -> Void),
                     failure: @escaping ((Error) -> Void)) {
-        provider.request(.createRoom(name: name, code: password, daysAfterEnum: daysAfterEnum)) { result in
+        provider.request(.createRoom(title: title, code: password, daysAfterEnum: daysAfterEnum)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
         
     }
     
-    func joinRoom(id: String,
+    func joinRoom(title: String,
+                  code: String,
                   completion: @escaping ((Response?) -> Void),
                   failure: @escaping ((Error) -> Void)) {
-        provider.request(.joinRoom(id: id)) { result in
+        provider.request(.joinRoom(title: title, code: code)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
     
-    func retrieveRoomList(id: String,
-                          completion: @escaping ((Response?) -> Void),
+    func retrieveRoomList(completion: @escaping ((Response?) -> Void),
                           failure: @escaping ((Error) -> Void)) {
-        provider.request(.retrieveRoomList(id: id)) { result in
+        provider.request(.retrieveRoomList) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
     
-    func retrieveRoomDetail(id: String,
+    func retrieveRoomDetail(id: Int,
                             completion: @escaping ((Response?) -> Void),
                             failure: @escaping ((Error) -> Void)) {
         provider.request(.retrieveRoomDetail(id: id)) { result in

@@ -15,16 +15,8 @@ class PeopleMatchViewController: UIViewController {
     @IBOutlet var numberOfPeopleLabel: UILabel!
     @IBOutlet var matchingButton: UIButton!
     
-    let dummyUsers: [User] = [User(imageCode: 1, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 2, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 3, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 4, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 5, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 6, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 1, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 2, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 3, name: "꿀꿀", description: "하하하"),
-                              User(imageCode: 4, name: "꿀꿀", description: "하하하")]
+    var users: [User] = []
+    var roomName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +35,15 @@ class PeopleMatchViewController: UIViewController {
 
 extension PeopleMatchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummyUsers.count
+        return users.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCell.cellIdentifier, for: indexPath) as? ProfileCell else { return UICollectionViewCell() }
-        let user = dummyUsers[indexPath.item]
+        let user = users[indexPath.item]
         cell.imageView.image = UIImage(named: "face\(user.imageCode)")
-        cell.nameLabel.text = user.name
-        cell.descriptionLabel.text = user.description
+        cell.nameLabel.text = user.username
+        cell.descriptionLabel.text = ""
         return cell
     }
 }
@@ -59,7 +51,7 @@ extension PeopleMatchViewController: UICollectionViewDataSource {
 extension PeopleMatchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let dimmedViewController = UIStoryboard.instantiate(DimmedProfileViewController.self, name: "RoomInside") else { return }
-        dimmedViewController.user = dummyUsers[indexPath.item]
+        dimmedViewController.user = users[indexPath.item]
         present(dimmedViewController, animated: true, completion: nil)
     }
 }

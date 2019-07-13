@@ -184,7 +184,7 @@ class MakeRoomViewController: UIViewController {
         let roomPassword = roomPasswordField.text!
         let daysAfterEnum = selectedDaysButton!
         // TODO: 보내기 전 인터렉션
-        provider.createRoom(name: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] response in
+        provider.createRoom(title: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] response in
             guard
                 let self = self,
                 let response = response else { return }

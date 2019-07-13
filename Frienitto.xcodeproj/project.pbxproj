@@ -34,6 +34,7 @@
 		B87F75C722C7F0A9000176BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75C622C7F0A9000176BB /* User.swift */; };
 		B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CA22C8041D000176BB /* SignUpViewController.swift */; };
 		B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */; };
+		B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */; };
 		B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4922D8272500E9B64A /* SignUpModel.swift */; };
 		B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4B22D82D5800E9B64A /* SignInModel.swift */; };
 		B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */; };
@@ -79,6 +80,7 @@
 		B87F75C622C7F0A9000176BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B87F75CA22C8041D000176BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteViewController.swift; sourceTree = "<group>"; };
+		B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveRoomDetailModel.swift; sourceTree = "<group>"; };
 		B8C94E4922D8272500E9B64A /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		B8C94E4B22D82D5800E9B64A /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEnterViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				3BE1C10722C7CB3A001BF37F /* LoginModels */,
 				B87F75C622C7F0A9000176BB /* User.swift */,
 				B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */,
+				B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */,
 				B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */,
 				D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */,
+				B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */,
 				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
 				D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */,
 				B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */,

@@ -12,10 +12,10 @@ import Moya
 enum FrienttoService {
     case signUp(username: String, description: String, imageCode: Int, email: String, password: String)
     case signIn(email: String, password: String)
-    case createRoom(name: String, code: String, daysAfterEnum: DaysButtonEnum)
-    case joinRoom(id: String)
-    case retrieveRoomList(id: String)
-    case retrieveRoomDetail(id: String)
+    case createRoom(title: String, code: String, daysAfterEnum: DaysButtonEnum)
+    case joinRoom(title: String, code: String)
+    case retrieveRoomList
+    case retrieveRoomDetail(id: Int)
     case matchingStart(roomId: Int, participantId: [Int])
     case issueCode(receiverInfo: String, type: String)
     case authCode(receiverInfo: String, type: String, code: String)
@@ -34,8 +34,8 @@ extension FrienttoService: TargetType {
             return "/api/v1/sign-in"
         case .createRoom:
             return "/api/v1/register/room"
-        case .joinRoom(let id):
-            return "/api/v1/join/room/\(id)"
+        case .joinRoom:
+            return "/api/v1/join/room"
         case .retrieveRoomList:
             return "/api/v1/room/list"
         case .retrieveRoomDetail(let id):
@@ -75,7 +75,7 @@ extension FrienttoService: TargetType {
             return .requestParameters(parameters: ["email" : email,
                                                    "password": password],
                                       encoding: JSONEncoding.default)
-        case .createRoom(let name, let code, let daysAfterEnum):
+        case .createRoom(let title, let code, let daysAfterEnum):
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-dd"
             
@@ -89,12 +89,14 @@ extension FrienttoService: TargetType {
                 }
             }
             
-            return .requestParameters(parameters: ["name": name,
+            return .requestParameters(parameters: ["title": title,
                                                    "code": code,
                                                    "expires_date": date],
                                       encoding: JSONEncoding.default)
-        case .joinRoom:
-            return .requestPlain
+        case .joinRoom(let title, let code):
+            return .requestParameters(parameters: ["title": title,
+                                                   "code": code],
+                                      encoding: JSONEncoding.default)
         case .retrieveRoomList:
             return .requestPlain
         case .retrieveRoomDetail:
