@@ -19,6 +19,7 @@ class MakeRoomViewController: UIViewController {
             roomNameField.tag = 1
         }
     }
+    
     @IBOutlet weak var roomPasswordField: UITextField! {
         didSet {
             roomPasswordField.borderStyle = .none
@@ -62,6 +63,7 @@ class MakeRoomViewController: UIViewController {
         return toolBar
     }()
     
+    private let provider = FrienttoProvider()
     private let buttonBackgroundLightGray = UIColor(named: "lightgrey")
     private let buttonTextGray = UIColor(named: "darkgrey")
     private var selectedDaysButton: DaysButtonEnum?
@@ -158,7 +160,7 @@ class MakeRoomViewController: UIViewController {
         if threeDayAfterButton.isSelected {
             threeDayAfterButton.backgroundColor = self.view.backgroundColor
             threeDayAfterButton.setTitleColor(.white, for: .normal)
-            selectedDaysButton = DaysButtonEnum(rawValue: 0)
+            selectedDaysButton = DaysButtonEnum(rawValue: 3)
         } else {
             threeDayAfterButton.backgroundColor = buttonBackgroundLightGray
             threeDayAfterButton.setTitleColor(buttonTextGray, for: .normal)
@@ -167,7 +169,7 @@ class MakeRoomViewController: UIViewController {
         if sevenDayAfterButton.isSelected {
             sevenDayAfterButton.backgroundColor = self.view.backgroundColor
             sevenDayAfterButton.setTitleColor(.white, for: .normal)
-            selectedDaysButton = DaysButtonEnum(rawValue: 1)
+            selectedDaysButton = DaysButtonEnum(rawValue: 7)
         } else {
             sevenDayAfterButton.backgroundColor = buttonBackgroundLightGray
             sevenDayAfterButton.setTitleColor(buttonTextGray, for: .normal)
@@ -178,14 +180,32 @@ class MakeRoomViewController: UIViewController {
     
     // TODO: API Connect
     @objc func didTapMakeButton(_ sender: UIButton) {
-        let makeRoomStoryboard = UIStoryboard(name: "MakeRoom", bundle: nil)
-        guard let makeRoomFinishViewController =
-            makeRoomStoryboard.instantiateViewController(withIdentifier: "MakeRoomFinishViewController") as? MakeRoomFinishViewController
-            else { fatalError("finish ViewController error") }
-        makeRoomFinishViewController.roomNameString = roomNameField.text!
-        makeRoomFinishViewController.roomPasswordString = roomPasswordField.text!
-        makeRoomFinishViewController.buttonSelectedEnum = selectedDaysButton!
-        navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
+        let roomName = roomNameField.text!
+        let roomPassword = roomPasswordField.text!
+        let daysAfterEnum = selectedDaysButton!
+        // TODO: 보내기 전 인터렉션
+        provider.createRoom(name: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] response in
+            guard
+                let self = self,
+                let response = response else { return }
+            do {
+                let responseModel = try response.map(CreateRoomModel.self)
+                
+                let makeRoomStoryboard = UIStoryboard(name: "MakeRoom", bundle: nil)
+                guard let makeRoomFinishViewController =
+                    makeRoomStoryboard.instantiateViewController(withIdentifier: "MakeRoomFinishViewController") as? MakeRoomFinishViewController
+                    else { fatalError("finish ViewController error") }
+                makeRoomFinishViewController.roomNameString = roomName
+                makeRoomFinishViewController.roomPasswordString = roomPassword
+                makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
+                self.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
+            } catch (let err) {
+                print(err.localizedDescription)
+            }
+        }) { error in
+            print(error.localizedDescription)
+        }
+        // END Of CreateRoom Scope
     }
 }
 
