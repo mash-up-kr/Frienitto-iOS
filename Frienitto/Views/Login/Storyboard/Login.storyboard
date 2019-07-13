@@ -1600,15 +1600,6 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일을 적어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ol1-Ah-XPX">
-                                                                        <rect key="frame" x="0.0" y="27" width="320" height="15"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="15" id="KD7-k6-N01"/>
-                                                                        </constraints>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                                    </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-y1-gzL">
                                                                         <rect key="frame" x="0.0" y="50" width="320" height="1"/>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1616,19 +1607,25 @@
                                                                             <constraint firstAttribute="height" constant="1" id="MtB-0u-XMb"/>
                                                                         </constraints>
                                                                     </view>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dddddd@naver.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POC-IV-qbf">
+                                                                        <rect key="frame" x="0.0" y="27" width="320" height="15"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                        <color key="textColor" name="middlegrey"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="ISa-y1-gzL" secondAttribute="trailing" id="7GR-b7-FHc"/>
-                                                                    <constraint firstItem="Ol1-Ah-XPX" firstAttribute="top" secondItem="wwY-xe-DzX" secondAttribute="bottom" constant="10" id="Spc-Pd-hrH"/>
+                                                                    <constraint firstItem="POC-IV-qbf" firstAttribute="leading" secondItem="rb2-4W-x3Z" secondAttribute="leading" id="Qte-WI-JpI"/>
+                                                                    <constraint firstItem="POC-IV-qbf" firstAttribute="top" secondItem="wwY-xe-DzX" secondAttribute="bottom" constant="10" id="R5h-gV-9Mm"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="POC-IV-qbf" secondAttribute="trailing" id="U1o-Yb-Yyr"/>
                                                                     <constraint firstAttribute="bottom" secondItem="ISa-y1-gzL" secondAttribute="bottom" id="VP9-vv-ySi"/>
-                                                                    <constraint firstItem="Ol1-Ah-XPX" firstAttribute="leading" secondItem="rb2-4W-x3Z" secondAttribute="leading" id="bZR-pl-5js"/>
-                                                                    <constraint firstItem="ISa-y1-gzL" firstAttribute="top" secondItem="Ol1-Ah-XPX" secondAttribute="bottom" constant="8" id="gFw-sW-sYU"/>
+                                                                    <constraint firstItem="ISa-y1-gzL" firstAttribute="top" secondItem="POC-IV-qbf" secondAttribute="bottom" constant="8" id="cRp-c3-h3W"/>
                                                                     <constraint firstItem="wwY-xe-DzX" firstAttribute="leading" secondItem="rb2-4W-x3Z" secondAttribute="leading" id="ivB-WU-PPL"/>
                                                                     <constraint firstItem="ISa-y1-gzL" firstAttribute="leading" secondItem="rb2-4W-x3Z" secondAttribute="leading" id="l7n-rg-Gdm"/>
                                                                     <constraint firstItem="wwY-xe-DzX" firstAttribute="top" secondItem="rb2-4W-x3Z" secondAttribute="top" id="rvs-M4-XrS"/>
                                                                     <constraint firstAttribute="trailing" secondItem="wwY-xe-DzX" secondAttribute="trailing" id="uOU-rx-qWK"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="Ol1-Ah-XPX" secondAttribute="trailing" id="vbT-1R-A0H"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKH-8m-74d">
@@ -1812,7 +1809,7 @@
                         <viewLayoutGuide key="safeArea" id="Chm-hX-tdm"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="Ol1-Ah-XPX" id="1Fo-x2-M7Q"/>
+                        <outlet property="checkedEmailLabel" destination="POC-IV-qbf" id="lSr-E6-zTj"/>
                         <outlet property="passwordConfirmTextField" destination="Dm1-v0-Gf6" id="r14-Jg-yqE"/>
                         <outlet property="passwordTextField" destination="Dl7-9z-iT2" id="19g-Oe-y8V"/>
                     </connections>
@@ -2227,6 +2224,9 @@ Cg
         </namedColor>
         <namedColor name="darkgrey">
             <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="middlegrey">
+            <color red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="orange">
             <color red="1" green="0.31764705882352939" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

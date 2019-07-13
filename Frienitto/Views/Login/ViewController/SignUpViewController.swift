@@ -10,17 +10,20 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet var checkedEmailLabel: UILabel!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var passwordConfirmTextField: UITextField!
     
+    var email: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkedEmailLabel.text = email
     }
     
     @IBAction func confirm(_ sender: UIButton) {
         guard let signUpCompleteViewController = UIStoryboard.instantiate(SignUpCompleteViewController.self, name: "Login") else { return }
-        let email = emailTextField.text
         signUpCompleteViewController.email = email
         signUpCompleteViewController.password = passwordTextField.text
         
