@@ -36,7 +36,7 @@ class RoomEnterViewController: UIViewController {
                     
                     if let result = roomResult {
                         guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
-                        peopleMatchViewController.users = result.data.participant
+                        peopleMatchViewController.users = result.data.participants
                         peopleMatchViewController.roomName = result.data.title
                         self.navigationController?.pushViewController(peopleMatchViewController, animated: true)
                     }

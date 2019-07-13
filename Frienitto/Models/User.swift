@@ -11,7 +11,7 @@ import Foundation
 struct User: Codable {
     let imageCode: Int
     let username: String
-    let id: String
+    let id: Int
     
     enum CodingKeys: String, CodingKey {
         case id, username

@@ -51,9 +51,9 @@ extension FrienttoService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .signUp, .signIn, .createRoom, .matchingStart, .issueCode, .authCode:
+        case .signUp, .signIn, .createRoom, .matchingStart, .issueCode, .authCode, .joinRoom:
             return .post
-        case .joinRoom, .retrieveRoomList, .retrieveRoomDetail:
+        case .retrieveRoomList, .retrieveRoomDetail:
             return .get
         }
     }
