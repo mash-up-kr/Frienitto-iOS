@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Result View Controller-->
+        <scene sceneID="itg-S3-tLZ">
+            <objects>
+                <viewController id="phK-na-4Tj" customClass="ResultViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="820-9j-PoY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 마니또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOf-Ry-fma">
+                                <rect key="frame" x="24" y="141" width="128.5" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4MZ-pC-bUA">
+                                <rect key="frame" x="24" y="214" width="366" height="376"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face1" translatesAutoresizingMaskIntoConstraints="NO" id="f5a-58-Mtm">
+                                        <rect key="frame" x="113" y="76" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="CXG-Cr-2Mp"/>
+                                            <constraint firstAttribute="height" constant="140" id="H8G-po-TYU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbX-2Y-N6v">
+                                        <rect key="frame" x="106" y="246" width="154" height="36"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                        <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caW-hH-9Kz">
+                                        <rect key="frame" x="155.5" y="298" width="55.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="16"/>
+                                        <color key="textColor" red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gx3-to-vWf">
+                                        <rect key="frame" x="318" y="17" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="5ef-nD-5VX"/>
+                                            <constraint firstAttribute="height" constant="25" id="DCy-Jw-cOr"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="cancel"/>
+                                        <connections>
+                                            <action selector="tabOnCancelButton:" destination="phK-na-4Tj" eventType="touchUpInside" id="6WJ-dl-eIY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gx3-to-vWf" secondAttribute="trailing" constant="23" id="4ls-8s-zXf"/>
+                                    <constraint firstItem="caW-hH-9Kz" firstAttribute="centerX" secondItem="4MZ-pC-bUA" secondAttribute="centerX" id="6Bt-Kk-HHQ"/>
+                                    <constraint firstItem="gbX-2Y-N6v" firstAttribute="top" secondItem="f5a-58-Mtm" secondAttribute="bottom" constant="30" id="8p9-Jy-HTz"/>
+                                    <constraint firstItem="gbX-2Y-N6v" firstAttribute="leading" secondItem="4MZ-pC-bUA" secondAttribute="leading" constant="106" id="ERt-3A-Dc4"/>
+                                    <constraint firstAttribute="trailing" secondItem="gbX-2Y-N6v" secondAttribute="trailing" constant="106" id="Frz-Iu-j5m"/>
+                                    <constraint firstItem="caW-hH-9Kz" firstAttribute="top" secondItem="gbX-2Y-N6v" secondAttribute="bottom" constant="16" id="fqj-LK-uxF"/>
+                                    <constraint firstItem="f5a-58-Mtm" firstAttribute="top" secondItem="4MZ-pC-bUA" secondAttribute="top" constant="76" id="hH3-C2-6pq"/>
+                                    <constraint firstItem="f5a-58-Mtm" firstAttribute="centerX" secondItem="4MZ-pC-bUA" secondAttribute="centerX" id="num-D8-cZU"/>
+                                    <constraint firstItem="gx3-to-vWf" firstAttribute="top" secondItem="4MZ-pC-bUA" secondAttribute="top" constant="17" id="tXE-bN-o1d"/>
+                                    <constraint firstAttribute="height" constant="376" id="xK5-Pi-aHa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ni6-Qz-pIh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nau-NW-NIY">
+                                        <rect key="frame" x="24" y="11" width="13" height="22"/>
+                                        <state key="normal" image="backArrow"/>
+                                        <connections>
+                                            <action selector="tabOnBackButton:" destination="phK-na-4Tj" eventType="touchUpInside" id="67e-If-1W5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2Gh-Da-ekE"/>
+                                    <constraint firstItem="nau-NW-NIY" firstAttribute="centerY" secondItem="Ni6-Qz-pIh" secondAttribute="centerY" id="Hte-BU-Pmm"/>
+                                    <constraint firstItem="nau-NW-NIY" firstAttribute="leading" secondItem="Ni6-Qz-pIh" secondAttribute="leading" constant="24" id="kjr-0N-BUK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="darkIndigo"/>
+                        <constraints>
+                            <constraint firstItem="Ni6-Qz-pIh" firstAttribute="leading" secondItem="LV9-aK-dK5" secondAttribute="leading" id="2D1-bZ-MJj"/>
+                            <constraint firstItem="tOf-Ry-fma" firstAttribute="leading" secondItem="LV9-aK-dK5" secondAttribute="leading" constant="24" id="C9r-6B-axW"/>
+                            <constraint firstItem="Ni6-Qz-pIh" firstAttribute="top" secondItem="LV9-aK-dK5" secondAttribute="top" id="Hko-tG-buB"/>
+                            <constraint firstItem="4MZ-pC-bUA" firstAttribute="top" secondItem="tOf-Ry-fma" secondAttribute="bottom" constant="31" id="L3h-jy-efC"/>
+                            <constraint firstItem="LV9-aK-dK5" firstAttribute="trailing" secondItem="4MZ-pC-bUA" secondAttribute="trailing" constant="24" id="W7j-5c-OcR"/>
+                            <constraint firstItem="4MZ-pC-bUA" firstAttribute="leading" secondItem="LV9-aK-dK5" secondAttribute="leading" constant="24" id="Wql-Hz-1BB"/>
+                            <constraint firstAttribute="trailing" secondItem="Ni6-Qz-pIh" secondAttribute="trailing" id="c0u-nC-vs4"/>
+                            <constraint firstItem="tOf-Ry-fma" firstAttribute="top" secondItem="LV9-aK-dK5" secondAttribute="top" constant="97" id="fiI-XL-VqZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LV9-aK-dK5"/>
+                    </view>
+                    <connections>
+                        <outlet property="additionalInfoLabel" destination="caW-hH-9Kz" id="Syg-pp-3rE"/>
+                        <outlet property="avatarImageView" destination="f5a-58-Mtm" id="bFt-vT-1cL"/>
+                        <outlet property="nicknameLabel" destination="gbX-2Y-N6v" id="BgI-dl-IYB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LLK-sL-zyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="58"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backArrow" width="13" height="21"/>
+        <image name="cancel" width="25" height="25"/>
+        <image name="face1" width="279" height="279"/>
+        <namedColor name="darkIndigo">
+            <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
