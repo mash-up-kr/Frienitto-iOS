@@ -14,15 +14,15 @@ struct RetrieveRoomDetailModel: Codable {
         let title: String
         let status: String
         let expiresDate: String
-        let participant: [User]
+        let participants: [User]
         
         enum CodingKeys: String, CodingKey {
-            case id, title, status, participant
+            case id, title, status, participants
             case expiresDate = "expires_date"
         }
     }
     
-    let code: String
+    let code: Int
     let msg: String
     let data: Data
 }

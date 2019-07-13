@@ -21,6 +21,8 @@ class PeopleMatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         matchingButton.isHidden = true
+        roomNameLabel.text = roomName
+        numberOfPeopleLabel.text = "\(users.count)명이 입장했습니다."
     }
     
     override func viewWillAppear(_ animated: Bool) {
