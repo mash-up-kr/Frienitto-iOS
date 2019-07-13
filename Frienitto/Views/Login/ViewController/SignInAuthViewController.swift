@@ -81,6 +81,7 @@ class SignInAuthViewController: UIViewController {
             }
             
             guard let signUpViewController = UIStoryboard.instantiate(SignUpViewController.self, name: "Login") else { return }
+            signUpViewController.email = email
             self.navigationController?.pushViewController(signUpViewController, animated: true)
         }, failure: { error in
             print(error.localizedDescription)
