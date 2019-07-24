@@ -9,9 +9,12 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var additionalInfoLabel: UILabel!
+    @IBOutlet weak var userImage1: UIImageView!
+    @IBOutlet weak var userImage2: UIImageView!
+    @IBOutlet weak var userName1: UILabel!
+    @IBOutlet weak var userName2: UILabel!
+    @IBOutlet weak var userInfo1: UILabel!
+    @IBOutlet weak var userInfo2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,4 @@ class ResultViewController: UIViewController {
     }
     */
 
-    @IBAction func tabOnBackButton(_ sender: UIButton) {
-    }
-    
-    @IBAction func tabOnCancelButton(_ sender: UIButton) {
-    }
 }
