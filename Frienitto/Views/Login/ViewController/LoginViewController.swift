@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
             
             if let result = result {
                 UserDefaults.standard.set(result.data.token, forKey: "authorizationToken")
+                UserDefaults.standard.set(email, forKey: "userEmail")
             }
             
             guard let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UINavigationController else { return }

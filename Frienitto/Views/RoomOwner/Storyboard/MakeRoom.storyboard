@@ -14,7 +14,7 @@
         <!--Make Room View Controller-->
         <scene sceneID="ogF-2m-kev">
             <objects>
-                <viewController id="hRr-JK-Mkv" customClass="MakeRoomViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeRoomViewController" id="hRr-JK-Mkv" customClass="MakeRoomViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dcZ-3z-esR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
