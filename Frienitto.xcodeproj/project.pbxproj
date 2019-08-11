@@ -25,6 +25,8 @@
 		6395FC1B22E88849001F6C60 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395FC1A22E88849001F6C60 /* ResultCollectionViewCell.swift */; };
 		6395FC2122E88A02001F6C60 /* ResultCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */; };
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
+		B87CE9872300878800BF2440 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE9862300878800BF2440 /* String+Date.swift */; };
+		B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE98823008F6400BF2440 /* MainMenuCell.swift */; };
 		B87F75A222C75521000176BB /* FrienttoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A122C75521000176BB /* FrienttoService.swift */; };
 		B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A322C769C0000176BB /* FrienttoProvider.swift */; };
 		B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87F75B222C7B3AB000176BB /* Colors.xcassets */; };
@@ -41,10 +43,13 @@
 		B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4B22D82D5800E9B64A /* SignInModel.swift */; };
 		B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */; };
 		B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */; };
+		B8FCDDA923001BB700248814 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDA823001BB700248814 /* MainListViewController.swift */; };
+		B8FCDDAC2300307600248814 /* MainRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDAB2300307600248814 /* MainRoomCell.swift */; };
+		B8FCDDAE23003E6300248814 /* RoomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDAD23003E6300248814 /* RoomListModel.swift */; };
+		B8FCDDB023003F7100248814 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDAF23003F7100248814 /* Room.swift */; };
 		D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01422C7FCB7001D4956 /* MainViewController.swift */; };
 		D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */; };
 		D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */; };
-		D90DF01E22C7FD4D001D4956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DF01D22C7FD4D001D4956 /* Assets.xcassets */; };
 		D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF78DF22D6E59B00AF6DC3 /* DaysButtonEnum.swift */; };
 		D9FF78E222D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF78E122D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift */; };
 		D9FF78E522D72B3B00AF6DC3 /* CreateRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF78E422D72B3B00AF6DC3 /* CreateRoomModel.swift */; };
@@ -73,6 +78,8 @@
 		6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionView.swift; sourceTree = "<group>"; };
 		69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frienitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
+		B87CE9862300878800BF2440 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		B87CE98823008F6400BF2440 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		B87F75A122C75521000176BB /* FrienttoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoService.swift; sourceTree = "<group>"; };
 		B87F75A322C769C0000176BB /* FrienttoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoProvider.swift; sourceTree = "<group>"; };
 		B87F75B222C7B3AB000176BB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -89,10 +96,13 @@
 		B8C94E4B22D82D5800E9B64A /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEnterViewController.swift; sourceTree = "<group>"; };
 		B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomModel.swift; sourceTree = "<group>"; };
+		B8FCDDA823001BB700248814 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		B8FCDDAB2300307600248814 /* MainRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoomCell.swift; sourceTree = "<group>"; };
+		B8FCDDAD23003E6300248814 /* RoomListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListModel.swift; sourceTree = "<group>"; };
+		B8FCDDAF23003F7100248814 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		D90DF01422C7FCB7001D4956 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D90DF01822C7FCE8001D4956 /* MakeRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MakeRoom.storyboard; sourceTree = "<group>"; };
 		D90DF01A22C7FCE8001D4956 /* MakeRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
-		D90DF01D22C7FD4D001D4956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Frienitto/Assets.xcassets; sourceTree = "<group>"; };
 		D9FF78DF22D6E59B00AF6DC3 /* DaysButtonEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysButtonEnum.swift; sourceTree = "<group>"; };
 		D9FF78E122D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRoomFinishViewController.swift; sourceTree = "<group>"; };
 		D9FF78E422D72B3B00AF6DC3 /* CreateRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomModel.swift; sourceTree = "<group>"; };
@@ -114,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				3B20E7A622BCCE7A0043C929 /* Frienitto */,
-				D90DF01D22C7FD4D001D4956 /* Assets.xcassets */,
 				3B20E7A522BCCE7A0043C929 /* Products */,
 				628F74C58366520EC03E43DC /* Pods */,
 				9ACF15B2C97722DA8CC265C3 /* Frameworks */,
@@ -161,6 +170,8 @@
 				B87F75C622C7F0A9000176BB /* User.swift */,
 				B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */,
 				B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */,
+				B8FCDDAD23003E6300248814 /* RoomListModel.swift */,
+				B8FCDDAF23003F7100248814 /* Room.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 			children = (
 				3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */,
 				3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */,
+				B87CE9862300878800BF2440 /* String+Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +202,7 @@
 		3B20E7C122BCD0DD0043C929 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B8FCDDAA2300305800248814 /* View */,
 				3B20E7C322BCD2AD0043C929 /* ViewController */,
 				3B20E7C222BCD0E20043C929 /* Storyboard */,
 			);
@@ -208,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				D90DF01422C7FCB7001D4956 /* MainViewController.swift */,
+				B8FCDDA823001BB700248814 /* MainListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -359,6 +373,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		B8FCDDAA2300305800248814 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8FCDDAB2300307600248814 /* MainRoomCell.swift */,
+				B87CE98823008F6400BF2440 /* MainMenuCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D90DF01622C7FCE7001D4956 /* RoomOwner */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,7 +491,6 @@
 				D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */,
 				B87F75B922C7BF0C000176BB /* RoomInside.storyboard in Resources */,
 				3B20E7AF22BCCE7B0043C929 /* Assets.xcassets in Resources */,
-				D90DF01E22C7FD4D001D4956 /* Assets.xcassets in Resources */,
 				3B20E7AD22BCCE7A0043C929 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,18 +545,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9FF78E522D72B3B00AF6DC3 /* CreateRoomModel.swift in Sources */,
+				B8FCDDAC2300307600248814 /* MainRoomCell.swift in Sources */,
 				3BE1C10B22C7CBAF001BF37F /* AuthCodeModel.swift in Sources */,
 				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,
+				B8FCDDAE23003E6300248814 /* RoomListModel.swift in Sources */,
 				3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */,
 				B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */,
 				B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */,
 				B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */,
+				B8FCDDB023003F7100248814 /* Room.swift in Sources */,
 				B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */,
 				D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */,
 				B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */,
 				3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */,
 				D9FF78E222D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift in Sources */,
 				3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */,
+				B87CE9872300878800BF2440 /* String+Date.swift in Sources */,
 				B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */,
 				D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */,
 				B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */,
@@ -545,6 +571,7 @@
 				3BE1C10622C7C5C2001BF37F /* LoginViewController.swift in Sources */,
 				B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */,
 				3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */,
+				B8FCDDA923001BB700248814 /* MainListViewController.swift in Sources */,
 				B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */,
 				3BE1C10922C7CB4F001BF37F /* IssueCodeModel.swift in Sources */,
 				B87F75C722C7F0A9000176BB /* User.swift in Sources */,
@@ -553,6 +580,7 @@
 				B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */,
 				B87F75C122C7DF2A000176BB /* CircleView.swift in Sources */,
 				6358168322D8C58100E7DA6D /* ResultViewController.swift in Sources */,
+				B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
