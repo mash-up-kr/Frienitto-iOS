@@ -59,7 +59,9 @@ class SignInAuthViewController: UIViewController {
             let result = try? response?.map(IssueCodeModel.self)
             
             if let _ = result {
-                guard let alertViewController = UIStoryboard.instantiate(CommonAlertViewController.self, name: "Login") else { return }
+                guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                alertViewController.delegate = self
+                alertViewController.configure(status: .emailAuth)
                 self.present(alertViewController, animated: false, completion: {
                     self.configure(self.status)
                 })
@@ -92,3 +94,5 @@ class SignInAuthViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension SignInAuthViewController: OneButtonAlertViewControllerDelegate { }

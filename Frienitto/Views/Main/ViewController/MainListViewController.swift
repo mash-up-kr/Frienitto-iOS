@@ -26,7 +26,10 @@ class MainListViewController: UIViewController {
     }
     
     @IBAction private func logOutButtonAction(_ sender: Any) {
-        
+        guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
+        alertViewController.delegate = self
+        alertViewController.configure(status: .logout)
+        present(alertViewController, animated: true)
     }
 }
 
@@ -109,3 +112,5 @@ extension MainListViewController: MainMenuCellDelegate {
         }
     }
 }
+
+extension MainListViewController: TwoButtonAlertViewControllerDelegate { }

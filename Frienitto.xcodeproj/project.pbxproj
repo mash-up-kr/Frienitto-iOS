@@ -13,7 +13,7 @@
 		3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B20E7B022BCCE7B0043C929 /* LaunchScreen.storyboard */; };
 		3B20E7BE22BCCF2C0043C929 /* View+Stroyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */; };
 		3B20E7C022BCCFBE0043C929 /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */; };
-		3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D77D222C7E04A00FA8871 /* CommonAlertViewController.swift */; };
+		3B3D77D322C7E04A00FA8871 /* OneButtonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D77D222C7E04A00FA8871 /* OneButtonAlertViewController.swift */; };
 		3B8E9A8A22C7682A00923678 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8E9A8922C7682A00923678 /* Login.storyboard */; };
 		3BB6B75322C7B43400BB5156 /* LoginSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB6B75222C7B43400BB5156 /* LoginSignViewController.swift */; };
 		3BE1C10622C7C5C2001BF37F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE1C10522C7C5C2001BF37F /* LoginViewController.swift */; };
@@ -25,6 +25,7 @@
 		6395FC1B22E88849001F6C60 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395FC1A22E88849001F6C60 /* ResultCollectionViewCell.swift */; };
 		6395FC2122E88A02001F6C60 /* ResultCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */; };
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
+		B8648D842301B8B3004D5339 /* TwoButtonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */; };
 		B87CE9872300878800BF2440 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE9862300878800BF2440 /* String+Date.swift */; };
 		B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE98823008F6400BF2440 /* MainMenuCell.swift */; };
 		B87F75A222C75521000176BB /* FrienttoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A122C75521000176BB /* FrienttoService.swift */; };
@@ -64,7 +65,7 @@
 		3B20E7B322BCCE7B0043C929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B20E7BD22BCCF2C0043C929 /* View+Stroyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Stroyboard.swift"; sourceTree = "<group>"; };
 		3B20E7BF22BCCFBE0043C929 /* UIStoryboard+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Instantiate.swift"; sourceTree = "<group>"; };
-		3B3D77D222C7E04A00FA8871 /* CommonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertViewController.swift; sourceTree = "<group>"; };
+		3B3D77D222C7E04A00FA8871 /* OneButtonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneButtonAlertViewController.swift; sourceTree = "<group>"; };
 		3B8E9A8922C7682A00923678 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3BB6B75222C7B43400BB5156 /* LoginSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignViewController.swift; sourceTree = "<group>"; };
 		3BE1C10522C7C5C2001BF37F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionView.swift; sourceTree = "<group>"; };
 		69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frienitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
+		B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoButtonAlertViewController.swift; sourceTree = "<group>"; };
 		B87CE9862300878800BF2440 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		B87CE98823008F6400BF2440 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		B87F75A122C75521000176BB /* FrienttoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoService.swift; sourceTree = "<group>"; };
@@ -229,7 +231,8 @@
 		3B3D77D122C7E03C00FA8871 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3B3D77D222C7E04A00FA8871 /* CommonAlertViewController.swift */,
+				3B3D77D222C7E04A00FA8871 /* OneButtonAlertViewController.swift */,
+				B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -549,7 +552,7 @@
 				3BE1C10B22C7CBAF001BF37F /* AuthCodeModel.swift in Sources */,
 				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,
 				B8FCDDAE23003E6300248814 /* RoomListModel.swift in Sources */,
-				3B3D77D322C7E04A00FA8871 /* CommonAlertViewController.swift in Sources */,
+				3B3D77D322C7E04A00FA8871 /* OneButtonAlertViewController.swift in Sources */,
 				B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */,
 				B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */,
 				B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */,
@@ -564,6 +567,7 @@
 				B87F75C522C7EC66000176BB /* DimmedProfileViewController.swift in Sources */,
 				D90DF01C22C7FCE8001D4956 /* MakeRoomViewController.swift in Sources */,
 				B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */,
+				B8648D842301B8B3004D5339 /* TwoButtonAlertViewController.swift in Sources */,
 				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
 				D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */,
 				B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */,
