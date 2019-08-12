@@ -32,7 +32,18 @@ class MainRoomCell: UICollectionViewCell {
         roomDescriptionLabel.text = "\(room.title)방입니다. 우리 친해져요!"
         roomImageView.image = UIImage(named: "listFace\(room.id % 6 + 1)")
         if let date = room.expiresDate.convertToDate() {
-            dateLabel.text = "D-Day. \(MainRoomCell.calculateDayOffsetFromToday(date: date))"
+            let dDay = MainRoomCell.calculateDayOffsetFromToday(date: date)
+            configureDateLabel(dDay: dDay)
+        }
+    }
+    
+    private func configureDateLabel(dDay: Int) {
+        if dDay < 0 {
+            dateLabel.text = "매칭 종료"
+        } else if dDay == 0 {
+            dateLabel.text = "D-day"
+        } else {
+            dateLabel.text = "D-day. \(dDay)"
         }
     }
     

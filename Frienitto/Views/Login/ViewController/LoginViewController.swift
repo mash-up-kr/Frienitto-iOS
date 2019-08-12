@@ -36,8 +36,29 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(email, forKey: "userEmail")
             }
             
-            guard let mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UINavigationController else { return }
-            UIApplication.shared.keyWindow?.rootViewController = mainNavigationController
+//            provider.retrieveRoomList(completion: { response in
+//                let result = try? response?.map(RoomListModel.self)
+//
+//                if let result = result {
+//                    let nextViewController: UIViewController
+//                    if result.data.count == 0 {
+//                        guard let mainViewController = UIStoryboard.instantiate(MainViewController.self, name: "Main") else { return }
+//                        nextViewController = mainViewController
+//                    } else {
+//                        guard let mainListViewController = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
+//                        nextViewController = mainListViewController
+//                    }
+//
+//                    self.navigationController?.setViewControllers([nextViewController], animated: true)
+//                }
+//
+//            }, failure: { error in
+//                print(error.localizedDescription)
+//            })
+            
+            guard let mainListViewController = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
+            self.navigationController?.setViewControllers([mainListViewController], animated: true)
+            
         }, failure: { error in
             print(error.localizedDescription)
         })

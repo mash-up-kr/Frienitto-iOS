@@ -34,5 +34,12 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(roomInside, animated: true)
     }
 
+    @IBAction func didTapLogOut(_ sender: UIButton) {
+        guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
+        alertViewController.delegate = self
+        alertViewController.configure(status: .logout)
+        present(alertViewController, animated: true)
+    }
 }
 
+extension MainViewController: TwoButtonAlertViewControllerDelegate { }
