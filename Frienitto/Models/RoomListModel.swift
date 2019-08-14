@@ -9,7 +9,7 @@
 import Foundation
 
 struct RoomListModel: Codable {
-    let code: String
+    let code: Int
     let data: [Room]
     let msg: String
 }

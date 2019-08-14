@@ -183,29 +183,20 @@ class MakeRoomViewController: UIViewController {
         let roomName = roomNameField.text!
         let roomPassword = roomPasswordField.text!
         let daysAfterEnum = selectedDaysButton!
+        
         // TODO: 보내기 전 인터렉션
-        provider.createRoom(title: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] response in
-            guard
-                let self = self,
-                let response = response else { return }
-            do {
-                let responseModel = try response.map(CreateRoomModel.self)
-                
-                let makeRoomStoryboard = UIStoryboard(name: "MakeRoom", bundle: nil)
-                guard let makeRoomFinishViewController =
-                    makeRoomStoryboard.instantiateViewController(withIdentifier: "MakeRoomFinishViewController") as? MakeRoomFinishViewController
-                    else { fatalError("finish ViewController error") }
-                makeRoomFinishViewController.roomNameString = roomName
-                makeRoomFinishViewController.roomPasswordString = roomPassword
-                makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
-                self.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
-            } catch (let err) {
-                print(err.localizedDescription)
-            }
-        }) { error in
+        provider.createRoom(title: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] createRoomModel in
+            guard let makeRoomFinishViewController = UIStoryboard.instantiate(MakeRoomFinishViewController.self, name: "MakeRoom") else { return }
+            
+            makeRoomFinishViewController.roomNameString = roomName
+            makeRoomFinishViewController.roomPasswordString = roomPassword
+            makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
+            
+            self?.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
+            
+        }, failure: { error in
             print(error.localizedDescription)
-        }
-        // END Of CreateRoom Scope
+        })
     }
 }
 

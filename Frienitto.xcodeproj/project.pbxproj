@@ -41,6 +41,9 @@
 		B803AB712303EE8F003173DC /* img_9.png in Resources */ = {isa = PBXBuildFile; fileRef = B803AB642303EE8F003173DC /* img_9.png */; };
 		B803AB722303EE8F003173DC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B803AB652303EE8F003173DC /* data.json */; };
 		B803AB742303EE99003173DC /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B803AB732303EE99003173DC /* loading.json */; };
+		B803AB762304689B003173DC /* MatchingStartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB752304689B003173DC /* MatchingStartModel.swift */; };
+		B803AB78230469C8003173DC /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB77230469C8003173DC /* Mission.swift */; };
+		B803AB7B23046B13003173DC /* MatchingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB7A23046B13003173DC /* MatchingInfoModel.swift */; };
 		B8648D842301B8B3004D5339 /* TwoButtonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */; };
 		B87CE9872300878800BF2440 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE9862300878800BF2440 /* String+Date.swift */; };
 		B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE98823008F6400BF2440 /* MainMenuCell.swift */; };
@@ -111,6 +114,9 @@
 		B803AB642303EE8F003173DC /* img_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_9.png; sourceTree = "<group>"; };
 		B803AB652303EE8F003173DC /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		B803AB732303EE99003173DC /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		B803AB752304689B003173DC /* MatchingStartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStartModel.swift; sourceTree = "<group>"; };
+		B803AB77230469C8003173DC /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		B803AB7A23046B13003173DC /* MatchingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingInfoModel.swift; sourceTree = "<group>"; };
 		B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoButtonAlertViewController.swift; sourceTree = "<group>"; };
 		B87CE9862300878800BF2440 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		B87CE98823008F6400BF2440 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 				B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */,
 				B8FCDDAD23003E6300248814 /* RoomListModel.swift */,
 				B8FCDDAF23003F7100248814 /* Room.swift */,
+				B803AB752304689B003173DC /* MatchingStartModel.swift */,
+				B803AB77230469C8003173DC /* Mission.swift */,
+				B803AB7A23046B13003173DC /* MatchingInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -658,11 +667,13 @@
 				3B3D77D322C7E04A00FA8871 /* OneButtonAlertViewController.swift in Sources */,
 				B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */,
 				B803AB562303EDF0003173DC /* SelectViewController.swift in Sources */,
+				B803AB7B23046B13003173DC /* MatchingInfoModel.swift in Sources */,
 				B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */,
 				B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */,
 				B8FCDDB023003F7100248814 /* Room.swift in Sources */,
 				B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */,
 				D90DF01522C7FCB7001D4956 /* MainViewController.swift in Sources */,
+				B803AB762304689B003173DC /* MatchingStartModel.swift in Sources */,
 				B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */,
 				3B20E7A822BCCE7A0043C929 /* AppDelegate.swift in Sources */,
 				D9FF78E222D6E5B500AF6DC3 /* MakeRoomFinishViewController.swift in Sources */,
@@ -673,6 +684,7 @@
 				B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */,
 				B8648D842301B8B3004D5339 /* TwoButtonAlertViewController.swift in Sources */,
 				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
+				B803AB78230469C8003173DC /* Mission.swift in Sources */,
 				D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */,
 				B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */,
 				6395FC1B22E88849001F6C60 /* ResultCollectionViewCell.swift in Sources */,

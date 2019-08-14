@@ -18,7 +18,7 @@ class FrienttoProvider {
                 imageCode: Int,
                 email: String,
                 password: String,
-                completion: @escaping ((Response?) -> Void),
+                completion: @escaping ((SignUpModel) -> Void),
                 failure: @escaping ((Error) -> Void)) {
         provider.request(.signUp(username: username, description: description, imageCode: imageCode, email: email, password: password)) { result in
             self.resultTask(result, completion: completion, failure: failure)
@@ -27,7 +27,7 @@ class FrienttoProvider {
     
     func signIn(email: String,
                 password: String,
-                completion: @escaping ((Response?) -> Void),
+                completion: @escaping ((SignInModel) -> Void),
                 failure: @escaping ((Error) -> Void)) {
         provider.request(.signIn(email: email, password: password)) { result in
             self.resultTask(result, completion: completion, failure: failure)
@@ -37,7 +37,7 @@ class FrienttoProvider {
     func createRoom(title: String,
                     password: String,
                     daysAfterEnum: DaysButtonEnum,
-                    completion: @escaping ((Response?) -> Void),
+                    completion: @escaping ((CreateRoomModel) -> Void),
                     failure: @escaping ((Error) -> Void)) {
         provider.request(.createRoom(title: title, code: password, daysAfterEnum: daysAfterEnum)) { result in
             self.resultTask(result, completion: completion, failure: failure)
@@ -47,14 +47,14 @@ class FrienttoProvider {
     
     func joinRoom(title: String,
                   code: String,
-                  completion: @escaping ((Response?) -> Void),
+                  completion: @escaping ((JoinRoomModel) -> Void),
                   failure: @escaping ((Error) -> Void)) {
         provider.request(.joinRoom(title: title, code: code)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
     
-    func retrieveRoomList(completion: @escaping ((Response?) -> Void),
+    func retrieveRoomList(completion: @escaping ((RoomListModel) -> Void),
                           failure: @escaping ((Error) -> Void)) {
         provider.request(.retrieveRoomList) { result in
             self.resultTask(result, completion: completion, failure: failure)
@@ -62,7 +62,7 @@ class FrienttoProvider {
     }
     
     func retrieveRoomDetail(id: Int,
-                            completion: @escaping ((Response?) -> Void),
+                            completion: @escaping ((RetrieveRoomDetailModel) -> Void),
                             failure: @escaping ((Error) -> Void)) {
         provider.request(.retrieveRoomDetail(id: id)) { result in
             self.resultTask(result, completion: completion, failure: failure)
@@ -70,17 +70,17 @@ class FrienttoProvider {
     }
     
     func matchingStart(roomId: Int,
-                       participantId: [Int],
-                       completion: @escaping ((Response?) -> Void),
+                       ownerId: Int,
+                       completion: @escaping ((MatchingStartModel) -> Void),
                        failure: @escaping ((Error) -> Void)) {
-        provider.request(.matchingStart(roomId: roomId, participantId: participantId)) { result in
+        provider.request(.matchingStart(roomId: roomId, ownerId: ownerId)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
     
     func issueCode(receiverInfo: String,
                    type: String,
-                   completion: @escaping ((Response?) -> Void),
+                   completion: @escaping ((IssueCodeModel) -> Void),
                    failure: @escaping ((Error) -> Void)) {
         provider.request(.issueCode(receiverInfo: receiverInfo, type: type)) { result in
             self.resultTask(result, completion: completion, failure: failure)
@@ -90,26 +90,45 @@ class FrienttoProvider {
     func authCode(receiverInfo: String,
                   type: String,
                   code: String,
-                  completion: @escaping ((Response?) -> Void),
+                  completion: @escaping ((AuthCodeModel) -> Void),
                   failure: @escaping ((Error) -> Void)) {
         provider.request(.authCode(receiverInfo: receiverInfo, type: type, code: code)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
+    
+    func matchingInfo(roomId: Int,
+                      completion: @escaping ((MatchingInfoModel) -> Void),
+                      failure: @escaping ((Error) -> Void)) {
+        provider.request(.matchingInfo(id: roomId)) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
+    
+    func exitRoom(title: String,
+                  completion: @escaping ((Response?) -> Void),
+                  failure: @escaping ((Error) -> Void)) {
+        provider.request(.exitRoom(title: title)) { result in
+            // TODO: - Delete 후 처리
+        }
+    }
 }
 
 extension FrienttoProvider {
-    func resultTask(_ result: Result<Response, MoyaError>,
-                    completion: @escaping ((Response?) -> Void),
+    func resultTask<T: Decodable>(_ result: Result<Response, MoyaError>,
+                    completion: @escaping ((T) -> Void),
                     failure: @escaping ((Error) -> Void)) {
         switch result {
         case .success(let response):
-            let statusCode = response.statusCode
-            if statusCode >= 300 {
-                failure(MoyaError.statusCode(response))
+            
+            print(try! response.mapJSON())
+            
+            if let data = try? response.map(T.self) {
+                completion(data)
             } else {
-                completion(response)
+                // TODO: - 예외 처리
             }
+            
         case .failure(let error):
             failure(error)
         }

@@ -12,9 +12,10 @@ struct SignInModel: Codable {
     struct Data: Codable {
         let token: String
         let tokenExpiresDate: String
+        let user: User
         
         enum CodingKeys: String, CodingKey {
-            case token
+            case token, user
             case tokenExpiresDate = "token_expires_date"
         }
     }

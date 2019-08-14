@@ -476,6 +476,12 @@
                         <viewLayoutGuide key="safeArea" id="iJz-y8-a81"/>
                     </view>
                     <navigationItem key="navigationItem" id="sqe-eT-dLT"/>
+                    <connections>
+                        <outlet property="collectionView" destination="BCd-ig-lc2" id="GIT-94-C72"/>
+                        <outlet property="userEmailLabel" destination="rFn-Ya-Mqc" id="UfS-Ys-W82"/>
+                        <outlet property="userImageView" destination="A3f-KQ-yL9" id="b7V-YF-X8X"/>
+                        <outlet property="userNameLabel" destination="EIq-9X-nUu" id="gbK-69-XPG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dc-vV-XT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,7 +517,7 @@
             <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkgrey">
-            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="orange">
             <color red="1" green="0.31764705882352939" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
