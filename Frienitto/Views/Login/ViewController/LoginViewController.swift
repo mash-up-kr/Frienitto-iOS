@@ -28,36 +28,30 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         let provider = FrienttoProvider()
-        provider.signIn(email: email, password: password, completion: { response in
-            let result = try? response?.map(SignInModel.self)
-            
-            if let result = result {
-                UserDefaults.standard.set(result.data.token, forKey: "authorizationToken")
-                UserDefaults.standard.set(email, forKey: "userEmail")
+        provider.signIn(email: email, password: password, completion: { signInModel in
+            UserDefaults.standard.set(signInModel.data.token, forKey: "authorizationToken")
+            if let data = try? JSONEncoder().encode(signInModel.data.user) {
+                UserDefaults.standard.set(data, forKey: "userInfo")
             }
             
-//            provider.retrieveRoomList(completion: { response in
-//                let result = try? response?.map(RoomListModel.self)
-//
-//                if let result = result {
-//                    let nextViewController: UIViewController
-//                    if result.data.count == 0 {
-//                        guard let mainViewController = UIStoryboard.instantiate(MainViewController.self, name: "Main") else { return }
-//                        nextViewController = mainViewController
-//                    } else {
-//                        guard let mainListViewController = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
-//                        nextViewController = mainListViewController
-//                    }
-//
-//                    self.navigationController?.setViewControllers([nextViewController], animated: true)
-//                }
-//
-//            }, failure: { error in
-//                print(error.localizedDescription)
-//            })
-            
-            guard let mainListViewController = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
-            self.navigationController?.setViewControllers([mainListViewController], animated: true)
+            provider.retrieveRoomList(completion: { roomListModel in
+                let nextViewController: UIViewController
+                
+                if roomListModel.data.isEmpty {
+                    guard let mainViewController = UIStoryboard.instantiate(MainViewController.self, name: "Main") else { return }
+                    nextViewController = mainViewController
+                } else {
+                    guard let mainListViewController = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
+                    nextViewController = mainListViewController
+                    mainListViewController.rooms = roomListModel.data
+                    mainListViewController.user = signInModel.data.user
+                }
+                
+                self.navigationController?.setViewControllers([nextViewController], animated: true)
+                
+            }, failure: { error in
+                print(error.localizedDescription)
+            })
             
         }, failure: { error in
             print(error.localizedDescription)

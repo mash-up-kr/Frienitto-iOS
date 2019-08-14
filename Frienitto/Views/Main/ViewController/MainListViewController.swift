@@ -14,15 +14,22 @@ class MainListViewController: UIViewController {
         case menu
     }
     
-    let dummies: [Room] = [
-        Room(expiresDate: "2019-08-11", id: 1, isOwner: true, participants: [User(imageCode: 1, username: "hello", id: 1)], status: "xxx", title: "xxx xxxx  xxxxx xxx xx x x x x xx"),
-        Room(expiresDate: "2019-08-14", id: 2, isOwner: true, participants: [User(imageCode: 1, username: "hello", id: 1)], status: "xxx", title: "xxx"),
-        Room(expiresDate: "2019-08-15", id: 3, isOwner: true, participants: [User(imageCode: 1, username: "hello", id: 1)], status: "xxx", title: "xxx"),
-        Room(expiresDate: "2019-08-16", id: 4, isOwner: true, participants: [User(imageCode: 1, username: "hello", id: 1)], status: "xxx", title: "xxx")
-    ]
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var userEmailLabel: UILabel!
+    @IBOutlet private weak var userImageView: CircleImageView!
+    
+    var rooms: [Room] = []
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        if let user = user {
+            userNameLabel.text = user.username
+            userEmailLabel.text = user.email
+            userImageView.image = UIImage(named: "face\(user.imageCode)")
+        }
     }
     
     @IBAction private func logOutButtonAction(_ sender: Any) {
@@ -42,7 +49,7 @@ extension MainListViewController: UICollectionViewDataSource {
         let section = ContentType.allCases[section]
         switch section {
         case .room:
-            return dummies.count
+            return rooms.count
         case .menu:
             return 1
         }
@@ -61,7 +68,7 @@ extension MainListViewController: UICollectionViewDataSource {
     
     private func configureMainRoomCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainRoomCell.self)", for: indexPath) as? MainRoomCell else { return UICollectionViewCell() }
-        cell.configure(room: dummies[indexPath.item])
+        cell.configure(room: rooms[indexPath.item])
         cell.delegate = self
         
         return cell
