@@ -121,6 +121,8 @@ extension FrienttoProvider {
         switch result {
         case .success(let response):
             
+            print(try! response.mapJSON())
+            
             if let data = try? response.map(T.self) {
                 completion(data)
             } else {
