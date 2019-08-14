@@ -18,7 +18,13 @@ struct CreateRoomModel: Codable {
         let title: String
         let expiresDate: String
         let status: String
-        let isOwner: Bool
-        let participants: [User]
+        let isOwner: Bool?
+        let participants: [User]?
+        
+        enum CodingKeys: String, CodingKey {
+            case id, title, status, participants
+            case expiresDate = "expires_date"
+            case isOwner = "is_owner"
+        }
     }
 }

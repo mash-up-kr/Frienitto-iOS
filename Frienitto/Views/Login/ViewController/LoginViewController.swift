@@ -28,13 +28,13 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         let provider = FrienttoProvider()
-        provider.signIn(email: email, password: password, completion: { signInModel in
+        provider.signIn(email: email, password: password, completion: { [weak self] signInModel in
             UserDefaults.standard.set(signInModel.data.token, forKey: "authorizationToken")
             if let data = try? JSONEncoder().encode(signInModel.data.user) {
                 UserDefaults.standard.set(data, forKey: "userInfo")
             }
             
-            provider.retrieveRoomList(completion: { roomListModel in
+            provider.retrieveRoomList(completion: { [weak self] roomListModel in
                 let nextViewController: UIViewController
                 
                 if roomListModel.data.isEmpty {
@@ -42,13 +42,14 @@ class LoginViewController: UIViewController {
                     nextViewController = mainViewController
                 } else {
                     guard let mainListViewController = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
+                    
                     nextViewController = mainListViewController
                     mainListViewController.rooms = roomListModel.data
                     mainListViewController.user = signInModel.data.user
                 }
                 
-                self.navigationController?.setViewControllers([nextViewController], animated: true)
-                
+                self?.navigationController?.setViewControllers([nextViewController], animated: true)
+
             }, failure: { error in
                 print(error.localizedDescription)
             })

@@ -54,17 +54,18 @@ class SignInAuthViewController: UIViewController {
     @IBAction func sendAuthButton(_ sender: UIButton) {
         guard let email = textField.text, !email.isEmpty else { return }
         inputEmail = email
+        
         let provider = FrienttoProvider()
-        provider.issueCode(receiverInfo: email, type: "EMAIL", completion: { response in
-            let result = try? response?.map(IssueCodeModel.self)
+
+        provider.issueCode(receiverInfo: email, type: "EMAIL", completion: { [weak self] issueCodeModel in
+            guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
             
-            if let _ = result {
-                guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
-                alertViewController.delegate = self
-                alertViewController.configure(status: .emailAuth)
-                self.present(alertViewController, animated: false, completion: {
-                    self.configure(self.status)
-                })
+            alertViewController.delegate = self
+            alertViewController.configure(status: .emailAuth)
+            
+            self?.present(alertViewController, animated: true) {
+                guard let self = self else { return }
+                self.configure(self.status)
             }
         }, failure: { error in
             print(error.localizedDescription)
@@ -73,18 +74,16 @@ class SignInAuthViewController: UIViewController {
     
     @IBAction func confirm(_ sender: UIButton) {
         guard let email = inputEmail, let code = textField.text else { return }
+        
         let provider = FrienttoProvider()
-        provider.authCode(receiverInfo: email, type: "EMAIL", code: code, completion: { response in
-            let result = try? response?.map(AuthCodeModel.self)
-            
-            if let result = result {
-                print(result.data.registerToken)
-                UserDefaults.standard.set(result.data.registerToken, forKey: "registerToken")
-            }
+        
+        provider.authCode(receiverInfo: email, type: "EMAIL", code: code, completion: { [weak self] authCodeModel in
+            UserDefaults.standard.set(authCodeModel.data.registerToken, forKey: "registerToken")
             
             guard let signUpViewController = UIStoryboard.instantiate(SignUpViewController.self, name: "Login") else { return }
             signUpViewController.email = email
-            self.navigationController?.pushViewController(signUpViewController, animated: true)
+            
+            self?.navigationController?.pushViewController(signUpViewController, animated: true)
         }, failure: { error in
             print(error.localizedDescription)
         })

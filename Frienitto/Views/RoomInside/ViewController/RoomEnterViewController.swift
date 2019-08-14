@@ -27,23 +27,14 @@ class RoomEnterViewController: UIViewController {
             let code = codeTextField.text else { return }
         
         let provider = FrienttoProvider()
-        provider.joinRoom(title: title, code: code, completion: { response in
-            let result = try? response?.map(JoinRoomModel.self)
+        
+        provider.joinRoom(title: title, code: code, completion: { [weak self] joinRoomModel in
             
-            if let result = result {
-                provider.retrieveRoomDetail(id: result.data.id, completion: { response in
-                    let roomResult = try? response?.map(RetrieveRoomDetailModel.self)
-                    
-                    if let result = roomResult {
-                        guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
-                        peopleMatchViewController.users = result.data.participants
-                        peopleMatchViewController.roomName = result.data.title
-                        self.navigationController?.pushViewController(peopleMatchViewController, animated: true)
-                    }
-                }, failure: { error in
-                    print(error.localizedDescription)
-                })
-            }
+            guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
+            peopleMatchViewController.users = joinRoomModel.data.participants
+            peopleMatchViewController.roomName = joinRoomModel.data.title
+            
+            self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
         }, failure: { error in
             print(error.localizedDescription)
         })
