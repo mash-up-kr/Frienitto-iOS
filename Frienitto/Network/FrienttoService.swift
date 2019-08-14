@@ -16,9 +16,11 @@ enum FrienttoService {
     case joinRoom(title: String, code: String)
     case retrieveRoomList
     case retrieveRoomDetail(id: Int)
-    case matchingStart(roomId: Int, participantId: [Int])
+    case matchingStart(roomId: Int, ownerId: Int)
     case issueCode(receiverInfo: String, type: String)
     case authCode(receiverInfo: String, type: String, code: String)
+    case matchingInfo(id: Int)
+    case exitRoom(title: String)
 }
 
 extension FrienttoService: TargetType {
@@ -46,6 +48,10 @@ extension FrienttoService: TargetType {
             return "/api/v1/issue/code"
         case .authCode:
             return "/api/v1/verify/code"
+        case .matchingInfo(let id):
+            return "/api/v1/matching-info/room/\(id)"
+        case .exitRoom:
+            return "/api/v1/exit/room"
         }
     }
     
@@ -53,8 +59,10 @@ extension FrienttoService: TargetType {
         switch self {
         case .signUp, .signIn, .createRoom, .matchingStart, .issueCode, .authCode, .joinRoom:
             return .post
-        case .retrieveRoomList, .retrieveRoomDetail:
+        case .retrieveRoomList, .retrieveRoomDetail, .matchingInfo:
             return .get
+        case .exitRoom:
+            return .delete
         }
     }
     
@@ -101,9 +109,10 @@ extension FrienttoService: TargetType {
             return .requestPlain
         case .retrieveRoomDetail:
             return .requestPlain
-        case .matchingStart(let roomId, let participantId):
+        case .matchingStart(let roomId, let ownerId):
             return .requestParameters(parameters: ["room_id": roomId,
-                                                   "participant_id": participantId],
+                                                   "owner_id": ownerId,
+                                                   "type": "ROOM"],
                                       encoding: JSONEncoding.default)
         case .issueCode(let receiverInfo, let type):
             return .requestParameters(parameters: ["receiver_info": receiverInfo,
@@ -114,6 +123,11 @@ extension FrienttoService: TargetType {
                                                    "type": type,
                                                    "code": code],
                                       encoding: JSONEncoding.default)
+        case .matchingInfo:
+            return .requestPlain
+        case .exitRoom(let title):
+            return .requestParameters(parameters: ["title": title],
+                                      encoding: JSONEncoding.default)
         }
     }
     
@@ -122,12 +136,11 @@ extension FrienttoService: TargetType {
         case .signUp:
             return ["Content-type": "application/json",
                     "X-Register-Token": registerToken]
-        case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .matchingStart:
+        case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .matchingStart, .matchingInfo, .exitRoom:
             return ["Content-type": "application/json",
                     "X-Authorization": authorizationToken]
         default:
             return ["Content-type": "application/json"]
-
         }
     }
 }

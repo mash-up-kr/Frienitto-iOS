@@ -11,18 +11,14 @@ import Foundation
 struct CreateRoomModel: Codable {
     let code: Int
     let msg: String
-    let data: CreateRoomModel.DataModel
+    let data: Data
     
-    struct DataModel: Codable {
+    struct Data: Codable {
         let id: Int
         let title: String
-        let expires_date: String
+        let expiresDate: String
         let status: String
-    }
-    
-    struct UserInfo: Codable {
-        let id: Int
-        let username: String
-        let image_code: Int
+        let isOwner: Bool
+        let participants: [User]
     }
 }

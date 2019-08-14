@@ -14,10 +14,13 @@ struct JoinRoomModel: Codable {
         let title: String
         let status: String
         let expiresDate: String
+        let isOwner: Bool
+        let participants: [User]
         
         enum CodingKeys: String, CodingKey {
-            case id, title, status
+            case id, title, status, participants
             case expiresDate = "expires_date"
+            case isOwner = "is_owner"
         }
     }
     

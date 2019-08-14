@@ -12,13 +12,12 @@ struct Room: Codable {
     let expiresDate: String
     let id: Int
     let isOwner: Bool
-    let participants: [User]
     let status: String
     let title: String
     
     enum CodingKeys: String, CodingKey {
         case expiresDate = "expires_date"
         case isOwner = "is_owner"
-        case id, participants, status, title
+        case id, status, title
     }
 }

@@ -12,9 +12,10 @@ struct User: Codable {
     let imageCode: Int
     let username: String
     let id: Int
+    let description: String
     
     enum CodingKeys: String, CodingKey {
-        case id, username
+        case id, username, description
         case imageCode = "image_code"
     }
 }
