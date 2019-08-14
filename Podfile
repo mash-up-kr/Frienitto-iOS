@@ -7,5 +7,6 @@ target 'Frienitto' do
   pod 'Moya', '~> 13.0'
   pod 'Kingfisher', '~> 5.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'lottie-ios'
 
 end
