@@ -14,10 +14,11 @@ struct Room: Codable {
     let isOwner: Bool
     let status: String
     let title: String
+    let participants: [User]?
     
     enum CodingKeys: String, CodingKey {
         case expiresDate = "expires_date"
         case isOwner = "is_owner"
-        case id, status, title
+        case id, status, title, participants
     }
 }

@@ -15,14 +15,21 @@ class PeopleMatchViewController: UIViewController {
     @IBOutlet var numberOfPeopleLabel: UILabel!
     @IBOutlet var matchingButton: UIButton!
     
-    var users: [User] = []
-    var roomName: String = ""
+    var room: Room! {
+        didSet {
+            if let participants = room.participants {
+                self.participants = participants
+            }
+        }
+    }
+    var participants: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         matchingButton.isHidden = true
-        roomNameLabel.text = roomName
-        numberOfPeopleLabel.text = "\(users.count)명이 입장했습니다."
+        roomNameLabel.text = room.title
+        numberOfPeopleLabel.text = "\(participants.count)명이 입장했습니다."
+        matchingButton.isHidden = !room.isOwner
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,15 +44,16 @@ class PeopleMatchViewController: UIViewController {
 
 extension PeopleMatchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return users.count
+        return participants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCell.cellIdentifier, for: indexPath) as? ProfileCell else { return UICollectionViewCell() }
-        let user = users[indexPath.item]
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCell.cellIdentifier, for: indexPath) as? ProfileCell else { return UICollectionViewCell() }
+        let user = participants[indexPath.item]
         cell.imageView.image = UIImage(named: "face\(user.imageCode)")
         cell.nameLabel.text = user.username
-        cell.descriptionLabel.text = ""
+        cell.descriptionLabel.text = user.description
         return cell
     }
 }
@@ -53,7 +61,7 @@ extension PeopleMatchViewController: UICollectionViewDataSource {
 extension PeopleMatchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let dimmedViewController = UIStoryboard.instantiate(DimmedProfileViewController.self, name: "RoomInside") else { return }
-        dimmedViewController.user = users[indexPath.item]
+        dimmedViewController.user = participants[indexPath.item]
         present(dimmedViewController, animated: true, completion: nil)
     }
 }

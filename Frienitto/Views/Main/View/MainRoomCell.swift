@@ -22,7 +22,7 @@ class MainRoomCell: UICollectionViewCell {
     weak var delegate: MainRoomCellDelegate?
     private var room: Room?
     
-    @IBAction private func roomEnterButtonAction(_ sender: Any) {
+    @IBAction private func roomEnterButtonAction(_ sender: UIButton) {
         delegate?.mainRoomCell(self, enteringRoomId: room?.id ?? 0)
     }
     
