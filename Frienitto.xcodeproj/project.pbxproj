@@ -59,6 +59,8 @@
 		B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CA22C8041D000176BB /* SignUpViewController.swift */; };
 		B87F75CD22C80D81000176BB /* SignUpCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */; };
 		B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */; };
+		B8C7096D230835A5007AD1F2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7096C230835A5007AD1F2 /* TimerViewController.swift */; };
+		B8C7096F23083CE6007AD1F2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7096E23083CE6007AD1F2 /* TimerView.swift */; };
 		B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4922D8272500E9B64A /* SignUpModel.swift */; };
 		B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4B22D82D5800E9B64A /* SignInModel.swift */; };
 		B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */; };
@@ -132,6 +134,8 @@
 		B87F75CA22C8041D000176BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B87F75CC22C80D81000176BB /* SignUpCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteViewController.swift; sourceTree = "<group>"; };
 		B8AAE01C22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveRoomDetailModel.swift; sourceTree = "<group>"; };
+		B8C7096C230835A5007AD1F2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		B8C7096E23083CE6007AD1F2 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B8C94E4922D8272500E9B64A /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		B8C94E4B22D82D5800E9B64A /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEnterViewController.swift; sourceTree = "<group>"; };
@@ -444,6 +448,7 @@
 				B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */,
 				B87F75C422C7EC66000176BB /* DimmedProfileViewController.swift */,
 				B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */,
+				B8C7096C230835A5007AD1F2 /* TimerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				B87F75BD22C7D469000176BB /* ProfileCell.swift */,
+				B8C7096E23083CE6007AD1F2 /* TimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				3BE1C10D22C7CF75001BF37F /* SignInAuthViewController.swift in Sources */,
 				B8FCDDAE23003E6300248814 /* RoomListModel.swift in Sources */,
 				3B3D77D322C7E04A00FA8871 /* OneButtonAlertViewController.swift in Sources */,
+				B8C7096F23083CE6007AD1F2 /* TimerView.swift in Sources */,
 				B8C94E4A22D8272500E9B64A /* SignUpModel.swift in Sources */,
 				B803AB562303EDF0003173DC /* SelectViewController.swift in Sources */,
 				B803AB7B23046B13003173DC /* MatchingInfoModel.swift in Sources */,
@@ -700,6 +707,7 @@
 				B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */,
 				B87F75C122C7DF2A000176BB /* CircleView.swift in Sources */,
 				6358168322D8C58100E7DA6D /* ResultViewController.swift in Sources */,
+				B8C7096D230835A5007AD1F2 /* TimerViewController.swift in Sources */,
 				B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
