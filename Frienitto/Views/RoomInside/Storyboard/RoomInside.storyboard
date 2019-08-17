@@ -121,7 +121,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="qb8-jq-G6e" id="Pib-93-F7c"/>
-                                            <outlet property="imageView" destination="yQC-NK-5Hb" id="K6C-rW-dSd"/>
+                                            <outlet property="imageView" destination="yQC-NK-5Hb" id="TuP-f8-BrE"/>
                                             <outlet property="nameLabel" destination="zev-xi-h2K" id="HTL-gH-7po"/>
                                         </connections>
                                     </collectionViewCell>

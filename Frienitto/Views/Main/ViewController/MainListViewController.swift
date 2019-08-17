@@ -32,7 +32,7 @@ class MainListViewController: UIViewController {
         }
     }
     
-    @IBAction private func logOutButtonAction(_ sender: Any) {
+    @IBAction private func logOutButtonAction(_ sender: UIButton) {
         guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
         alertViewController.delegate = self
         alertViewController.configure(status: .logout)
@@ -103,7 +103,16 @@ extension MainListViewController: UICollectionViewDelegateFlowLayout {
 
 extension MainListViewController: MainRoomCellDelegate {
     func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int) {
+        let provider = FrienttoProvider()
         
+        provider.retrieveRoomDetail(id: id, completion: { [weak self] retrieveRoomDetailModel in
+            guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
+            peopleMatchViewController.room = retrieveRoomDetailModel.data
+            
+            self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
     }
 }
 

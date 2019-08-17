@@ -31,8 +31,7 @@ class RoomEnterViewController: UIViewController {
         provider.joinRoom(title: title, code: code, completion: { [weak self] joinRoomModel in
             
             guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
-            peopleMatchViewController.users = joinRoomModel.data.participants
-            peopleMatchViewController.roomName = joinRoomModel.data.title
+            peopleMatchViewController.room = joinRoomModel.data
             
             self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
         }, failure: { error in
