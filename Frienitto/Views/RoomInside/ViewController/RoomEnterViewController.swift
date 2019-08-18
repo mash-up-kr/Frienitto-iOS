@@ -26,6 +26,7 @@ class RoomEnterViewController: UIViewController {
         guard let title = titleTextField.text,
             let code = codeTextField.text else { return }
         
+        showActivityIndicator()
         let provider = FrienttoProvider()
         
         provider.joinRoom(title: title, code: code, completion: { [weak self] joinRoomModel in

@@ -105,6 +105,7 @@ extension MainListViewController: MainRoomCellDelegate {
     func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int) {
         let provider = FrienttoProvider()
         
+        showActivityIndicator()
         provider.retrieveRoomDetail(id: id, completion: { [weak self] retrieveRoomDetailModel in
             guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
             peopleMatchViewController.room = retrieveRoomDetailModel.data

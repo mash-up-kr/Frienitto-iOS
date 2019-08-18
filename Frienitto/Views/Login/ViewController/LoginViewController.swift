@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         let provider = FrienttoProvider()
+        
+        showActivityIndicator()
         provider.signIn(email: email, password: password, completion: { [weak self] signInModel in
             UserDefaults.standard.set(signInModel.data.token, forKey: "authorizationToken")
             if let data = try? JSONEncoder().encode(signInModel.data.user) {

@@ -55,6 +55,7 @@ class SignInAuthViewController: UIViewController {
         guard let email = textField.text, !email.isEmpty else { return }
         inputEmail = email
         
+        showActivityIndicator()
         let provider = FrienttoProvider()
 
         provider.issueCode(receiverInfo: email, type: "EMAIL", completion: { [weak self] issueCodeModel in
@@ -75,6 +76,7 @@ class SignInAuthViewController: UIViewController {
     @IBAction func confirm(_ sender: UIButton) {
         guard let email = inputEmail, let code = textField.text else { return }
         
+        showActivityIndicator()
         let provider = FrienttoProvider()
         
         provider.authCode(receiverInfo: email, type: "EMAIL", code: code, completion: { [weak self] authCodeModel in
