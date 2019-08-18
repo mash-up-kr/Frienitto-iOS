@@ -128,8 +128,9 @@ extension FrienttoProvider {
             } else {
                 // TODO: - 예외 처리
             }
-            
+            hideActivityIndicator()
         case .failure(let error):
+            hideActivityIndicator()
             failure(error)
         }
     }

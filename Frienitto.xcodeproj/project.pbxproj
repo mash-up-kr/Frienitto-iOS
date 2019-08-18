@@ -44,6 +44,8 @@
 		B803AB762304689B003173DC /* MatchingStartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB752304689B003173DC /* MatchingStartModel.swift */; };
 		B803AB78230469C8003173DC /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB77230469C8003173DC /* Mission.swift */; };
 		B803AB7B23046B13003173DC /* MatchingInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB7A23046B13003173DC /* MatchingInfoModel.swift */; };
+		B85D914D2309856A00FFAF8A /* FrenttoActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D914B2309856A00FFAF8A /* FrenttoActivityIndicatorView.swift */; };
+		B85D914E2309856A00FFAF8A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D914C2309856A00FFAF8A /* Common.swift */; };
 		B8648D842301B8B3004D5339 /* TwoButtonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */; };
 		B87CE9872300878800BF2440 /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE9862300878800BF2440 /* String+Date.swift */; };
 		B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE98823008F6400BF2440 /* MainMenuCell.swift */; };
@@ -119,6 +121,8 @@
 		B803AB752304689B003173DC /* MatchingStartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingStartModel.swift; sourceTree = "<group>"; };
 		B803AB77230469C8003173DC /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		B803AB7A23046B13003173DC /* MatchingInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingInfoModel.swift; sourceTree = "<group>"; };
+		B85D914B2309856A00FFAF8A /* FrenttoActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrenttoActivityIndicatorView.swift; sourceTree = "<group>"; };
+		B85D914C2309856A00FFAF8A /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B8648D832301B8B3004D5339 /* TwoButtonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoButtonAlertViewController.swift; sourceTree = "<group>"; };
 		B87CE9862300878800BF2440 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		B87CE98823008F6400BF2440 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				B87F75C022C7DF2A000176BB /* CircleView.swift */,
+				B85D914B2309856A00FFAF8A /* FrenttoActivityIndicatorView.swift */,
+				B85D914C2309856A00FFAF8A /* Common.swift */,
 				D9FF78DE22D6E59B00AF6DC3 /* Enum */,
 			);
 			path = Common;
@@ -691,6 +697,7 @@
 				B8AAE01D22D8FB3F0001E78D /* RetrieveRoomDetailModel.swift in Sources */,
 				B8648D842301B8B3004D5339 /* TwoButtonAlertViewController.swift in Sources */,
 				B87F75A222C75521000176BB /* FrienttoService.swift in Sources */,
+				B85D914D2309856A00FFAF8A /* FrenttoActivityIndicatorView.swift in Sources */,
 				B803AB78230469C8003173DC /* Mission.swift in Sources */,
 				D9FF78E022D6E59B00AF6DC3 /* DaysButtonEnum.swift in Sources */,
 				B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */,
@@ -705,6 +712,7 @@
 				6395FC2122E88A02001F6C60 /* ResultCollectionView.swift in Sources */,
 				3BB6B75322C7B43400BB5156 /* LoginSignViewController.swift in Sources */,
 				B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */,
+				B85D914E2309856A00FFAF8A /* Common.swift in Sources */,
 				B87F75C122C7DF2A000176BB /* CircleView.swift in Sources */,
 				6358168322D8C58100E7DA6D /* ResultViewController.swift in Sources */,
 				B8C7096D230835A5007AD1F2 /* TimerViewController.swift in Sources */,

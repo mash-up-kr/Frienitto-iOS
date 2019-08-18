@@ -21,6 +21,9 @@ class SignUpCompleteViewController: UIViewController {
     }
     
     @IBAction func confirm(_ sender: UIButton) {
+        
+        showActivityIndicator()
+        
         let provider = FrienttoProvider()
         guard let name = nameTextField.text,
             let description = descriptionTextField.text,

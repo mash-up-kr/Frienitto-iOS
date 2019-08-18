@@ -185,6 +185,7 @@ class MakeRoomViewController: UIViewController {
         let daysAfterEnum = selectedDaysButton!
         
         // TODO: 보내기 전 인터렉션
+        showActivityIndicator()
         provider.createRoom(title: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] createRoomModel in
             guard let makeRoomFinishViewController = UIStoryboard.instantiate(MakeRoomFinishViewController.self, name: "MakeRoom") else { return }
             
