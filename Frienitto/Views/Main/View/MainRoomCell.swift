@@ -18,9 +18,16 @@ class MainRoomCell: UICollectionViewCell {
     @IBOutlet private weak var roomDescriptionLabel: UILabel!
     @IBOutlet private weak var roomStatusLabel: UILabel!
     @IBOutlet private weak var roomImageView: UIImageView!
+    @IBOutlet private weak var crownImageView: UIImageView!
     
     weak var delegate: MainRoomCellDelegate?
-    private var room: Room?
+    private var room: Room? {
+        didSet {
+            if let room = room {
+                crownImageView.isHidden = !room.isOwner
+            }
+        }
+    }
     
     @IBAction private func roomEnterButtonAction(_ sender: UIButton) {
         delegate?.mainRoomCell(self, enteringRoomId: room?.id ?? 0)
