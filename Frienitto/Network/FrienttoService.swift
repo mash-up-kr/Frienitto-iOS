@@ -16,6 +16,7 @@ enum FrienttoService {
     case joinRoom(title: String, code: String)
     case retrieveRoomList
     case retrieveRoomDetail(id: Int)
+    case retrieveUserRoom
     case matchingStart(roomId: Int, ownerId: Int)
     case issueCode(receiverInfo: String, type: String)
     case authCode(receiverInfo: String, type: String, code: String)
@@ -42,6 +43,8 @@ extension FrienttoService: TargetType {
             return "/room/list"
         case .retrieveRoomDetail(let id):
             return "/room/\(id)"
+        case .retrieveUserRoom:
+            return "/user/room"
         case .matchingStart:
             return "/matching"
         case .issueCode:
@@ -59,7 +62,7 @@ extension FrienttoService: TargetType {
         switch self {
         case .signUp, .signIn, .createRoom, .matchingStart, .issueCode, .authCode, .joinRoom:
             return .post
-        case .retrieveRoomList, .retrieveRoomDetail, .matchingInfo:
+        case .retrieveRoomList, .retrieveRoomDetail, .retrieveUserRoom, .matchingInfo:
             return .get
         case .exitRoom:
             return .delete
@@ -109,6 +112,8 @@ extension FrienttoService: TargetType {
             return .requestPlain
         case .retrieveRoomDetail:
             return .requestPlain
+        case .retrieveUserRoom:
+            return .requestPlain
         case .matchingStart(let roomId, let ownerId):
             return .requestParameters(parameters: ["room_id": roomId,
                                                    "owner_id": ownerId,
@@ -136,7 +141,7 @@ extension FrienttoService: TargetType {
         case .signUp:
             return ["Content-type": "application/json",
                     "X-Register-Token": registerToken]
-        case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .matchingStart, .matchingInfo, .exitRoom:
+        case .createRoom, .joinRoom, .retrieveRoomList, .retrieveRoomDetail, .retrieveUserRoom, .matchingStart, .matchingInfo, .exitRoom:
             return ["Content-type": "application/json",
                     "X-Authorization": authorizationToken]
         default:

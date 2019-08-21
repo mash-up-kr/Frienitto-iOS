@@ -24,7 +24,6 @@
 		6358168122D8C57300E7DA6D /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6358168022D8C57300E7DA6D /* Result.storyboard */; };
 		6358168322D8C58100E7DA6D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358168222D8C58100E7DA6D /* ResultViewController.swift */; };
 		6395FC1B22E88849001F6C60 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395FC1A22E88849001F6C60 /* ResultCollectionViewCell.swift */; };
-		6395FC2122E88A02001F6C60 /* ResultCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */; };
 		6BB63B7856771D15AF046F81 /* Pods_Frienitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */; };
 		B803AB532303EDA9003173DC /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B803AB522303EDA9003173DC /* Select.storyboard */; };
 		B803AB562303EDF0003173DC /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803AB552303EDF0003173DC /* SelectViewController.swift */; };
@@ -101,7 +100,6 @@
 		6358168022D8C57300E7DA6D /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
 		6358168222D8C58100E7DA6D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		6395FC1A22E88849001F6C60 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
-		6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionView.swift; sourceTree = "<group>"; };
 		69BB7998EDD0D9916086266E /* Pods_Frienitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frienitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71173221788FACFDBC2541EA /* Pods-Frienitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frienitto.release.xcconfig"; path = "Target Support Files/Pods-Frienitto/Pods-Frienitto.release.xcconfig"; sourceTree = "<group>"; };
 		B803AB522303EDA9003173DC /* Select.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Select.storyboard; sourceTree = "<group>"; };
@@ -342,6 +340,7 @@
 		6358167C22D8C52F00E7DA6D /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				B8CBF050230D873E00EDB79C /* View */,
 				6358167E22D8C54300E7DA6D /* Storyboard */,
 				6358167F22D8C54900E7DA6D /* ViewController */,
 			);
@@ -360,8 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				6358168222D8C58100E7DA6D /* ResultViewController.swift */,
-				6395FC1A22E88849001F6C60 /* ResultCollectionViewCell.swift */,
-				6395FC2022E88A02001F6C60 /* ResultCollectionView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -486,6 +483,14 @@
 				D9FF78DE22D6E59B00AF6DC3 /* Enum */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B8CBF050230D873E00EDB79C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6395FC1A22E88849001F6C60 /* ResultCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B8FCDDAA2300305800248814 /* View */ = {
@@ -713,7 +718,6 @@
 				B87F75CB22C8041D000176BB /* SignUpViewController.swift in Sources */,
 				3BE1C10922C7CB4F001BF37F /* IssueCodeModel.swift in Sources */,
 				B87F75C722C7F0A9000176BB /* User.swift in Sources */,
-				6395FC2122E88A02001F6C60 /* ResultCollectionView.swift in Sources */,
 				3BB6B75322C7B43400BB5156 /* LoginSignViewController.swift in Sources */,
 				B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */,
 				B85D914E2309856A00FFAF8A /* Common.swift in Sources */,
