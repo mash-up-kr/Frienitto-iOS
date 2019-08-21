@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="phK-na-4Tj">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,10 +23,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nau-NW-NIY">
-                                        <rect key="frame" x="24" y="1" width="26" height="42"/>
+                                        <rect key="frame" x="24" y="11" width="13" height="22"/>
                                         <state key="normal" image="backArrow"/>
                                         <connections>
-                                            <action selector="tabOnBackButton:" destination="phK-na-4Tj" eventType="touchUpInside" id="67e-If-1W5"/>
+                                            <action selector="backButtonAction:" destination="phK-na-4Tj" eventType="touchUpInside" id="MwW-eg-szh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -52,31 +54,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-cD-Uzs" customClass="ResultCollectionView" customModule="Frienitto" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-cD-Uzs">
                                 <rect key="frame" x="24" y="242" width="366" height="620"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SDE-Bw-Nvb">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="13" minimumInteritemSpacing="13" id="SDE-Bw-Nvb">
                                     <size key="itemSize" width="366" height="154"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Hhq-Cm-zwh" customClass="ResultCollectionViewCell" customModule="Frienitto" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="resultCell" id="Hhq-Cm-zwh" customClass="ResultCollectionViewCell" customModule="Frienitto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mvh-XN-pTd">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face4" translatesAutoresizingMaskIntoConstraints="NO" id="Mvh-XN-pTd" customClass="CircleImageView" customModule="Frienitto" customModuleProvider="target">
                                                     <rect key="frame" x="33" y="18" width="72" height="72"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="72" id="LGn-nX-YLr"/>
                                                         <constraint firstAttribute="width" constant="72" id="kX1-0J-gC0"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEw-dp-Fel">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face5" translatesAutoresizingMaskIntoConstraints="NO" id="uEw-dp-Fel" customClass="CircleImageView" customModule="Frienitto" customModuleProvider="target">
                                                     <rect key="frame" x="261" y="18" width="72" height="72"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="72" id="7Gt-GU-KSi"/>
@@ -90,41 +92,44 @@
                                                         <constraint firstAttribute="width" constant="24" id="I0Z-iH-fHH"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-As-7WV">
-                                                    <rect key="frame" x="49.5" y="94" width="39" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-As-7WV">
+                                                    <rect key="frame" x="48" y="94" width="42" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                    <color key="textColor" name="darkgrey"/>
+                                                    <color key="textColor" name="darkestgrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-wZ-Pdg">
-                                                    <rect key="frame" x="55.5" y="121.5" width="27" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="기타정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-wZ-Pdg">
+                                                    <rect key="frame" x="48" y="121.5" width="42" height="14.5"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                     <color key="textColor" name="middlegrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7u-Mx-hLo">
-                                                    <rect key="frame" x="277.5" y="94" width="39" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="닉네임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7u-Mx-hLo">
+                                                    <rect key="frame" x="276" y="94" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                    <color key="textColor" name="darkgrey"/>
+                                                    <color key="textColor" name="darkestgrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYr-XT-c77">
-                                                    <rect key="frame" x="283.5" y="121.5" width="27" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYr-XT-c77">
+                                                    <rect key="frame" x="276" y="114" width="42" height="22"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                     <color key="textColor" name="middlegrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" name="white"/>
                                         <constraints>
                                             <constraint firstItem="Mvh-XN-pTd" firstAttribute="leading" secondItem="Hhq-Cm-zwh" secondAttribute="leading" constant="33" id="15W-Ft-VWu"/>
                                             <constraint firstAttribute="bottom" secondItem="zYr-XT-c77" secondAttribute="bottom" constant="18" id="2RM-iC-TnM"/>
                                             <constraint firstItem="Mvh-XN-pTd" firstAttribute="top" secondItem="Hhq-Cm-zwh" secondAttribute="top" constant="18" id="3Cx-np-L1a"/>
                                             <constraint firstItem="zYr-XT-c77" firstAttribute="centerX" secondItem="uEw-dp-Fel" secondAttribute="centerX" id="Pcu-5N-kxh"/>
                                             <constraint firstItem="uEw-dp-Fel" firstAttribute="top" secondItem="Hhq-Cm-zwh" secondAttribute="top" constant="18" id="Pgf-VQ-cbL"/>
+                                            <constraint firstItem="zYr-XT-c77" firstAttribute="top" secondItem="G7u-Mx-hLo" secondAttribute="bottom" id="Z0t-YP-fo2"/>
                                             <constraint firstItem="VOY-3e-1J6" firstAttribute="centerX" secondItem="Hhq-Cm-zwh" secondAttribute="centerX" id="bSB-n6-aRg"/>
                                             <constraint firstItem="4yv-wZ-Pdg" firstAttribute="centerX" secondItem="Od8-As-7WV" secondAttribute="centerX" id="d2K-Gz-7fd"/>
                                             <constraint firstItem="G7u-Mx-hLo" firstAttribute="top" secondItem="uEw-dp-Fel" secondAttribute="bottom" constant="4" id="hKq-m7-Slo"/>
+                                            <constraint firstItem="4yv-wZ-Pdg" firstAttribute="top" secondItem="Od8-As-7WV" secondAttribute="bottom" id="hNC-6n-u3i"/>
                                             <constraint firstAttribute="trailing" secondItem="uEw-dp-Fel" secondAttribute="trailing" constant="33" id="nOP-Hk-YUR"/>
                                             <constraint firstItem="Od8-As-7WV" firstAttribute="top" secondItem="Mvh-XN-pTd" secondAttribute="bottom" constant="4" id="oZR-mg-O4c"/>
                                             <constraint firstItem="Od8-As-7WV" firstAttribute="centerX" secondItem="Mvh-XN-pTd" secondAttribute="centerX" id="tSI-tR-oMx"/>
@@ -136,9 +141,24 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="layout.cornerRadius">
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="fromDescriptionLabel" destination="4yv-wZ-Pdg" id="ko4-3a-fhC"/>
+                                            <outlet property="fromImageView" destination="Mvh-XN-pTd" id="oEZ-Pn-iuD"/>
+                                            <outlet property="fromNameLabel" destination="Od8-As-7WV" id="f7V-sw-Cx2"/>
+                                            <outlet property="toDescriptionLabel" destination="zYr-XT-c77" id="9lc-80-5pI"/>
+                                            <outlet property="toImageView" destination="uEw-dp-Fel" id="lKA-Vd-UeJ"/>
+                                            <outlet property="toNameLabel" destination="G7u-Mx-hLo" id="zsm-E7-OO6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="phK-na-4Tj" id="Ysk-GH-UjD"/>
+                                    <outlet property="delegate" destination="phK-na-4Tj" id="kPK-Rl-c9y"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" name="darkIndigo"/>
@@ -157,6 +177,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LV9-aK-dK5"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="LgA-cD-Uzs" id="Ncr-MB-Cg0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLK-sL-zyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,15 +188,20 @@
     </scenes>
     <resources>
         <image name="backArrow" width="13" height="21"/>
+        <image name="face4" width="279" height="279.5"/>
+        <image name="face5" width="279" height="279"/>
         <image name="icKeyboardBackspace" width="24" height="24"/>
         <namedColor name="darkIndigo">
             <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="darkgrey">
-            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="darkestgrey">
+            <color red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="middlegrey">
             <color red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

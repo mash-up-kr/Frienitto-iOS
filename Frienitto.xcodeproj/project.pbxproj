@@ -52,7 +52,6 @@
 		B87CE98923008F6400BF2440 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87CE98823008F6400BF2440 /* MainMenuCell.swift */; };
 		B87F75A222C75521000176BB /* FrienttoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A122C75521000176BB /* FrienttoService.swift */; };
 		B87F75A422C769C0000176BB /* FrienttoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75A322C769C0000176BB /* FrienttoProvider.swift */; };
-		B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B87F75B222C7B3AB000176BB /* Colors.xcassets */; };
 		B87F75B922C7BF0C000176BB /* RoomInside.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87F75B822C7BF0C000176BB /* RoomInside.storyboard */; };
 		B87F75BB22C7C2B2000176BB /* PeopleMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */; };
 		B87F75BE22C7D469000176BB /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87F75BD22C7D469000176BB /* ProfileCell.swift */; };
@@ -68,6 +67,7 @@
 		B8C94E4C22D82D5800E9B64A /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4B22D82D5800E9B64A /* SignInModel.swift */; };
 		B8C94E5022D856A000E9B64A /* RoomEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */; };
 		B8C94E5322D8595000E9B64A /* JoinRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */; };
+		B8CBF04F230D846E00EDB79C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CBF04E230D846E00EDB79C /* Colors.xcassets */; };
 		B8FCDDA923001BB700248814 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDA823001BB700248814 /* MainListViewController.swift */; };
 		B8FCDDAC2300307600248814 /* MainRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDAB2300307600248814 /* MainRoomCell.swift */; };
 		B8FCDDAE23003E6300248814 /* RoomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCDDAD23003E6300248814 /* RoomListModel.swift */; };
@@ -130,7 +130,6 @@
 		B87CE98823008F6400BF2440 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		B87F75A122C75521000176BB /* FrienttoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoService.swift; sourceTree = "<group>"; };
 		B87F75A322C769C0000176BB /* FrienttoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrienttoProvider.swift; sourceTree = "<group>"; };
-		B87F75B222C7B3AB000176BB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B87F75B822C7BF0C000176BB /* RoomInside.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoomInside.storyboard; sourceTree = "<group>"; };
 		B87F75BA22C7C2B2000176BB /* PeopleMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleMatchViewController.swift; sourceTree = "<group>"; };
 		B87F75BD22C7D469000176BB /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		B8C94E4B22D82D5800E9B64A /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		B8C94E4F22D856A000E9B64A /* RoomEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEnterViewController.swift; sourceTree = "<group>"; };
 		B8C94E5222D8595000E9B64A /* JoinRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomModel.swift; sourceTree = "<group>"; };
+		B8CBF04E230D846E00EDB79C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B8FCDDA823001BB700248814 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
 		B8FCDDAB2300307600248814 /* MainRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoomCell.swift; sourceTree = "<group>"; };
 		B8FCDDAD23003E6300248814 /* RoomListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListModel.swift; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 			children = (
 				B803AB572303EE74003173DC /* Lottie */,
 				3B20E7AE22BCCE7B0043C929 /* Assets.xcassets */,
-				B87F75B222C7B3AB000176BB /* Colors.xcassets */,
+				B8CBF04E230D846E00EDB79C /* Colors.xcassets */,
 				3B20E7B322BCCE7B0043C929 /* Info.plist */,
 			);
 			path = Resources;
@@ -606,7 +606,6 @@
 				B803AB702303EE8F003173DC /* img_8.png in Resources */,
 				3B20E7B222BCCE7B0043C929 /* LaunchScreen.storyboard in Resources */,
 				B803AB6A2303EE8F003173DC /* img_2.png in Resources */,
-				B87F75B322C7B3AB000176BB /* Colors.xcassets in Resources */,
 				D90DF01B22C7FCE8001D4956 /* MakeRoom.storyboard in Resources */,
 				B803AB6E2303EE8F003173DC /* img_4.png in Resources */,
 				B87F75B922C7BF0C000176BB /* RoomInside.storyboard in Resources */,
@@ -614,6 +613,7 @@
 				B803AB712303EE8F003173DC /* img_9.png in Resources */,
 				B803AB662303EE8F003173DC /* img_10.png in Resources */,
 				B803AB682303EE8F003173DC /* img_0.png in Resources */,
+				B8CBF04F230D846E00EDB79C /* Colors.xcassets in Resources */,
 				B803AB742303EE99003173DC /* loading.json in Resources */,
 				B803AB692303EE8F003173DC /* img_11.png in Resources */,
 				B803AB6F2303EE8F003173DC /* img_5.png in Resources */,
@@ -868,7 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U2J29Y5X8;
+				DEVELOPMENT_TEAM = 9YDN5UGRB3;
 				INFOPLIST_FILE = "$(SRCROOT)/Frienitto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -887,7 +887,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U2J29Y5X8;
+				DEVELOPMENT_TEAM = 9YDN5UGRB3;
 				INFOPLIST_FILE = "$(SRCROOT)/Frienitto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

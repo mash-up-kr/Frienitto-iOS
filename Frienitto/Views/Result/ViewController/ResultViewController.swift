@@ -9,16 +9,40 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    @IBOutlet weak var userImage1: UIImageView!
-    @IBOutlet weak var userImage2: UIImageView!
-    @IBOutlet weak var userName1: UILabel!
-    @IBOutlet weak var userName2: UILabel!
-    @IBOutlet weak var userInfo1: UILabel!
-    @IBOutlet weak var userInfo2: UILabel!
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    var missions: [Mission] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction private func backButtonAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension ResultViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return missions.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let mission = missions[indexPath.item]
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCollectionViewCell.cellIdentifier, for: indexPath) as? ResultCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.configure(from: mission.from, to: mission.to)
+        
+        return cell
+    }
+}
+
+extension ResultViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height: CGFloat = 154
+        return CGSize(width: width, height: height)
+    }
 }
