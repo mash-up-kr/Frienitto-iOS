@@ -9,10 +9,16 @@
 import UIKit
 
 protocol MainRoomCellDelegate: AnyObject {
-    func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int)
+    func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int, status: MainRoomCell.Status)
 }
 
 class MainRoomCell: UICollectionViewCell {
+    enum Status: String {
+        case created = "CREATED"
+        case matched = "MATCHED"
+        case expired = "EXPIRED"
+    }
+    
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var roomDescriptionLabel: UILabel!
@@ -25,12 +31,26 @@ class MainRoomCell: UICollectionViewCell {
         didSet {
             if let room = room {
                 crownImageView.isHidden = !room.isOwner
+                status = Status(rawValue: room.status) ?? .created
+            }
+        }
+    }
+    
+    private var status: Status = .created {
+        didSet {
+            switch status {
+            case .created:
+                roomStatusLabel.text = "마니또 모집중이에요"
+            case .matched:
+                roomStatusLabel.text = "마니또 매칭중이에요"
+            case .expired:
+                roomStatusLabel.text = "마니또가 발표되었어요"
             }
         }
     }
     
     @IBAction private func roomEnterButtonAction(_ sender: UIButton) {
-        delegate?.mainRoomCell(self, enteringRoomId: room?.id ?? 0)
+        delegate?.mainRoomCell(self, enteringRoomId: room?.id ?? 0, status: status)
     }
     
     func configure(room: Room) {
