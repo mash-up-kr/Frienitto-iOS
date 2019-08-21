@@ -23,6 +23,10 @@ class SignUpViewController: UIViewController {
         checkedEmailLabel.text = email
     }
     
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func confirm(_ sender: UIButton) {
         guard let pw = passwordTextField.text,
             let confirmPw = passwordConfirmTextField.text else {

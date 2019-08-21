@@ -87,13 +87,13 @@
                         <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="vAW-mT-IfP" secondAttribute="trailing" constant="24" id="2Un-Ly-X6o"/>
-                            <constraint firstItem="pSi-7i-V7E" firstAttribute="centerX" secondItem="azp-YR-QVg" secondAttribute="centerX" id="3RH-MN-vfL"/>
                             <constraint firstAttribute="bottom" secondItem="hQ0-Q7-dve" secondAttribute="bottom" id="BxP-0A-wAN"/>
                             <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="h7o-u0-g0m" secondAttribute="trailing" constant="24" id="DnX-Ab-Vwu"/>
                             <constraint firstItem="hQ0-Q7-dve" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" id="E90-de-YBv"/>
                             <constraint firstItem="nGR-HA-hdk" firstAttribute="trailing" secondItem="GeL-TM-fo7" secondAttribute="trailing" constant="24" id="Qif-1r-i4X"/>
                             <constraint firstItem="nGR-HA-hdk" firstAttribute="bottom" secondItem="pSi-7i-V7E" secondAttribute="bottom" constant="60" id="SAW-3i-6bq"/>
                             <constraint firstItem="vAW-mT-IfP" firstAttribute="leading" secondItem="nGR-HA-hdk" secondAttribute="leading" constant="24" id="TQl-bk-lMt"/>
+                            <constraint firstItem="GeL-TM-fo7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nGR-HA-hdk" secondAttribute="leading" symbolic="YES" id="U0B-Qb-7z4"/>
                             <constraint firstItem="hQ0-Q7-dve" firstAttribute="top" secondItem="nGR-HA-hdk" secondAttribute="top" id="WBI-7d-TE1"/>
                             <constraint firstItem="vAW-mT-IfP" firstAttribute="top" secondItem="h7o-u0-g0m" secondAttribute="bottom" constant="18" id="XJc-ad-KZk"/>
                             <constraint firstItem="h7o-u0-g0m" firstAttribute="top" secondItem="nGR-HA-hdk" secondAttribute="top" constant="70" id="ZcQ-w8-cDj"/>
@@ -215,8 +215,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BCd-ig-lc2">
-                                <rect key="frame" x="24" y="339" width="414" height="557"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BCd-ig-lc2">
+                                <rect key="frame" x="0.0" y="285" width="414" height="557"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="R5e-2A-XpI">
                                     <size key="itemSize" width="324" height="498"/>
@@ -524,7 +524,7 @@
             <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkgrey">
-            <color red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="orange">
             <color red="1" green="0.31764705882352939" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

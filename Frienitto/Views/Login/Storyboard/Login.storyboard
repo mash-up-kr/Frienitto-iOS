@@ -1247,7 +1247,7 @@
                                                 </constraints>
                                                 <state key="normal" image="backArrow"/>
                                                 <connections>
-                                                    <action selector="popViewController:" destination="6Tl-vS-2jd" eventType="touchUpInside" id="wd4-DI-DqV"/>
+                                                    <action selector="backButtonAction:" destination="6Tl-vS-2jd" eventType="touchUpInside" id="wd4-DI-DqV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1976,14 +1976,39 @@
                                             <constraint firstItem="MBq-li-cIV" firstAttribute="top" secondItem="rcT-be-jgC" secondAttribute="bottom" id="yhh-OA-cRd"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGV-wG-exc">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQJ-vT-nQV">
+                                                <rect key="frame" x="15" y="7" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="4BC-gb-T1q"/>
+                                                    <constraint firstAttribute="height" constant="30" id="yxZ-z5-Ijq"/>
+                                                </constraints>
+                                                <state key="normal" image="backArrow"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="Fse-XB-51H" eventType="touchUpInside" id="seh-wa-mcK"/>
+                                                    <action selector="backButtonAction:" destination="u7j-3i-iZB" eventType="touchUpInside" id="djx-7d-DBa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="PQJ-vT-nQV" firstAttribute="centerY" secondItem="DGV-wG-exc" secondAttribute="centerY" id="Ddk-Wj-YEC"/>
+                                            <constraint firstAttribute="height" constant="44" id="RGQ-rm-XJz"/>
+                                            <constraint firstItem="PQJ-vT-nQV" firstAttribute="leading" secondItem="DGV-wG-exc" secondAttribute="leading" constant="15" id="SXi-gn-0eY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DGV-wG-exc" secondAttribute="trailing" id="19N-e5-WOT"/>
                                     <constraint firstItem="kDT-6V-49K" firstAttribute="width" secondItem="G34-D1-hg0" secondAttribute="width" id="2gF-E3-Rm1"/>
                                     <constraint firstItem="kDT-6V-49K" firstAttribute="height" relation="greaterThanOrEqual" secondItem="G34-D1-hg0" secondAttribute="height" priority="750" id="8O7-gP-1w9"/>
                                     <constraint firstItem="kDT-6V-49K" firstAttribute="leading" secondItem="G34-D1-hg0" secondAttribute="leading" id="JxH-Yr-nTb"/>
+                                    <constraint firstItem="DGV-wG-exc" firstAttribute="top" secondItem="G34-D1-hg0" secondAttribute="top" id="L9z-Cq-nCA"/>
                                     <constraint firstItem="kDT-6V-49K" firstAttribute="top" secondItem="G34-D1-hg0" secondAttribute="top" id="j8F-Ia-nmT"/>
                                     <constraint firstAttribute="bottom" secondItem="kDT-6V-49K" secondAttribute="bottom" id="j9P-Mo-ZkD"/>
                                     <constraint firstAttribute="trailing" secondItem="kDT-6V-49K" secondAttribute="trailing" id="pPP-Sj-qNM"/>
+                                    <constraint firstItem="DGV-wG-exc" firstAttribute="leading" secondItem="G34-D1-hg0" secondAttribute="leading" id="xkc-pX-Uda"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -2400,6 +2425,28 @@ Cg
                                             <constraint firstItem="xLh-T6-p7T" firstAttribute="leading" secondItem="9cG-iq-JxS" secondAttribute="leading" id="zKH-Tx-wqP"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qs-oh-eCU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKD-15-bn7">
+                                                <rect key="frame" x="15" y="7" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="9mn-9X-jE9"/>
+                                                    <constraint firstAttribute="width" constant="30" id="Qal-s0-tcQ"/>
+                                                </constraints>
+                                                <state key="normal" image="backArrow"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="Fse-XB-51H" eventType="touchUpInside" id="4VS-QC-mwS"/>
+                                                    <action selector="backButtonAction:" destination="Ic5-BL-Qil" eventType="touchUpInside" id="iLr-4i-u6V"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="05O-cj-4fo"/>
+                                            <constraint firstItem="bKD-15-bn7" firstAttribute="centerY" secondItem="1Qs-oh-eCU" secondAttribute="centerY" id="PLt-OU-FuH"/>
+                                            <constraint firstItem="bKD-15-bn7" firstAttribute="leading" secondItem="1Qs-oh-eCU" secondAttribute="leading" constant="15" id="oG4-S8-tgs"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="9cG-iq-JxS" firstAttribute="top" secondItem="V1V-Kt-Mpu" secondAttribute="top" id="Ewh-hn-ohB"/>
@@ -2418,7 +2465,10 @@ Cg
                             <constraint firstAttribute="bottom" secondItem="L5N-3Z-7Kq" secondAttribute="bottom" id="79P-5I-OGx"/>
                             <constraint firstItem="L5N-3Z-7Kq" firstAttribute="top" secondItem="dlw-9H-Cf0" secondAttribute="top" id="9AW-My-z2x"/>
                             <constraint firstItem="V1V-Kt-Mpu" firstAttribute="leading" secondItem="dlw-9H-Cf0" secondAttribute="leading" id="C7y-np-SNp"/>
+                            <constraint firstItem="1Qs-oh-eCU" firstAttribute="leading" secondItem="qdV-Nc-Byg" secondAttribute="leading" id="GmN-oR-c2H"/>
+                            <constraint firstItem="1Qs-oh-eCU" firstAttribute="top" secondItem="qdV-Nc-Byg" secondAttribute="top" id="HRC-dK-pgL"/>
                             <constraint firstItem="V1V-Kt-Mpu" firstAttribute="top" secondItem="qdV-Nc-Byg" secondAttribute="top" id="K72-lM-3K8"/>
+                            <constraint firstItem="qdV-Nc-Byg" firstAttribute="trailing" secondItem="1Qs-oh-eCU" secondAttribute="trailing" id="Q79-pD-oOb"/>
                             <constraint firstItem="L5N-3Z-7Kq" firstAttribute="leading" secondItem="qdV-Nc-Byg" secondAttribute="leading" id="caV-s1-HU6"/>
                             <constraint firstAttribute="trailing" secondItem="V1V-Kt-Mpu" secondAttribute="trailing" id="uNr-Eb-d5Z"/>
                         </constraints>
