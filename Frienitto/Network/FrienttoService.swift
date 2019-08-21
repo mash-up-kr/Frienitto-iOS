@@ -25,33 +25,33 @@ enum FrienttoService {
 
 extension FrienttoService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://codingsquid-side-project.com")!
+        return URL(string: "https://codingsquid-side-project.com/api/v1")!
     }
     
     var path: String {
         switch self {
         case .signUp:
-            return "/api/v1/sign-up"
+            return "/sign-up"
         case .signIn:
-            return "/api/v1/sign-in"
+            return "/sign-in"
         case .createRoom:
-            return "/api/v1/register/room"
+            return "/register/room"
         case .joinRoom:
-            return "/api/v1/join/room"
+            return "/join/room"
         case .retrieveRoomList:
-            return "/api/v1/room/list"
+            return "/room/list"
         case .retrieveRoomDetail(let id):
-            return "/api/v1/room/\(id)"
+            return "/room/\(id)"
         case .matchingStart:
-            return "/api/v1/matching"
+            return "/matching"
         case .issueCode:
-            return "/api/v1/issue/code"
+            return "/issue/code"
         case .authCode:
-            return "/api/v1/verify/code"
+            return "/verify/code"
         case .matchingInfo(let id):
-            return "/api/v1/matching-info/room/\(id)"
+            return "/matching-info/room/\(id)"
         case .exitRoom:
-            return "/api/v1/exit/room"
+            return "/exit/room"
         }
     }
     
@@ -142,6 +142,10 @@ extension FrienttoService: TargetType {
         default:
             return ["Content-type": "application/json"]
         }
+    }
+    
+    var validationType: ValidationType {
+        return .successCodes
     }
 }
 

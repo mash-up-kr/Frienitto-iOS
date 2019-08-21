@@ -15,20 +15,31 @@ class SignUpCompleteViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var descriptionTextField: UITextField!
+    @IBOutlet weak var warningNameLabel: UILabel!
+    @IBOutlet weak var warningIntroduceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func confirm(_ sender: UIButton) {
-        
         showActivityIndicator()
-        
-        let provider = FrienttoProvider()
+    
         guard let name = nameTextField.text,
             let description = descriptionTextField.text,
             let email = email,
             let password = password else { return }
+        
+        if name.isEmpty || description.isEmpty {
+            warningNameLabel.isHidden = !name.isEmpty
+            warningIntroduceLabel.isHidden = !description.isEmpty
+            return
+        }
+        
+        warningNameLabel.isHidden = true
+        warningIntroduceLabel.isHidden = true
+        
+        let provider = FrienttoProvider()
         let imageCode = Int.random(in: 1...6)
         
         provider.signUp(username: name,
@@ -38,7 +49,7 @@ class SignUpCompleteViewController: UIViewController {
                         password: password,
                         completion: { [weak self] SignUpModel in
             self?.navigationController?.popToRootViewController(animated: true)
-        }) { error in
+        }) { error, _ in
             print(error.localizedDescription)
         }
     }

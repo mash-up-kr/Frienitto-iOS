@@ -195,7 +195,7 @@ class MakeRoomViewController: UIViewController {
             
             self?.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
             
-        }, failure: { error in
+        }, failure: { error, _ in
             print(error.localizedDescription)
         })
     }

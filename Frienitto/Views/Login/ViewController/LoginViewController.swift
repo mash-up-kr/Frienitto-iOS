@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var warningEmailLabel: UILabel!
+    @IBOutlet weak var warningPwLabel: UILabel!
     
     // MARK: - Lifecycle
     
@@ -27,6 +29,16 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: Any) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        if email.isEmpty || password.isEmpty {
+            warningEmailLabel.isHidden = !email.isEmpty
+            warningPwLabel.isHidden = !password.isEmpty
+            return
+        }
+        
+        warningEmailLabel.isHidden = true
+        warningPwLabel.isHidden = true
+        
         let provider = FrienttoProvider()
         
         showActivityIndicator()
@@ -52,12 +64,20 @@ class LoginViewController: UIViewController {
                 
                 self?.navigationController?.setViewControllers([nextViewController], animated: true)
 
-            }, failure: { error in
-                print(error.localizedDescription)
+            }, failure: { error, _ in
+                guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                alertViewController.delegate = self
+                alertViewController.configure(status: .failureNetwork)
+                
+                self?.present(alertViewController, animated: true, completion: nil)
             })
             
-        }, failure: { error in
-            print(error.localizedDescription)
+        }, failure: { error, errorResponse in
+            guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+            alertViewController.delegate = self
+            alertViewController.configure(status: .noUser)
+            
+            self.present(alertViewController, animated: true, completion: nil)
         })
     }
     
@@ -65,3 +85,5 @@ class LoginViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension LoginViewController: OneButtonAlertViewControllerDelegate { }

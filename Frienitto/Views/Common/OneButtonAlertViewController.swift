@@ -18,15 +18,63 @@ class OneButtonAlertViewController: UIViewController {
         case emailAuth
         case noEmail
         case registeredEmail
+        case emptyEmail
+        case noUser
+        case failureNetwork
+        
+        var firstLineText: String {
+            switch self {
+            case .emailAuth:
+                return "이메일로 인증번호가"
+            case .noEmail:
+                return "가입된 이메일이"
+            case .registeredEmail:
+                return "이미 가입되어 있는"
+            case .emptyEmail:
+                return "이메일을"
+            case .noUser:
+                return "찾을 수 없는 사용자 입니다."
+            case .failureNetwork:
+                return "네트워크 상태가 원활하지 않습니다."
+            }
+        }
+        var secondLineText: String {
+            switch self {
+            case .emailAuth:
+                return "전달되었습니다."
+            case .noEmail:
+                return "없습니다."
+            case .registeredEmail:
+                return "이메일입니다."
+            case .emptyEmail:
+                return "입혁해주세요."
+            case .noUser:
+                return "다시 입력해주세요."
+            case .failureNetwork:
+                return "다시 시도해주세요."
+            }
+        }
+        var buttonText: String {
+            switch self {
+            case .emailAuth:
+                return "확인"
+            case .noEmail:
+                return "다시 시도"
+            case .registeredEmail:
+                return "다른 이메일로 가입"
+            case .emptyEmail:
+                return "확인"
+            case .noUser:
+                return "다시 시도"
+            case .failureNetwork:
+                return "확인"
+            }
+        }
     }
     
     @IBOutlet private weak var firstLineLabel: UILabel!
     @IBOutlet private weak var secondLineLabel: UILabel!
     @IBOutlet private weak var button: UIButton!
-    
-    private var firstLineText: String?
-    private var secondLineText: String?
-    private var buttonText: String?
     
     weak var delegate: OneButtonAlertViewControllerDelegate?
     var status: Status = .emailAuth
@@ -41,38 +89,17 @@ class OneButtonAlertViewController: UIViewController {
     }
     
     func configure(status: Status) {
-        switch status {
-        case .emailAuth:
-            configureEmailAuth()
-        case .noEmail:
-            configureNoEmail()
-        case .registeredEmail:
-            configureRegisteredEmail()
+        self.status = status
+        
+        if firstLineLabel != nil {
+            configureView()
         }
     }
     
-    private func configureEmailAuth() {
-        firstLineText = "이메일로 인증번호가"
-        secondLineText = "전달되었습니다."
-        buttonText = "확인"
-    }
-    
-    private func configureNoEmail() {
-        firstLineText = "가입된 이메일이"
-        secondLineText = "없습니다."
-        buttonText = "다시 시도"
-    }
-    
-    private func configureRegisteredEmail() {
-        firstLineText = "이미 가입되어 있는"
-        secondLineText = "이메일입니다."
-        buttonText = "다른 이메일로 가입"
-    }
-    
     private func configureView() {
-        firstLineLabel.text = firstLineText
-        secondLineLabel.text = secondLineText
-        button.setTitle(buttonText, for: .normal)
+        firstLineLabel.text = status.firstLineText
+        secondLineLabel.text = status.secondLineText
+        button.setTitle(status.buttonText, for: .normal)
     }
 }
 

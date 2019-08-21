@@ -22,9 +22,10 @@ class SignInAuthViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var warningEmailLabel: UILabel!
     
     private var status: EmailCodeStatus = .initial
-    private var inputEmail: String?
+    private var inputEmail: String = ""
     
     // MARK: - Private
     
@@ -36,8 +37,8 @@ class SignInAuthViewController: UIViewController {
             textField.placeholder = "인증코드를 입력하십시오."
             textField.text = ""
             sendButton.setTitle("인증코드 재발송하기", for: .normal)
-            confirmButton.isEnabled = true
-            confirmButton.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.08235294118, blue: 0.3294117647, alpha: 1)
+            warningEmailLabel.isHidden = true
+            
         case .sent:
             break
         }
@@ -47,18 +48,25 @@ class SignInAuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        confirmButton.isEnabled = false
     }
 
     // MARK: - Action
     
     @IBAction func sendAuthButton(_ sender: UIButton) {
-        guard let email = textField.text, !email.isEmpty else { return }
-        inputEmail = email
+        guard let email = textField.text, !email.isEmpty else {
+            warningEmailLabel.isHidden = false
+            return
+        }
+        
+        if sendButton.currentTitle == "인증코드 발송하기" {
+            inputEmail = email
+        }
         
         showActivityIndicator()
         let provider = FrienttoProvider()
 
-        provider.issueCode(receiverInfo: email, type: "EMAIL", completion: { [weak self] issueCodeModel in
+        provider.issueCode(receiverInfo: inputEmail, type: "EMAIL", completion: { [weak self] issueCodeModel in
             guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
             
             alertViewController.delegate = self
@@ -68,31 +76,53 @@ class SignInAuthViewController: UIViewController {
                 guard let self = self else { return }
                 self.configure(self.status)
             }
-        }, failure: { error in
+        }, failure: { error, result in
+            if result?.errorCode == 409 {
+                guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                
+                alertViewController.delegate = self
+                alertViewController.configure(status: .registeredEmail)
+                
+                self.present(alertViewController, animated: true)
+            }
             print(error.localizedDescription)
         })
     }
     
     @IBAction func confirm(_ sender: UIButton) {
-        guard let email = inputEmail, let code = textField.text else { return }
+        guard let code = textField.text else { return }
         
         showActivityIndicator()
         let provider = FrienttoProvider()
         
-        provider.authCode(receiverInfo: email, type: "EMAIL", code: code, completion: { [weak self] authCodeModel in
+        provider.authCode(receiverInfo: inputEmail, type: "EMAIL", code: code, completion: { [weak self] authCodeModel in
+            guard let ss = self else { return }
             UserDefaults.standard.set(authCodeModel.data.registerToken, forKey: "registerToken")
             
             guard let signUpViewController = UIStoryboard.instantiate(SignUpViewController.self, name: "Login") else { return }
-            signUpViewController.email = email
+            signUpViewController.email = ss.inputEmail
             
-            self?.navigationController?.pushViewController(signUpViewController, animated: true)
-        }, failure: { error in
+            ss.navigationController?.pushViewController(signUpViewController, animated: true)
+        }, failure: { error, _ in
             print(error.localizedDescription)
         })
     }
     
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func textFieldChanging(_ sender: Any) {
+        guard let code = textField.text else { return }
+        if emailLabel.text == "이메일 인증 코드" {
+            if !code.isEmpty {
+                confirmButton.isEnabled = true
+                confirmButton.backgroundColor = UIColor(named: "darkIndigo")
+            }else {
+                confirmButton.isEnabled = false
+                confirmButton.backgroundColor = UIColor(named: "darkgrey")
+            }
+        }
     }
 }
 
