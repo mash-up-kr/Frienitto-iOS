@@ -10,10 +10,10 @@ import UIKit
 
 class PeopleMatchViewController: UIViewController {
 
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var roomNameLabel: UILabel!
-    @IBOutlet var numberOfPeopleLabel: UILabel!
-    @IBOutlet var matchingButton: UIButton!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var roomNameLabel: UILabel!
+    @IBOutlet private weak var numberOfPeopleLabel: UILabel!
+    @IBOutlet private weak var matchingButton: UIButton!
     
     var room: Room! {
         didSet {
@@ -32,13 +32,40 @@ class PeopleMatchViewController: UIViewController {
         matchingButton.isHidden = !room.isOwner
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-        super.viewWillAppear(animated)
+    @IBAction private func backButtonAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func backButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+    @IBAction private func matchingButtonAction(_ sender: UIButton) {
+        startMatching()
+    }
+}
+
+private extension PeopleMatchViewController {
+    func startMatching() {
+        let provider = FrienttoProvider()
+        showActivityIndicator()
+        
+        var user: User? = nil
+        if let data = UserDefaults.standard.data(forKey: "userInfo") {
+            user = try? JSONDecoder().decode(User.self, from: data)
+        }
+        
+        provider.matchingStart(
+            roomId: room.id,
+            ownerId: user?.id ?? 0,
+            completion: { [weak self] matchingStartModel in
+                guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
+                let myFrentto = matchingStartModel.data.missions.filter { $0.from.id == user?.id ?? 0 }.first?.to
+                
+                selectViewController.myFrentto = myFrentto
+                self?.navigationController?.pushViewController(selectViewController, animated: true)
+            },
+            failure: { error, errorResponse in
+                print(error.localizedDescription)
+                print(errorResponse?.errorMessage)
+            }
+        )
     }
 }
 

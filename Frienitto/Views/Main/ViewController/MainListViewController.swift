@@ -32,11 +32,104 @@ class MainListViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refreshRoomList()
+    }
+    
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
         guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
         alertViewController.delegate = self
         alertViewController.configure(status: .logout)
         present(alertViewController, animated: true)
+    }
+}
+
+private extension MainListViewController {
+    func configureMainRoomCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainRoomCell.self)", for: indexPath) as? MainRoomCell else { return UICollectionViewCell() }
+        cell.configure(room: rooms[indexPath.item])
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    func configureMainMenuCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainMenuCell.self)", for: indexPath) as? MainMenuCell else { return UICollectionViewCell() }
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    func retrieveRoomDetail(id: Int) {
+        let provider = FrienttoProvider()
+        showActivityIndicator()
+        
+        provider.retrieveRoomDetail(
+            id: id,
+            completion: { [weak self] retrieveRoomDetailModel in
+                guard let peopleMatchViewController =
+                    UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
+                peopleMatchViewController.room = retrieveRoomDetailModel.data
+                
+                self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
+            },
+            failure: { error, _ in
+                print(error.localizedDescription)
+            }
+        )
+    }
+    
+    func matchingInfo(id: Int, status: MainRoomCell.Status) {
+        let provider = FrienttoProvider()
+        showActivityIndicator()
+        
+        provider.matchingInfo(
+            roomId: id,
+            completion: { [weak self] matchingInfoModel in
+                guard
+                    let self = self,
+                    let user = self.user else { return }
+                
+                if status == .matched {
+                    let filteredMission = matchingInfoModel.data.filter { $0.from.id == user.id }
+                    let myFrentto = filteredMission[0].to
+                    
+                    guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
+                    selectViewController.myFrentto = myFrentto
+                    
+                    self.navigationController?.pushViewController(selectViewController, animated: true)
+                }
+                
+                if status == .expired {
+                    let missions = matchingInfoModel.data
+                    
+                    guard let resultViewController = UIStoryboard.instantiate(ResultViewController.self, name: "Result") else { return }
+                    resultViewController.missions = missions
+                    
+                    self.navigationController?.pushViewController(resultViewController, animated: true)
+                }
+            },
+            failure: { error, errorResponse in
+                print(error.localizedDescription)
+            }
+        )
+    }
+    
+    func refreshRoomList() {
+        let provider = FrienttoProvider()
+        showActivityIndicator()
+        
+        provider.retrieveRoomList(
+            completion: { [weak self] roomListModel in
+                self?.rooms = roomListModel.data
+                self?.collectionView.reloadData()
+            },
+            failure: { error, errorResponse in
+                print(error.localizedDescription)
+            }
+        )
     }
 }
 
@@ -65,21 +158,6 @@ extension MainListViewController: UICollectionViewDataSource {
             return configureMainMenuCell(collectionView, cellForItemAt: indexPath)
         }
     }
-    
-    private func configureMainRoomCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainRoomCell.self)", for: indexPath) as? MainRoomCell else { return UICollectionViewCell() }
-        cell.configure(room: rooms[indexPath.item])
-        cell.delegate = self
-        
-        return cell
-    }
-    
-    private func configureMainMenuCell(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainMenuCell.self)", for: indexPath) as? MainMenuCell else { return UICollectionViewCell() }
-        cell.delegate = self
-        
-        return cell
-    }
 }
 
 extension MainListViewController: UICollectionViewDelegateFlowLayout {
@@ -102,18 +180,12 @@ extension MainListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MainListViewController: MainRoomCellDelegate {
-    func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int) {
-        let provider = FrienttoProvider()
-        
-        showActivityIndicator()
-        provider.retrieveRoomDetail(id: id, completion: { [weak self] retrieveRoomDetailModel in
-            guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
-            peopleMatchViewController.room = retrieveRoomDetailModel.data
-            
-            self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
-        }, failure: { error, _ in
-            print(error.localizedDescription)
-        })
+    func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int, status: MainRoomCell.Status) {
+        switch status {
+        case .created: retrieveRoomDetail(id: id)
+        case .matched, .expired:
+            matchingInfo(id: id, status: status)
+        }
     }
 }
 

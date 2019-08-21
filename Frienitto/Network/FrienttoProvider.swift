@@ -69,6 +69,13 @@ class FrienttoProvider {
         }
     }
     
+    func retrieveUserRoom(completion: @escaping ((RoomListModel) -> Void),
+                          failure: @escaping ((Error, ErrorResponse?) -> Void)) {
+        provider.request(.retrieveUserRoom) { result in
+            self.resultTask(result, completion: completion, failure: failure)
+        }
+    }
+    
     func matchingStart(roomId: Int,
                        ownerId: Int,
                        completion: @escaping ((MatchingStartModel) -> Void),
