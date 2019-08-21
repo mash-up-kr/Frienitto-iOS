@@ -11,9 +11,10 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     @IBOutlet var checkedEmailLabel: UILabel!
-    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var passwordConfirmTextField: UITextField!
+    @IBOutlet weak var warningPwLabel: UILabel!
+    @IBOutlet weak var warningConfirmPwLabel: UILabel!
     
     var email: String = ""
     
@@ -23,6 +24,26 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func confirm(_ sender: UIButton) {
+        guard let pw = passwordTextField.text,
+            let confirmPw = passwordConfirmTextField.text else {
+                warningPwLabel.isHidden = false
+                return }
+        
+        if pw.isEmpty {
+            warningPwLabel.isHidden = false
+            warningConfirmPwLabel.isHidden = true
+            return
+        }
+        
+        if pw != confirmPw {
+            warningPwLabel.isHidden = true
+            warningConfirmPwLabel.isHidden = false
+            return
+        }
+        
+        warningPwLabel.isHidden = true
+        warningConfirmPwLabel.isHidden = true
+        
         guard let signUpCompleteViewController = UIStoryboard.instantiate(SignUpCompleteViewController.self, name: "Login") else { return }
         signUpCompleteViewController.email = email
         signUpCompleteViewController.password = passwordTextField.text

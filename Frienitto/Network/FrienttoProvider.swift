@@ -19,7 +19,7 @@ class FrienttoProvider {
                 email: String,
                 password: String,
                 completion: @escaping ((SignUpModel) -> Void),
-                failure: @escaping ((Error) -> Void)) {
+                failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.signUp(username: username, description: description, imageCode: imageCode, email: email, password: password)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -28,7 +28,7 @@ class FrienttoProvider {
     func signIn(email: String,
                 password: String,
                 completion: @escaping ((SignInModel) -> Void),
-                failure: @escaping ((Error) -> Void)) {
+                failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.signIn(email: email, password: password)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -38,7 +38,7 @@ class FrienttoProvider {
                     password: String,
                     daysAfterEnum: DaysButtonEnum,
                     completion: @escaping ((CreateRoomModel) -> Void),
-                    failure: @escaping ((Error) -> Void)) {
+                    failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.createRoom(title: title, code: password, daysAfterEnum: daysAfterEnum)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -48,14 +48,14 @@ class FrienttoProvider {
     func joinRoom(title: String,
                   code: String,
                   completion: @escaping ((JoinRoomModel) -> Void),
-                  failure: @escaping ((Error) -> Void)) {
+                  failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.joinRoom(title: title, code: code)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }
     
     func retrieveRoomList(completion: @escaping ((RoomListModel) -> Void),
-                          failure: @escaping ((Error) -> Void)) {
+                          failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.retrieveRoomList) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -63,7 +63,7 @@ class FrienttoProvider {
     
     func retrieveRoomDetail(id: Int,
                             completion: @escaping ((RetrieveRoomDetailModel) -> Void),
-                            failure: @escaping ((Error) -> Void)) {
+                            failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.retrieveRoomDetail(id: id)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -72,7 +72,7 @@ class FrienttoProvider {
     func matchingStart(roomId: Int,
                        ownerId: Int,
                        completion: @escaping ((MatchingStartModel) -> Void),
-                       failure: @escaping ((Error) -> Void)) {
+                       failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.matchingStart(roomId: roomId, ownerId: ownerId)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -81,7 +81,7 @@ class FrienttoProvider {
     func issueCode(receiverInfo: String,
                    type: String,
                    completion: @escaping ((IssueCodeModel) -> Void),
-                   failure: @escaping ((Error) -> Void)) {
+                   failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.issueCode(receiverInfo: receiverInfo, type: type)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -91,7 +91,7 @@ class FrienttoProvider {
                   type: String,
                   code: String,
                   completion: @escaping ((AuthCodeModel) -> Void),
-                  failure: @escaping ((Error) -> Void)) {
+                  failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.authCode(receiverInfo: receiverInfo, type: type, code: code)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -99,7 +99,7 @@ class FrienttoProvider {
     
     func matchingInfo(roomId: Int,
                       completion: @escaping ((MatchingInfoModel) -> Void),
-                      failure: @escaping ((Error) -> Void)) {
+                      failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.matchingInfo(id: roomId)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
@@ -107,7 +107,7 @@ class FrienttoProvider {
     
     func exitRoom(title: String,
                   completion: @escaping ((Response?) -> Void),
-                  failure: @escaping ((Error) -> Void)) {
+                  failure: @escaping ((Error, ErrorResponse?) -> Void)) {
         provider.request(.exitRoom(title: title)) { result in
             // TODO: - Delete 후 처리
         }
@@ -117,21 +117,26 @@ class FrienttoProvider {
 extension FrienttoProvider {
     func resultTask<T: Decodable>(_ result: Result<Response, MoyaError>,
                     completion: @escaping ((T) -> Void),
-                    failure: @escaping ((Error) -> Void)) {
-        switch result {
-        case .success(let response):
+                    failure: @escaping ((Error, ErrorResponse?) -> Void)) {
+        do {
+            hideActivityIndicator()
             
-            print(try! response.mapJSON())
+            switch result {
+            case .success(let response):
+                completion(try response.map(T.self))
             
-            if let data = try? response.map(T.self) {
-                completion(data)
-            } else {
-                // TODO: - 예외 처리
+            case .failure(MoyaError.underlying(let error, let response)):
+                guard let response = response else {
+                    failure(error, nil)
+                    return
+                }
+                failure(error, try response.map(ErrorResponse.self))
+            
+            case .failure(let error):
+                failure(error, nil)
             }
-            hideActivityIndicator()
-        case .failure(let error):
-            hideActivityIndicator()
-            failure(error)
+        } catch let error {
+            failure(error, nil)
         }
     }
 }
