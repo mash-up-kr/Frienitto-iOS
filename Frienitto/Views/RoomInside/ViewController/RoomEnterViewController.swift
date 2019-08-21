@@ -35,7 +35,7 @@ class RoomEnterViewController: UIViewController {
             peopleMatchViewController.room = joinRoomModel.data
             
             self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
-        }, failure: { error in
+        }, failure: { error, _ in
             print(error.localizedDescription)
         })
     }
