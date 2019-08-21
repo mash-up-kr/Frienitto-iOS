@@ -81,12 +81,12 @@ private extension MainListViewController {
         )
     }
     
-    func matchingInfo(id: Int, status: MainRoomCell.Status) {
+    func matchingInfo(room: Room, status: MainRoomCell.Status) {
         let provider = FrienttoProvider()
         showActivityIndicator()
         
         provider.matchingInfo(
-            roomId: id,
+            roomId: room.id,
             completion: { [weak self] matchingInfoModel in
                 guard
                     let self = self,
@@ -94,10 +94,10 @@ private extension MainListViewController {
                 
                 if status == .matched {
                     let filteredMission = matchingInfoModel.data.filter { $0.from.id == user.id }
-                    let myFrentto = filteredMission[0].to
                     
                     guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
-                    selectViewController.myFrentto = myFrentto
+                    selectViewController.mission = filteredMission[0]
+                    selectViewController.room = room
                     
                     self.navigationController?.pushViewController(selectViewController, animated: true)
                 }
@@ -180,11 +180,11 @@ extension MainListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MainListViewController: MainRoomCellDelegate {
-    func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int, status: MainRoomCell.Status) {
+    func mainRoomCell(_ cell: MainRoomCell, room: Room, status: MainRoomCell.Status) {
         switch status {
-        case .created: retrieveRoomDetail(id: id)
+        case .created: retrieveRoomDetail(id: room.id)
         case .matched, .expired:
-            matchingInfo(id: id, status: status)
+            matchingInfo(room: room, status: status)
         }
     }
 }

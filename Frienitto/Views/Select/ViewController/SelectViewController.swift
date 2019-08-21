@@ -20,7 +20,15 @@ class SelectViewController: UIViewController {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var userDescriptionLabel: UILabel!
     
-    var myFrentto: User? {
+    var mission: Mission? {
+        didSet {
+            myFrentto = mission?.to
+        }
+    }
+    
+    var room: Room?
+    
+    private var myFrentto: User? {
         didSet {
             userImageView.image = UIImage(named: "face\(myFrentto?.id ?? 1)")
             userNameLabel.text = myFrentto?.username
@@ -31,6 +39,18 @@ class SelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addLottieView()
+    }
+    
+    @IBAction private func confirmButtonAction(_ sender: UIButton) {
+        guard
+            let room = room,
+            let mission = mission,
+            let timerViewController = UIStoryboard
+                .instantiate(TimerViewController.self, name: "RoomInside") else { return }
+        
+        timerViewController.mission = mission
+        timerViewController.isOwner = room.isOwner
+        timerViewController.expiresDate = room.expiresDate.convertToDate()
     }
     
     private func addLottieView() {
