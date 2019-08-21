@@ -488,19 +488,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4F-cK-rfG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aF7-JE-NH4">
-                                        <rect key="frame" x="0.0" y="-6" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="-6" width="414" height="818"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="J0K-RA-c3N">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" constant="50" id="Cm4-tF-STu"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="W8r-fG-aNI">
-                                                <rect key="frame" x="0.0" y="154" width="414" height="137.5"/>
+                                                <rect key="frame" x="0.0" y="159" width="414" height="137.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frentto" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-nq-ipO">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="45"/>
@@ -711,13 +711,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-UJ-WZ3">
-                                                <rect key="frame" x="0.0" y="291.5" width="414" height="153.5"/>
+                                                <rect key="frame" x="0.0" y="296.5" width="414" height="158.5"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egV-MQ-SBx">
-                                                <rect key="frame" x="24" y="445" width="366" height="328"/>
+                                                <rect key="frame" x="24" y="455" width="366" height="328"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-9P-Gjg">
-                                                        <rect key="frame" x="107" y="-34" width="152" height="187"/>
+                                                        <rect key="frame" x="107" y="-34" width="152" height="187.00000000000003"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="152" id="F8L-Bx-ggv"/>
                                                             <constraint firstAttribute="height" constant="187" id="IX3-vT-Csq"/>
@@ -826,8 +826,8 @@
                         <constraints>
                             <constraint firstItem="8PW-gD-EeV" firstAttribute="trailing" secondItem="C4F-cK-rfG" secondAttribute="trailing" id="9rO-Ye-6Dn"/>
                             <constraint firstItem="C4F-cK-rfG" firstAttribute="top" secondItem="8PW-gD-EeV" secondAttribute="top" id="Axg-hm-fPN"/>
-                            <constraint firstItem="C4F-cK-rfG" firstAttribute="leading" secondItem="X0Z-Ot-U27" secondAttribute="leading" id="cLZ-CA-jSo"/>
-                            <constraint firstAttribute="bottom" secondItem="C4F-cK-rfG" secondAttribute="bottom" id="lTk-GB-ToO"/>
+                            <constraint firstItem="C4F-cK-rfG" firstAttribute="leading" secondItem="8PW-gD-EeV" secondAttribute="leading" id="cLZ-CA-jSo"/>
+                            <constraint firstItem="8PW-gD-EeV" firstAttribute="bottom" secondItem="C4F-cK-rfG" secondAttribute="bottom" id="lTk-GB-ToO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8PW-gD-EeV"/>
                     </view>
@@ -1505,10 +1505,9 @@
         <!--Navigation Controller-->
         <scene sceneID="8ou-4d-2BL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JGN-sc-cwI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JGN-sc-cwI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e2F-qh-XqO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
