@@ -22,6 +22,10 @@ class SignUpCompleteViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func confirm(_ sender: UIButton) {
         showActivityIndicator()
     

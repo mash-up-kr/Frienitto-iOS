@@ -22,7 +22,7 @@ class DimmedProfileViewController: UIViewController {
         if let user = user {
             imageView.image = UIImage(named: "face\(user.imageCode)")
             nicknameLabel.text = user.username
-            descriptionLabel.text = ""
+            descriptionLabel.text = user.description
         }
     }
     

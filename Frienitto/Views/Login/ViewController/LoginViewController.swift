@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
         })
     }
     
-    @IBAction func popViewController(_ sender: UIButton) {
+    @IBAction func backButtonAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
 }
