@@ -124,6 +124,9 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="hn1-WN-AFt" id="tsi-aE-wqv"/>
+                        <outlet property="userDescriptionLabel" destination="5vZ-LI-R5J" id="z9g-ZE-IEB"/>
+                        <outlet property="userImageView" destination="RI4-MU-jdt" id="8as-et-NJB"/>
+                        <outlet property="userNameLabel" destination="NqH-VY-DMY" id="Alj-08-A4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7k-01-ARJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

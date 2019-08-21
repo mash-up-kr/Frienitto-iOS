@@ -16,6 +16,17 @@ class SelectViewController: UIViewController {
             contentView.alpha = 0
         }
     }
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var userNameLabel: UILabel!
+    @IBOutlet private weak var userDescriptionLabel: UILabel!
+    
+    var myFrentto: User? {
+        didSet {
+            userImageView.image = UIImage(named: "face\(myFrentto?.id ?? 1)")
+            userNameLabel.text = myFrentto?.username
+            userDescriptionLabel.text = myFrentto?.description
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
