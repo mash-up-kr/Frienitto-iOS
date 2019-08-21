@@ -32,11 +32,34 @@ class MainListViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refreshRoomList()
+    }
+    
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
         guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
         alertViewController.delegate = self
         alertViewController.configure(status: .logout)
         present(alertViewController, animated: true)
+    }
+}
+
+private extension MainListViewController {
+    func refreshRoomList() {
+        let provider = FrienttoProvider()
+        showActivityIndicator()
+        
+        provider.retrieveRoomList(
+            completion: { [weak self] roomListModel in
+                self?.rooms = roomListModel.data
+                self?.collectionView.reloadData()
+            },
+            failure: { error, errorResponse in
+                print(error.localizedDescription)
+            }
+        )
     }
 }
 
