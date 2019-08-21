@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainRoomCellDelegate: AnyObject {
-    func mainRoomCell(_ cell: MainRoomCell, enteringRoomId id: Int, status: MainRoomCell.Status)
+    func mainRoomCell(_ cell: MainRoomCell, room: Room, status: MainRoomCell.Status)
 }
 
 class MainRoomCell: UICollectionViewCell {
@@ -50,7 +50,9 @@ class MainRoomCell: UICollectionViewCell {
     }
     
     @IBAction private func roomEnterButtonAction(_ sender: UIButton) {
-        delegate?.mainRoomCell(self, enteringRoomId: room?.id ?? 0, status: status)
+        if let room = room {
+            delegate?.mainRoomCell(self, room: room, status: status)
+        }
     }
     
     func configure(room: Room) {

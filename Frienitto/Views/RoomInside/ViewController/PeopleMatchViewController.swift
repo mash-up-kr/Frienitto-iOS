@@ -56,9 +56,11 @@ private extension PeopleMatchViewController {
             ownerId: user?.id ?? 0,
             completion: { [weak self] matchingStartModel in
                 guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
-                let myFrentto = matchingStartModel.data.missions.filter { $0.from.id == user?.id ?? 0 }.first?.to
+                let filteredMissions = matchingStartModel.data.missions.filter { $0.from.id == user?.id ?? 0 }
                 
-                selectViewController.myFrentto = myFrentto
+                selectViewController.mission = filteredMissions[0]
+                selectViewController.room = self?.room
+                
                 self?.navigationController?.pushViewController(selectViewController, animated: true)
             },
             failure: { error, errorResponse in
