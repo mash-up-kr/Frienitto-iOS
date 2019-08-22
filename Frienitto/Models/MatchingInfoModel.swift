@@ -9,7 +9,7 @@
 import Foundation
 
 struct MatchingInfoModel: Codable {
-    let code: String
+    let code: Int
     let msg: String
     let data: [Mission]
 }
