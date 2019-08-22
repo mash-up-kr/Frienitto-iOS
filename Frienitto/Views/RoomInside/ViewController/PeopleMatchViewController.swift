@@ -31,7 +31,7 @@ class PeopleMatchViewController: UIViewController {
         numberOfPeopleLabel.text = "\(participants.count)명이 입장했습니다."
         
         if let isOwner = room.isOwner {
-            matchingButton.isHidden = isOwner
+            matchingButton.isHidden = !isOwner
         }
     }
     
@@ -56,7 +56,6 @@ private extension PeopleMatchViewController {
         
         provider.matchingStart(
             roomId: room.id,
-            ownerId: user?.id ?? 0,
             completion: { [weak self] matchingStartModel in
                 guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
                 let filteredMissions = matchingStartModel.data.missions.filter { $0.from.id == user?.id ?? 0 }
