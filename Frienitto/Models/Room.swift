@@ -11,7 +11,7 @@ import Foundation
 struct Room: Codable {
     let expiresDate: String
     let id: Int
-    let isOwner: Bool
+    let isOwner: Bool?
     let status: String
     let title: String
     let participants: [User]?

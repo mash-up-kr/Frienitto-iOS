@@ -29,8 +29,9 @@ class MainRoomCell: UICollectionViewCell {
     weak var delegate: MainRoomCellDelegate?
     private var room: Room? {
         didSet {
-            if let room = room {
-                crownImageView.isHidden = !room.isOwner
+            if let room = room,
+                let isOwner = room.isOwner {
+                crownImageView.isHidden = !isOwner
                 status = Status(rawValue: room.status) ?? .created
             }
         }

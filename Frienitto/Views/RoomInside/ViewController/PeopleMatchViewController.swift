@@ -29,7 +29,10 @@ class PeopleMatchViewController: UIViewController {
         matchingButton.isHidden = true
         roomNameLabel.text = room.title
         numberOfPeopleLabel.text = "\(participants.count)명이 입장했습니다."
-        matchingButton.isHidden = !room.isOwner
+        
+        if let isOwner = room.isOwner {
+            matchingButton.isHidden = isOwner
+        }
     }
     
     @IBAction private func backButtonAction(_ sender: UIButton) {

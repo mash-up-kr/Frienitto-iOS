@@ -49,7 +49,9 @@ class SelectViewController: UIViewController {
                 .instantiate(TimerViewController.self, name: "RoomInside") else { return }
         
         timerViewController.mission = mission
-        timerViewController.isOwner = room.isOwner
+        if let isOwner = room.isOwner {
+            timerViewController.isOwner = isOwner
+        }
         timerViewController.expiresDate = room.expiresDate.convertToDate() ?? Date()
     }
     
