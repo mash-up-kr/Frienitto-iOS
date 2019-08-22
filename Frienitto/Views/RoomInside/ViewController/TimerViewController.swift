@@ -16,7 +16,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var timerView: TimerView!
     
-    var expiresDate = "2019-08-19".convertToDate() // dummy
+    var expiresDate: Date = Date()
     var timer: Timer?
     var isOwner: Bool = false
     var mission: Mission?
@@ -67,7 +67,7 @@ extension TimerViewController {
             Calendar(identifier: .gregorian)
                 .dateComponents([.day, .hour, .minute, .second],
                                 from: Date(),
-                                to: expiresDate ?? Date())
+                                to: expiresDate)
         
         return offsetComponent
     }
