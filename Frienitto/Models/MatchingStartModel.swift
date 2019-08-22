@@ -9,7 +9,7 @@
 import Foundation
 
 struct MatchingStartModel: Codable {
-    let code: String
+    let code: Int
     let data: Data
     let msg: String
     
