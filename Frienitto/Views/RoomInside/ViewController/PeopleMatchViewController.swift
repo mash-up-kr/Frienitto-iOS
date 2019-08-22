@@ -29,7 +29,10 @@ class PeopleMatchViewController: UIViewController {
         matchingButton.isHidden = true
         roomNameLabel.text = room.title
         numberOfPeopleLabel.text = "\(participants.count)명이 입장했습니다."
-        matchingButton.isHidden = !room.isOwner
+        
+        if let isOwner = room.isOwner {
+            matchingButton.isHidden = !isOwner
+        }
     }
     
     @IBAction private func backButtonAction(_ sender: UIButton) {
@@ -53,7 +56,6 @@ private extension PeopleMatchViewController {
         
         provider.matchingStart(
             roomId: room.id,
-            ownerId: user?.id ?? 0,
             completion: { [weak self] matchingStartModel in
                 guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
                 let filteredMissions = matchingStartModel.data.missions.filter { $0.from.id == user?.id ?? 0 }

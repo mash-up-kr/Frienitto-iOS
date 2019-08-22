@@ -25,13 +25,13 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didTapDidTapMakeRoom(_ sender: UIButton) {
-        guard let roomMakeViewController = UIStoryboard(name: "MakeRoom", bundle: nil).instantiateInitialViewController() as? MakeRoomViewController else {fatalError("MakeRoom error")}
+        guard let roomMakeViewController = UIStoryboard.instantiate(MakeRoomViewController.self, name: "MakeRoom") else { return }
         navigationController?.pushViewController(roomMakeViewController, animated: true)
     }
     
     @IBAction func didTapEnterRoom(_ sender: UIButton) {
-        guard let roomInside = UIStoryboard(name: "RoomInside", bundle: nil).instantiateInitialViewController() as? RoomEnterViewController else {fatalError("RoomInside error")}
-        navigationController?.pushViewController(roomInside, animated: true)
+        guard let roomEnterViewController = UIStoryboard.instantiate(RoomEnterViewController.self, name: "RoomInside") else { return }
+        navigationController?.pushViewController(roomEnterViewController, animated: true)
     }
 
     @IBAction func didTapLogOut(_ sender: UIButton) {

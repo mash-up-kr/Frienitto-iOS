@@ -121,7 +121,7 @@ private extension MainListViewController {
         let provider = FrienttoProvider()
         showActivityIndicator()
         
-        provider.retrieveRoomList(
+        provider.retrieveUserRoom(
             completion: { [weak self] roomListModel in
                 self?.rooms = roomListModel.data
                 self?.collectionView.reloadData()
