@@ -544,7 +544,7 @@
         <!--Timer View Controller-->
         <scene sceneID="fHv-03-B9S">
             <objects>
-                <viewController id="wuv-Se-JOz" customClass="TimerViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerViewController" id="wuv-Se-JOz" customClass="TimerViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qiu-sl-W7J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
