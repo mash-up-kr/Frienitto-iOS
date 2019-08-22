@@ -77,10 +77,9 @@ class FrienttoProvider {
     }
     
     func matchingStart(roomId: Int,
-                       ownerId: Int,
                        completion: @escaping ((MatchingStartModel) -> Void),
                        failure: @escaping ((Error, ErrorResponse?) -> Void)) {
-        provider.request(.matchingStart(roomId: roomId, ownerId: ownerId)) { result in
+        provider.request(.matchingStart(roomId: roomId)) { result in
             self.resultTask(result, completion: completion, failure: failure)
         }
     }

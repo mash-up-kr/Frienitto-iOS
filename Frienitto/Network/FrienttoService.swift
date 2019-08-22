@@ -17,7 +17,7 @@ enum FrienttoService {
     case retrieveRoomList
     case retrieveRoomDetail(id: Int)
     case retrieveUserRoom
-    case matchingStart(roomId: Int, ownerId: Int)
+    case matchingStart(roomId: Int)
     case issueCode(receiverInfo: String, type: String)
     case authCode(receiverInfo: String, type: String, code: String)
     case matchingInfo(id: Int)
@@ -114,10 +114,9 @@ extension FrienttoService: TargetType {
             return .requestPlain
         case .retrieveUserRoom:
             return .requestPlain
-        case .matchingStart(let roomId, let ownerId):
+        case .matchingStart(let roomId):
             return .requestParameters(parameters: ["room_id": roomId,
-                                                   "owner_id": ownerId,
-                                                   "type": "ROOM"],
+                                                   "type": "USER"],
                                       encoding: JSONEncoding.default)
         case .issueCode(let receiverInfo, let type):
             return .requestParameters(parameters: ["receiver_info": receiverInfo,

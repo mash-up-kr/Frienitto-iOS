@@ -29,19 +29,12 @@ class TimerViewController: UIViewController {
         startTimer()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        updateTimerView(with: calculateDateOffset())
-        startTimer()
-    }
-    
     deinit {
         stopTimer()
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
@@ -84,6 +77,7 @@ extension TimerViewController {
         if let mission = mission {
             usernameLabel.text = mission.to.username
             userDescriptionLabel.text = mission.to.description
+            profileImageView.image = UIImage(named: "face\(mission.to.imageCode)")
         }
     }
 }

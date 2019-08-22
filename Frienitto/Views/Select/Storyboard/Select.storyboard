@@ -14,7 +14,7 @@
         <!--Select View Controller-->
         <scene sceneID="Mg8-WD-rtD">
             <objects>
-                <viewController id="Jqv-2l-BER" customClass="SelectViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectViewController" id="Jqv-2l-BER" customClass="SelectViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jR2-2H-nBK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,9 @@
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmButtonAction:" destination="Jqv-2l-BER" eventType="touchUpInside" id="BAs-NL-PRv"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGc-kL-1AH">
                                         <rect key="frame" x="23" y="160" width="368" height="539"/>
