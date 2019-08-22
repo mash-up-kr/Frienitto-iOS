@@ -29,12 +29,8 @@ class RoomEnterViewController: UIViewController {
         showActivityIndicator()
         let provider = FrienttoProvider()
         
-        provider.joinRoom(title: title, code: code, completion: { [weak self] joinRoomModel in
-            
-            guard let peopleMatchViewController = UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
-            peopleMatchViewController.room = joinRoomModel.data
-            
-            self?.navigationController?.pushViewController(peopleMatchViewController, animated: true)
+        provider.joinRoom(title: title, code: code, completion: { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
         }, failure: { error, _ in
             print(error.localizedDescription)
         })
