@@ -30,7 +30,7 @@ class SelectViewController: UIViewController {
     
     private var myFrentto: User? {
         didSet {
-            userImageView.image = UIImage(named: "face\(myFrentto?.id ?? 1)")
+            userImageView.image = UIImage(named: "face\(myFrentto?.imageCode ?? 1)")
             userNameLabel.text = myFrentto?.username
             userDescriptionLabel.text = myFrentto?.description
         }
