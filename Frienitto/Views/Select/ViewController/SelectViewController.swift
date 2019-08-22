@@ -43,6 +43,8 @@ class SelectViewController: UIViewController {
             timerViewController.isOwner = isOwner
         }
         timerViewController.expiresDate = room.expiresDate.convertToDate() ?? Date()
+        
+        navigationController?.pushViewController(timerViewController, animated: true)
     }
     
     private func addLottieView() {
