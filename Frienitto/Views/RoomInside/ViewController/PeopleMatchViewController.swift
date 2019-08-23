@@ -42,6 +42,13 @@ class PeopleMatchViewController: UIViewController {
     @IBAction private func matchingButtonAction(_ sender: UIButton) {
         startMatching()
     }
+    
+    @IBAction private func exitButtonAction(_ sender: UIButton) {
+        let provider = FrienttoProvider()
+        provider.exitRoom(title: room.title) { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
 private extension PeopleMatchViewController {
