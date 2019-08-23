@@ -154,7 +154,7 @@ class MakeRoomViewController: UIViewController {
             makeRoomFinishViewController.roomPasswordString = roomPassword
             makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
             
-            UIApplication.shared.keyWindow?.rootViewController = roomList
+            UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: roomList)
             
             self?.dismiss(animated: true, completion: {
                 UIApplication.topViewController()?.present(makeRoomFinishViewController, animated: true, completion: nil)
