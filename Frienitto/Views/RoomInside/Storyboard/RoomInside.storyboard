@@ -881,18 +881,10 @@
                                             <action selector="backButtonAction:" destination="wuv-Se-JOz" eventType="touchUpInside" id="FAp-l2-e9C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p13-iy-HAd">
-                                        <rect key="frame" x="335" y="7" width="56" height="30"/>
-                                        <state key="normal" title="방 나가기">
-                                            <color key="titleColor" name="white"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="p13-iy-HAd" firstAttribute="centerY" secondItem="tjz-28-NZV" secondAttribute="centerY" id="8hy-tb-FDY"/>
                                     <constraint firstAttribute="height" constant="44" id="Gej-vO-g6z"/>
-                                    <constraint firstAttribute="trailing" secondItem="p13-iy-HAd" secondAttribute="trailing" constant="23" id="zyT-9I-daS"/>
                                 </constraints>
                             </view>
                         </subviews>
