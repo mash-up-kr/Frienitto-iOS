@@ -23,6 +23,7 @@ class OneButtonAlertViewController: UIViewController {
         case failureNetwork
         case failAuth
         case overlapRoom
+        case onlyOneMatching
         
         var firstLineText: String {
             switch self {
@@ -42,6 +43,8 @@ class OneButtonAlertViewController: UIViewController {
                 return "인증번호가"
             case .overlapRoom:
                 return "이미 존재하는 방입니다."
+            case .onlyOneMatching:
+                return "2명 이상이어야"
             }
         }
         var secondLineText: String {
@@ -62,6 +65,8 @@ class OneButtonAlertViewController: UIViewController {
                 return "알맞지 않습니다."
             case .overlapRoom:
                 return "다른 이름으로 생성해주세요."
+            case .onlyOneMatching:
+                return "시작할 수 있습니다."
             }
         }
         var buttonText: String {
@@ -81,6 +86,8 @@ class OneButtonAlertViewController: UIViewController {
             case .failAuth:
                 return "확인"
             case .overlapRoom:
+                return "확인"
+            case .onlyOneMatching:
                 return "확인"
             }
         }

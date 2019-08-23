@@ -77,6 +77,7 @@ extension TwoButtonAlertViewControllerDelegate where Self: UIViewController {
     private func logoutAction(tapped button: UIButton) {
         dismiss(animated: true) {
             if button.currentTitle == "네" {
+                UserDefaults.standard.set(nil, forKey: "userInfo")
                 guard let viewController = UIStoryboard.instantiate(LoginSignViewController.self, name: "Login") else { return }
                 UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: viewController)
             }

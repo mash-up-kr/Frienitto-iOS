@@ -94,14 +94,14 @@ private extension MainListViewController {
                 
                 if status == .matched {
                     let filteredMission = matchingInfoModel.data.filter { $0.from.id == user.id }
-                    
+
                     guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
                     selectViewController.mission = filteredMission[0]
                     selectViewController.room = room
-                    
+
                     self.navigationController?.pushViewController(selectViewController, animated: true)
                 }
-                
+
                 if status == .expired {
                     let missions = matchingInfoModel.data
                     
@@ -164,7 +164,7 @@ extension MainListViewController: UICollectionViewDataSource {
 
 extension MainListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = 244
+        let width: CGFloat = 260
         let height = collectionView.frame.height < 388 ? collectionView.frame.height : 388
         return CGSize(width: width, height: height)
     }

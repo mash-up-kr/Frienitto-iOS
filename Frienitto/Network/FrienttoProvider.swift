@@ -112,10 +112,9 @@ class FrienttoProvider {
     }
     
     func exitRoom(title: String,
-                  completion: @escaping ((Response?) -> Void),
-                  failure: @escaping ((Error, ErrorResponse?) -> Void)) {
+                  completion: @escaping (() -> Void)) {
         provider.request(.exitRoom(title: title)) { result in
-            // TODO: - Delete 후 처리
+            completion()
         }
     }
 }

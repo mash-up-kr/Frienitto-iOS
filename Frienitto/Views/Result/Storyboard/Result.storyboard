@@ -14,7 +14,7 @@
         <!--Result View Controller-->
         <scene sceneID="itg-S3-tLZ">
             <objects>
-                <viewController id="phK-na-4Tj" customClass="ResultViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="phK-na-4Tj" customClass="ResultViewController" customModule="Frienitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="820-9j-PoY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -134,28 +134,52 @@
                                     <outlet property="delegate" destination="PdB-Ra-1PZ" id="tWV-hR-thW"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4R9-z9-sZM">
-                                <rect key="frame" x="24" y="55.666666666666657" width="13" height="22"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xD3-qK-Kql">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-YG-ttC">
+                                        <rect key="frame" x="15" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="VZc-os-17f"/>
+                                            <constraint firstAttribute="width" constant="30" id="eu2-bY-eB9"/>
+                                        </constraints>
+                                        <state key="normal" image="backArrow"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="kSC-Yw-7FC" eventType="touchUpInside" id="YLI-gc-R8d"/>
+                                            <action selector="backButtonAction:" destination="PdB-Ra-1PZ" eventType="touchUpInside" id="aIf-mg-IcP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcm-d4-kuS">
+                                        <rect key="frame" x="326" y="5.6666666666666643" width="64" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="방 나가기">
+                                            <color key="titleColor" name="white"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exitButtonAction:" destination="PdB-Ra-1PZ" eventType="touchUpInside" id="GT2-hQ-Gd6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="13" id="EnG-0N-6vg"/>
-                                    <constraint firstAttribute="height" constant="22" id="Y1P-Wp-VKr"/>
+                                    <constraint firstAttribute="height" constant="44" id="5Dv-61-L3U"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wcm-d4-kuS" secondAttribute="trailing" constant="24" id="7Yz-OA-z72"/>
+                                    <constraint firstItem="Wcm-d4-kuS" firstAttribute="centerY" secondItem="xD3-qK-Kql" secondAttribute="centerY" id="c9w-kR-bcy"/>
+                                    <constraint firstItem="qPa-YG-ttC" firstAttribute="leading" secondItem="xD3-qK-Kql" secondAttribute="leading" constant="15" id="oSB-st-XVx"/>
+                                    <constraint firstItem="qPa-YG-ttC" firstAttribute="centerY" secondItem="xD3-qK-Kql" secondAttribute="centerY" id="zbj-dk-J9R"/>
                                 </constraints>
-                                <state key="normal" image="backArrow"/>
-                                <connections>
-                                    <action selector="backButtonAction:" destination="PdB-Ra-1PZ" eventType="touchUpInside" id="AKB-Kb-Ypn"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="darkIndigo"/>
                         <constraints>
                             <constraint firstItem="Ojl-qi-4bE" firstAttribute="trailing" secondItem="rbh-Cw-bX9" secondAttribute="trailing" constant="24" id="3Ra-1i-bZU"/>
+                            <constraint firstItem="xD3-qK-Kql" firstAttribute="leading" secondItem="raF-gg-HAe" secondAttribute="leading" id="5SB-FZ-ecI"/>
                             <constraint firstItem="DSH-vE-R62" firstAttribute="top" secondItem="rbh-Cw-bX9" secondAttribute="bottom" constant="38" id="8OV-su-juo"/>
                             <constraint firstItem="rbh-Cw-bX9" firstAttribute="leading" secondItem="Ojl-qi-4bE" secondAttribute="leading" constant="24" id="CkP-rA-fNk"/>
                             <constraint firstItem="DSH-vE-R62" firstAttribute="leading" secondItem="Ojl-qi-4bE" secondAttribute="leading" constant="24" id="Lr6-Rx-dtd"/>
-                            <constraint firstItem="4R9-z9-sZM" firstAttribute="leading" secondItem="Ojl-qi-4bE" secondAttribute="leading" constant="24" id="OiK-XD-Jjn"/>
+                            <constraint firstItem="xD3-qK-Kql" firstAttribute="top" secondItem="Ojl-qi-4bE" secondAttribute="top" id="NVY-Bh-xwC"/>
                             <constraint firstItem="Ojl-qi-4bE" firstAttribute="bottom" secondItem="DSH-vE-R62" secondAttribute="bottom" id="dvO-iX-Atc"/>
                             <constraint firstItem="Ojl-qi-4bE" firstAttribute="trailing" secondItem="DSH-vE-R62" secondAttribute="trailing" constant="24" id="i9z-2O-Vcm"/>
-                            <constraint firstItem="4R9-z9-sZM" firstAttribute="top" secondItem="Ojl-qi-4bE" secondAttribute="top" constant="11.5" id="kmO-kz-Y3N"/>
+                            <constraint firstItem="Ojl-qi-4bE" firstAttribute="trailing" secondItem="xD3-qK-Kql" secondAttribute="trailing" id="l1l-ST-N0B"/>
                             <constraint firstItem="rbh-Cw-bX9" firstAttribute="top" secondItem="Ojl-qi-4bE" secondAttribute="top" constant="73" id="tGg-c7-I3g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ojl-qi-4bE"/>
@@ -293,7 +317,7 @@
                                                             <fragment content="방 이름과 코드번호를 입력하고 마니또에 참여하세요!">
                                                                 <attributes>
                                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" metaFont="system"/>
+                                                                    <font key="NSFont" metaFont="label" size="13"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -798,7 +822,7 @@
                                                         <color key="textColor" name="white"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-ty-xwn">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-ty-xwn">
                                                         <rect key="frame" x="20" y="198" width="370" height="48"/>
                                                         <color key="backgroundColor" name="orange"/>
                                                         <constraints>
@@ -881,18 +905,10 @@
                                             <action selector="backButtonAction:" destination="wuv-Se-JOz" eventType="touchUpInside" id="FAp-l2-e9C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p13-iy-HAd">
-                                        <rect key="frame" x="335" y="7" width="56" height="30"/>
-                                        <state key="normal" title="방 나가기">
-                                            <color key="titleColor" name="white"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="p13-iy-HAd" firstAttribute="centerY" secondItem="tjz-28-NZV" secondAttribute="centerY" id="8hy-tb-FDY"/>
                                     <constraint firstAttribute="height" constant="44" id="Gej-vO-g6z"/>
-                                    <constraint firstAttribute="trailing" secondItem="p13-iy-HAd" secondAttribute="trailing" constant="23" id="zyT-9I-daS"/>
                                 </constraints>
                             </view>
                         </subviews>
