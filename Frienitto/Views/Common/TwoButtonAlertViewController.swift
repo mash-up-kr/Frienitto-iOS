@@ -78,7 +78,7 @@ extension TwoButtonAlertViewControllerDelegate where Self: UIViewController {
         dismiss(animated: true) {
             if button.currentTitle == "네" {
                 guard let viewController = UIStoryboard.instantiate(LoginSignViewController.self, name: "Login") else { return }
-                self.navigationController?.setViewControllers([viewController], animated: true)
+                UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: viewController)
             }
         }
     }

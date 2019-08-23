@@ -30,19 +30,20 @@ class RoomEnterViewController: UIViewController {
         let provider = FrienttoProvider()
         
         provider.joinRoom(title: title, code: code, completion: { [weak self] result in
-//            self?.navigationController?.popViewController(animated: true)
+            
             provider.retrieveRoomDetail(
                 id: result.data.id,
                 completion: { [weak self] retrieveRoomDetailModel in
                     guard let peopleMatchViewController =
-                        UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside") else { return }
+                        UIStoryboard.instantiate(PeopleMatchViewController.self, name: "RoomInside"),
+                    let roomList = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
                     peopleMatchViewController.room = retrieveRoomDetailModel.data
                     
                     if var vcArray = self?.navigationController?.viewControllers {
-                        vcArray.removeLast()
-                        vcArray.append(peopleMatchViewController)
+                        vcArray = [roomList, peopleMatchViewController]
                         
                         self?.navigationController?.setViewControllers(vcArray, animated: false)
+//                        UIApplication.shared.keyWindow?.rootViewController = roomList
                     }
                    
                 },
