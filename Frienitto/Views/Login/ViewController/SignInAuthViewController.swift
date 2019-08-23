@@ -103,8 +103,15 @@ class SignInAuthViewController: UIViewController {
             signUpViewController.email = ss.inputEmail
             
             ss.navigationController?.pushViewController(signUpViewController, animated: true)
-        }, failure: { error, _ in
-            print(error.localizedDescription)
+        }, failure: { error, errorResult in
+            if errorResult?.errorCode == 401 {
+                guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                
+                alertViewController.delegate = self
+                alertViewController.configure(status: .registeredEmail)
+                
+                self.present(alertViewController, animated: true)
+            }
         })
     }
     
@@ -123,6 +130,12 @@ class SignInAuthViewController: UIViewController {
                 confirmButton.backgroundColor = UIColor(named: "darkgrey")
             }
         }
+    }
+    @IBAction func codeTextFieldChanging(_ sender: Any) {
+        if emailLabel.text == "이메일" { return }
+        
+        guard let code = textField.text else { return }
+        textField.text = code.uppercased()
     }
 }
 

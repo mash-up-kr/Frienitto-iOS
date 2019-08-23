@@ -21,12 +21,12 @@ class MainViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
+//        navigationController?.isNavigationBarHidden = false
     }
     
     @IBAction func didTapDidTapMakeRoom(_ sender: UIButton) {
         guard let roomMakeViewController = UIStoryboard.instantiate(MakeRoomViewController.self, name: "MakeRoom") else { return }
-        navigationController?.pushViewController(roomMakeViewController, animated: true)
+        present(roomMakeViewController, animated: true, completion: nil)
     }
     
     @IBAction func didTapEnterRoom(_ sender: UIButton) {

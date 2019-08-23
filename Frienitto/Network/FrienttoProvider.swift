@@ -142,6 +142,7 @@ extension FrienttoProvider {
                 failure(error, nil)
             }
         } catch let error {
+            hideActivityIndicator()
             failure(error, nil)
         }
     }

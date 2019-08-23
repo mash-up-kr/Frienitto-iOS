@@ -21,6 +21,8 @@ class OneButtonAlertViewController: UIViewController {
         case emptyEmail
         case noUser
         case failureNetwork
+        case failAuth
+        case overlapRoom
         
         var firstLineText: String {
             switch self {
@@ -36,6 +38,10 @@ class OneButtonAlertViewController: UIViewController {
                 return "찾을 수 없는 사용자 입니다."
             case .failureNetwork:
                 return "네트워크 상태가 원활하지 않습니다."
+            case .failAuth:
+                return "인증번호가"
+            case .overlapRoom:
+                return "이미 존재하는 방입니다."
             }
         }
         var secondLineText: String {
@@ -52,6 +58,10 @@ class OneButtonAlertViewController: UIViewController {
                 return "다시 입력해주세요."
             case .failureNetwork:
                 return "다시 시도해주세요."
+            case .failAuth:
+                return "알맞지 않습니다."
+            case .overlapRoom:
+                return "다른 이름으로 생성해주세요."
             }
         }
         var buttonText: String {
@@ -67,6 +77,10 @@ class OneButtonAlertViewController: UIViewController {
             case .noUser:
                 return "다시 시도"
             case .failureNetwork:
+                return "확인"
+            case .failAuth:
+                return "확인"
+            case .overlapRoom:
                 return "확인"
             }
         }
