@@ -798,7 +798,7 @@
                                                         <color key="textColor" name="white"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-ty-xwn">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-ty-xwn">
                                                         <rect key="frame" x="20" y="198" width="370" height="48"/>
                                                         <color key="backgroundColor" name="orange"/>
                                                         <constraints>
