@@ -23,7 +23,10 @@ class OneButtonAlertViewController: UIViewController {
         case failureNetwork
         case failAuth
         case overlapRoom
+<<<<<<< HEAD
         case onlyOneMatching
+=======
+>>>>>>> - 인증번호 칸 영어 대문자로 입력되게끔 수정
         
         var firstLineText: String {
             switch self {
@@ -47,6 +50,7 @@ class OneButtonAlertViewController: UIViewController {
                 return "2명 이상이어야"
             }
         }
+        
         var secondLineText: String {
             switch self {
             case .emailAuth:
