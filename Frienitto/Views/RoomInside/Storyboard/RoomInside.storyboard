@@ -85,13 +85,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zev-xi-h2K">
                                                             <rect key="frame" x="0.0" y="78" width="70" height="19.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="darkestgrey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타 정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qb8-jq-G6e">
                                                             <rect key="frame" x="0.0" y="105.66666666666666" width="70" height="14.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="middlegrey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -189,7 +189,7 @@
                                             <action selector="dismiss:" destination="20o-S9-150" eventType="touchUpInside" id="mMH-x6-3X9"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KvI-Cq-Uwa" customClass="CircleImageView" customModule="Frienitto" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face4" translatesAutoresizingMaskIntoConstraints="NO" id="KvI-Cq-Uwa" customClass="CircleImageView" customModule="Frienitto" customModuleProvider="target">
                                         <rect key="frame" x="113" y="76" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="NPh-qI-ze2"/>
@@ -199,13 +199,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLH-Mr-iIT">
                                         <rect key="frame" x="144" y="246" width="78" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="darkestgrey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2O-HU-YbD">
-                                        <rect key="frame" x="155.66666666666666" y="294" width="55" height="19.666666666666686"/>
+                                        <rect key="frame" x="155" y="294" width="56" height="20"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="middlegrey"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -587,7 +587,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q74-nm-Fmj">
                                                                 <rect key="frame" x="134" y="136.99999999999997" width="106" height="36"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                                                <color key="textColor" name="darkgrey"/>
+                                                                <color key="textColor" name="darkestgrey"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="기타정보" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7e-5I-LhR">
@@ -671,7 +671,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRM-ue-SW8">
                                                                                 <rect key="frame" x="17.333333333333336" y="0.0" width="46" height="36"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                                                <color key="textColor" name="darkgrey"/>
+                                                                                <color key="textColor" name="darkestgrey"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abj-sd-tff">
@@ -694,7 +694,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ial-CV-f1h">
                                                                                 <rect key="frame" x="16.999999999999986" y="0.0" width="46" height="36"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                                                <color key="textColor" name="darkgrey"/>
+                                                                                <color key="textColor" name="darkestgrey"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o52-d8-qE9">
@@ -717,7 +717,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAm-Rx-Q77">
                                                                                 <rect key="frame" x="17.333333333333343" y="0.0" width="46" height="36"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                                                <color key="textColor" name="darkgrey"/>
+                                                                                <color key="textColor" name="darkestgrey"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrX-J1-fJu">
@@ -740,7 +740,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00u-Co-qc9">
                                                                                 <rect key="frame" x="17" y="0.0" width="46" height="36"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                                                <color key="textColor" name="darkgrey"/>
+                                                                                <color key="textColor" name="darkestgrey"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFc-mR-cF2">
@@ -926,9 +926,13 @@
         <image name="cancel" width="25" height="25"/>
         <image name="capsule" width="160" height="141"/>
         <image name="face1" width="279" height="279"/>
+        <image name="face4" width="279" height="279.5"/>
         <image name="face6" width="279" height="279"/>
         <namedColor name="darkIndigo">
             <color red="0.098039215686274508" green="0.082352941176470587" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkestgrey">
+            <color red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="darkgrey">
             <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
