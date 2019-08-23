@@ -27,8 +27,6 @@ class SignUpCompleteViewController: UIViewController {
     }
     
     @IBAction func confirm(_ sender: UIButton) {
-        showActivityIndicator()
-    
         guard let name = nameTextField.text,
             let description = descriptionTextField.text,
             let email = email,
@@ -39,9 +37,11 @@ class SignUpCompleteViewController: UIViewController {
             warningIntroduceLabel.isHidden = !description.isEmpty
             return
         }
-        
+    
         warningNameLabel.isHidden = true
         warningIntroduceLabel.isHidden = true
+        
+        showActivityIndicator()
         
         let provider = FrienttoProvider()
         let imageCode = Int.random(in: 1...6)

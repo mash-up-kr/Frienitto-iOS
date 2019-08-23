@@ -124,7 +124,9 @@ private extension MainListViewController {
         provider.retrieveUserRoom(
             completion: { [weak self] roomListModel in
                 self?.rooms = roomListModel.data
-                self?.collectionView.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    self?.collectionView.reloadData()
+                }
             },
             failure: { error, errorResponse in
                 print(error.localizedDescription)
@@ -194,7 +196,7 @@ extension MainListViewController: MainMenuCellDelegate {
         switch type {
         case .createRoom:
             guard let roomMakeViewController = UIStoryboard.instantiate(MakeRoomViewController.self, name: "MakeRoom") else { fatalError("MakeRoom error") }
-            navigationController?.pushViewController(roomMakeViewController, animated: true)
+            present(roomMakeViewController, animated: true, completion: nil)
         case .joinRoom:
             guard let roomInside = UIStoryboard.instantiate(RoomEnterViewController.self, name: "RoomInside") else { fatalError("RoomInside error") }
             navigationController?.pushViewController(roomInside, animated: true)

@@ -14,18 +14,13 @@ class MakeRoomViewController: UIViewController {
     
     @IBOutlet weak var roomNameField: UITextField! {
         didSet {
-            roomNameField.borderStyle = .none
-            roomNameField.inputAccessoryView = keyboardAccessaryView
-            roomNameField.tag = 1
+            roomNameField.delegate = self
         }
     }
     
-    @IBOutlet weak var roomPasswordField: UITextField! {
+    @IBOutlet weak var roomPasswordField: UITextField!{
         didSet {
-            roomPasswordField.borderStyle = .none
-            roomPasswordField.keyboardType = .numberPad
-            roomPasswordField.inputAccessoryView = keyboardAccessaryView
-            roomPasswordField.tag = 2
+            roomPasswordField.delegate = self
         }
     }
     
@@ -44,24 +39,10 @@ class MakeRoomViewController: UIViewController {
     @IBOutlet weak var makeButton: UIButton! {
         didSet {
             setMakeButton(false)
-            makeButton.addTarget(self, action: #selector(didTapMakeButton(_:)), for: .touchUpInside)
         }
     }
     
     // MARK: - Property
-    
-    private lazy var keyboardAccessaryView: UIToolbar = {
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        let upButton = UIBarButtonItem(image: UIImage(named: "up-arrow"), style: .plain, target: self, action: #selector(didTapUpArrow))
-        let downButton = UIBarButtonItem(image: UIImage(named: "down-arrow"), style: .plain, target: self, action: #selector(didTapDownArrow))
-        let doneButton = UIBarButtonItem.init(title: "Done", style: .plain, target: self, action: #selector(didTapToolbarDoneButton))
-        toolBar.items = [upButton, downButton, doneButton]
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        return toolBar
-    }()
     
     private let provider = FrienttoProvider()
     private let buttonBackgroundLightGray = UIColor(named: "lightgrey")
@@ -72,23 +53,15 @@ class MakeRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationItem()
         setDelegate()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
     }
     
     // MARK: - Method
-    
-    private func setNavigationItem() {
-        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem()
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.barTintColor = view.backgroundColor
-        navigationController?.navigationBar.isTranslucent = false
-    }
     
     private func setDelegate() {
         roomNameField.delegate = self
@@ -96,6 +69,7 @@ class MakeRoomViewController: UIViewController {
     }
     
     // TODO: roomNameField validation check
+    
     private func checkRoomInfoValidation() {
         
         guard let roomName = roomNameField.text,
@@ -104,6 +78,10 @@ class MakeRoomViewController: UIViewController {
                 setMakeButton(false)
                 return
             }
+        
+        if roomName.isEmpty {
+            return
+        }
         
         if password.count < 4 {
             setMakeButton(false)
@@ -126,27 +104,8 @@ class MakeRoomViewController: UIViewController {
             makeButton.backgroundColor = UIColor(named: "darkgrey")
         }
     }
-    
-    // MARK: - objc
-    
-    @objc func didTapUpArrow() {
-        roomPasswordField.resignFirstResponder()
-        roomNameField.becomeFirstResponder()
-    }
-    
-    @objc func didTapDownArrow() {
-        roomNameField.resignFirstResponder()
-        roomPasswordField.becomeFirstResponder()
-    }
-    
-    @objc func didTapToolbarDoneButton() {
-        if roomPasswordField.isFirstResponder {
-            roomPasswordField.resignFirstResponder()
-        } else if roomNameField.isFirstResponder {
-            roomNameField.resignFirstResponder()
-        }
-        checkRoomInfoValidation()
-    }
+
+    // MARK: - Objc
     
     @objc func basicButton(_ sender: UIButton) {
         sender.isSelected = true
@@ -179,7 +138,8 @@ class MakeRoomViewController: UIViewController {
     }
     
     // TODO: API Connect
-    @objc func didTapMakeButton(_ sender: UIButton) {
+    
+    @IBAction func didTapMakeButton(_ sender: UIButton) {
         let roomName = roomNameField.text!
         let roomPassword = roomPasswordField.text!
         let daysAfterEnum = selectedDaysButton!
@@ -187,35 +147,42 @@ class MakeRoomViewController: UIViewController {
         // TODO: 보내기 전 인터렉션
         showActivityIndicator()
         provider.createRoom(title: roomName, password: roomPassword, daysAfterEnum: daysAfterEnum, completion: { [weak self] createRoomModel in
-            guard let makeRoomFinishViewController = UIStoryboard.instantiate(MakeRoomFinishViewController.self, name: "MakeRoom") else { return }
+            guard let makeRoomFinishViewController = UIStoryboard.instantiate(MakeRoomFinishViewController.self, name: "MakeRoom"),
+            let roomList = UIStoryboard.instantiate(MainListViewController.self, name: "Main") else { return }
             
             makeRoomFinishViewController.roomNameString = roomName
             makeRoomFinishViewController.roomPasswordString = roomPassword
             makeRoomFinishViewController.buttonSelectedEnum = daysAfterEnum
             
-            self?.navigationController?.pushViewController(makeRoomFinishViewController, animated: true)
+            UIApplication.shared.keyWindow?.rootViewController = roomList
             
-        }, failure: { error, _ in
+            self?.dismiss(animated: true, completion: {
+                UIApplication.topViewController()?.present(makeRoomFinishViewController, animated: true, completion: nil)
+            })
+        }, failure: { error, errorResult in
+            if errorResult?.errorCode == 409 {
+                guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                
+                alertViewController.delegate = self
+                alertViewController.configure(status: .overlapRoom)
+                
+                self.present(alertViewController, animated: true)
+            }
             print(error.localizedDescription)
         })
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
 extension MakeRoomViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        guard
-            let toolbar = textField.inputAccessoryView as? UIToolbar,
-            let upArrowButton = toolbar.items?[0],
-            let downArrowButton = toolbar.items?[1]
-            else { fatalError("textfield arrow") }
-        
-        if textField == roomNameField {
-            upArrowButton.isEnabled = false
-            downArrowButton.isEnabled = true
-        } else if textField == roomPasswordField {
-            upArrowButton.isEnabled = true
-            downArrowButton.isEnabled = false
-        }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkRoomInfoValidation()
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -228,3 +195,5 @@ extension MakeRoomViewController: UITextFieldDelegate {
         return true
     }
 }
+
+extension MakeRoomViewController: OneButtonAlertViewControllerDelegate { }

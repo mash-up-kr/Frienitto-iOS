@@ -24,41 +24,28 @@ class MakeRoomFinishViewController: UIViewController {
     }
     @IBOutlet weak var threeDaysAfterButton: UIButton!
     @IBOutlet weak var sevenDaysAfterButton: UIButton!
-    @IBOutlet weak var DoneButton: UIButton! {
-        didSet {
-            DoneButton.addTarget(self, action: #selector(didTapDoneButton(_:)), for: .touchUpInside)
-        }
-    }
+    @IBOutlet weak var shareButton: UIButton!
     
     // MARK: - Property
     
-    var roomNameString: String!
-    var roomPasswordString: String!
-    var buttonSelectedEnum: DaysButtonEnum!
+    var roomNameString: String = ""
+    var roomPasswordString: String = ""
+    var buttonSelectedEnum: DaysButtonEnum?
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationItem()
         setBasicInfo()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Method
     
-    private func setNavigationItem() {
-        navigationItem.setHidesBackButton(true, animated: false)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.barTintColor = view.backgroundColor
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    
     private func setBasicInfo() {
+        guard let buttonSelectedEnum = buttonSelectedEnum else { return }
         roomNameField.text = roomNameString
         roomPasswordField.text = roomPasswordString
-        switch buttonSelectedEnum! {
+        switch buttonSelectedEnum {
         case .threeDays:
             threeDaysAfterButton.backgroundColor = UIColor(named: "darkIndigo")
             threeDaysAfterButton.setTitleColor(.white, for: .normal)
@@ -68,10 +55,21 @@ class MakeRoomFinishViewController: UIViewController {
         }
     }
     
-    // MARK: - objc
+    // MARK: - IBAction
     
-    @objc func didTapDoneButton(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+    @IBAction func closeButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func shareButtonAction(_ sender: UIButton) {
+        let shareText = """
+        나랑 마니또 할래?😘
+        방 이름 : \(roomNameString)
+        비밀번호 : \(roomPasswordString)
+        """
+        
+        let activityVC = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
+        
+    }
 }

@@ -18,6 +18,20 @@ class LoginSignViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        allNaviGuesturePop()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    // MARK: - Private
+    
+    private func allNaviGuesturePop() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil;
     }
     
     // MARK: - Action
