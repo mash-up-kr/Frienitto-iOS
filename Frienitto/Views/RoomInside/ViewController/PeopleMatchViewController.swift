@@ -65,9 +65,13 @@ private extension PeopleMatchViewController {
                 
                 self?.navigationController?.pushViewController(selectViewController, animated: true)
             },
-            failure: { error, errorResponse in
-                print(error.localizedDescription)
-                print(errorResponse?.errorMessage)
+            failure: { [weak self] error, errorResponse in
+                if errorResponse?.errorCode == 400 {
+                    guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                    alertViewController.delegate = self
+                    alertViewController.configure(status: .onlyOneMatching)
+                    self?.present(alertViewController, animated: true, completion: nil)
+                }
             }
         )
     }
@@ -107,3 +111,5 @@ extension PeopleMatchViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
 }
+
+extension PeopleMatchViewController: OneButtonAlertViewControllerDelegate { }
