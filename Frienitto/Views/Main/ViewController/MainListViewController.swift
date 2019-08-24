@@ -24,18 +24,18 @@ class MainListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        refreshRoomList()
+        
         if let user = user {
             userNameLabel.text = user.username
             userEmailLabel.text = user.email
             userImageView.image = UIImage(named: "face\(user.imageCode)")
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        refreshRoomList()
     }
     
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
