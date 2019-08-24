@@ -30,6 +30,15 @@ class MainListViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         refreshRoomList()
+      
+        if user == nil {
+            if let userInfo = UserDefaults.standard.object(forKey: "userInfo") as? Data {
+                let decoder = JSONDecoder()
+                if let loadedUser = try? decoder.decode(User.self, from: userInfo) {
+                    user = loadedUser
+                }
+            }
+        }
         
         if let user = user {
             userNameLabel.text = user.username
@@ -38,6 +47,7 @@ class MainListViewController: UIViewController {
         }
     }
     
+
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
         guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
         alertViewController.delegate = self
