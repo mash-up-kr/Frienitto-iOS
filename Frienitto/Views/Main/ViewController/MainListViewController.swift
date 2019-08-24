@@ -25,6 +25,15 @@ class MainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        if user == nil {
+            if let userInfo = UserDefaults.standard.object(forKey: "userInfo") as? Data {
+                let decoder = JSONDecoder()
+                if let loadedUser = try? decoder.decode(User.self, from: userInfo) {
+                    user = loadedUser
+                }
+            }
+        }
+        
         if let user = user {
             userNameLabel.text = user.username
             userEmailLabel.text = user.email
@@ -34,7 +43,7 @@ class MainListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.isNavigationBarHidden = true
         refreshRoomList()
     }
     

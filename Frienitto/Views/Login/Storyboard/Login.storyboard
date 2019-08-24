@@ -718,7 +718,7 @@
                                                 <rect key="frame" x="24" y="455" width="366" height="328"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-9P-Gjg">
-                                                        <rect key="frame" x="107" y="-34" width="152" height="187"/>
+                                                        <rect key="frame" x="107" y="-34" width="152" height="187.00000000000003"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="152" id="F8L-Bx-ggv"/>
                                                             <constraint firstAttribute="height" constant="187" id="IX3-vT-Csq"/>
