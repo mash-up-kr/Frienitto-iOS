@@ -28,9 +28,9 @@ class FrenttoActivityIndicatorView: UIView {
 
 extension FrenttoActivityIndicatorView {
     private func commonInit() {
+        isUserInteractionEnabled = false
         addBackgroundView()
         addLoadingView()
-        isUserInteractionEnabled = false
     }
     
     private func addLoadingView() {
@@ -45,9 +45,14 @@ extension FrenttoActivityIndicatorView {
     }
     
     private func addBackgroundView() {
-        let view = UIView(frame: frame)
-        view.backgroundColor = .black
-        view.layer.opacity = 0.6
+        let view = UIView()
+        view.backgroundColor = .white
+        view.alpha = 0.6
+        view.frame.size.width = 150
+        view.frame.size.height = 150
+        view.layer.cornerRadius = 25
+        view.clipsToBounds = true
+        view.center = center
         
         addSubview(view)
     }

@@ -24,7 +24,13 @@ class MainListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        refreshRoomList()
+      
         if user == nil {
             if let userInfo = UserDefaults.standard.object(forKey: "userInfo") as? Data {
                 let decoder = JSONDecoder()
@@ -41,12 +47,7 @@ class MainListViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-        refreshRoomList()
-    }
-    
+
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
         guard let alertViewController = UIStoryboard.instantiate(TwoButtonAlertViewController.self, name: "Login") else { return }
         alertViewController.delegate = self
