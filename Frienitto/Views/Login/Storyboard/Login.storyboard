@@ -1069,7 +1069,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="shaaark.sea@gmail.com" placeholder="이메일을 적어주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gsf-qP-ubZ">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일을 적어주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gsf-qP-ubZ">
                                                                         <rect key="frame" x="0.0" y="27" width="320" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15" id="czN-Qc-0Ab"/>
@@ -1124,7 +1124,7 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rlak84591" placeholder="비밀번호를 입력하세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-HA-7Sz">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력하세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uAO-HA-7Sz">
                                                                         <rect key="frame" x="0.0" y="27" width="320" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="15" id="bb2-Th-d9I"/>

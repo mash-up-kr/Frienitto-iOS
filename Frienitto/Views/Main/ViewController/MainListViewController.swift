@@ -104,10 +104,19 @@ private extension MainListViewController {
                     let filteredMission = matchingInfoModel.data.filter { $0.from.id == user.id }
 
                     guard let selectViewController = UIStoryboard.instantiate(SelectViewController.self, name: "Select") else { return }
-                    selectViewController.mission = filteredMission[0]
-                    selectViewController.room = room
-
-                    self.navigationController?.pushViewController(selectViewController, animated: true)
+                    if !filteredMission.isEmpty {
+                        selectViewController.mission = filteredMission[0]
+                        selectViewController.room = room
+                        
+                        self.navigationController?.pushViewController(selectViewController, animated: true)
+                    }else {
+                        guard let alertViewController = UIStoryboard.instantiate(OneButtonAlertViewController.self, name: "Login") else { return }
+                        
+                        alertViewController.delegate = self
+                        alertViewController.configure(status: .endMatching)
+                        
+                        self.present(alertViewController, animated: true)
+                    }
                 }
 
                 if status == .expired {
@@ -212,4 +221,4 @@ extension MainListViewController: MainMenuCellDelegate {
     }
 }
 
-extension MainListViewController: TwoButtonAlertViewControllerDelegate { }
+extension MainListViewController: OneButtonAlertViewControllerDelegate, TwoButtonAlertViewControllerDelegate { }
