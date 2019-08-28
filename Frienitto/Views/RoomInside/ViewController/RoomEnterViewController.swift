@@ -30,7 +30,6 @@ class RoomEnterViewController: UIViewController {
         let provider = FrienttoProvider()
         
         provider.joinRoom(title: title, code: code, completion: { [weak self] result in
-            
             provider.retrieveRoomDetail(
                 id: result.data.id,
                 completion: { [weak self] retrieveRoomDetailModel in
@@ -43,9 +42,7 @@ class RoomEnterViewController: UIViewController {
                         vcArray = [roomList, peopleMatchViewController]
                         
                         self?.navigationController?.setViewControllers(vcArray, animated: false)
-//                        UIApplication.shared.keyWindow?.rootViewController = roomList
                     }
-                   
                 },
                 failure: { error, _ in
                     print(error.localizedDescription)
